@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="logo.png">
+<title>Raghad Almatrfy</title>
+<meta name="description" content="Raghad Almatrfy — Computer Science student at Umm Al-Qura University, interested in data analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..600&family=Manrope:wght@400;500;600;700&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Palette: Transparent Yellow #F5EFC6 · Sceptre Red #4D0E12 · Cerulean #A5BCD6 · Potting Soil #4A2E27 · Java #231815 */
+:root{
+  --bg:#F8F4DC; --paper:#F5EFC6; --card:#FBF8E8;
+  --ink:#231815; --ink-soft:#4A2E27; --muted:#7D6A5F;
+  --red:#4D0E12; --red-ink:#F5EFC6; --accent:#7A1D24;
+  --blue:#A5BCD6; --blue-ink:#231815; --blue-soft:rgba(165,188,214,.35);
+  --soil:#4A2E27; --java:#231815;
+  --line:rgba(35,24,21,.16); --line-2:rgba(35,24,21,.3);
+  --band-dark:#231815; --band-dark-ink:#F5EFC6; --band-dark-soft:#CBBFA8;
+  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1210; --paper:#231815; --card:#2A1D19;
+    --ink:#F5EFC6; --ink-soft:#DCD2B4; --muted:#A8977F;
+    --red:#4D0E12; --red-ink:#F5EFC6; --accent:#D98C8F;
+    --blue:#A5BCD6; --blue-ink:#231815; --blue-soft:rgba(165,188,214,.16);
+    --line:rgba(245,239,198,.14); --line-2:rgba(245,239,198,.28);
+    --band-dark:#2E1F1B; --band-dark-ink:#F5EFC6; --band-dark-soft:#CBBFA8;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1210; --paper:#231815; --card:#2A1D19;
+  --ink:#F5EFC6; --ink-soft:#DCD2B4; --muted:#A8977F;
+  --red:#4D0E12; --red-ink:#F5EFC6; --accent:#D98C8F;
+  --blue:#A5BCD6; --blue-ink:#231815; --blue-soft:rgba(165,188,214,.16);
+  --line:rgba(245,239,198,.14); --line-2:rgba(245,239,198,.28);
+  --band-dark:#2E1F1B; --band-dark-ink:#F5EFC6; --band-dark-soft:#CBBFA8;
+  color-scheme:dark;
+}
+:root[lang="ar"]{
+  --display:"Amiri","Noto Naskh Arabic",serif;
+  --body:"IBM Plex Sans Arabic",Tahoma,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background-color .4s,color .4s}
+:root[lang="ar"] body{line-height:1.9}
+a{color:inherit}
+::selection{background:var(--blue);color:var(--java)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:500;text-wrap:balance}
+:root[lang="ar"] h1,:root[lang="ar"] h2,:root[lang="ar"] h3{font-weight:700}
+h2{font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-.01em}
+:root[lang="ar"] h2{line-height:1.4;letter-spacing:0}
+h3{font-size:22px;line-height:1.25}
+:root[dir="rtl"] .flip{transform:scaleX(-1)}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);border-bottom:1px solid var(--line);transition:background-color .4s}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand{display:block;width:112px;aspect-ratio:1000/354;flex:none}
+.mark{display:block;width:100%;height:100%;background:var(--ink);-webkit-mask:url(logo.png) center/contain no-repeat;mask:url(logo.png) center/contain no-repeat}
+nav.links{display:flex;gap:28px;margin-inline:auto;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+:root[lang="ar"] nav.links{letter-spacing:0;font-size:14.5px}
+nav.links a{text-decoration:none;color:var(--ink-soft);padding-block:4px;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+nav.links a:hover{color:var(--ink);border-color:var(--accent)}
+.tools{display:flex;gap:6px;align-items:center}
+.sq{appearance:none;border:1px solid var(--line-2);background:transparent;color:var(--ink);height:38px;min-width:38px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;gap:7px;font:600 12.5px/1 var(--body);cursor:pointer;transition:background .2s,border-color .2s}
+.sq:hover{background:var(--card);border-color:var(--ink)}
+.sq svg{width:16px;height:16px}
+.lang-btn span{font-family:"IBM Plex Sans Arabic","Manrope",sans-serif}
+.icon-sun{display:none}.is-dark .icon-sun{display:block}.is-dark .icon-moon{display:none}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:52px;padding:0 26px;text-decoration:none;font:600 13.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,gap .25s}
+:root[lang="ar"] .btn{letter-spacing:0;font-size:15px}
+.btn svg{width:16px;height:16px}
+.btn:hover{gap:16px}
+.btn-red{background:var(--red);color:var(--red-ink)}
+.btn-red:hover{background:#6A1419}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
+.top .btn{height:38px;padding:0 16px;font-size:12px}
+
+/* Section scaffold */
+section{padding-block:clamp(72px,10vw,128px)}
+.shead{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;align-items:end;border-bottom:1px solid var(--line-2);padding-bottom:22px;margin-bottom:clamp(36px,5vw,60px)}
+.num{font:400 clamp(56px,8vw,104px)/.8 var(--display);color:var(--accent);font-family:"Bodoni Moda",serif;font-variant-numeric:lining-nums}
+.shead .lbl{display:block;font:600 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+:root[lang="ar"] .shead .lbl{letter-spacing:0;font-size:13.5px}
+.band-red{background:var(--red);color:var(--red-ink)}
+.band-red .num,.band-dark .num{color:var(--blue)}
+.band-red .shead,.band-dark .shead{border-color:rgba(245,239,198,.25)}
+.band-red .shead .lbl,.band-dark .shead .lbl{color:rgba(245,239,198,.65)}
+.band-dark{background:var(--band-dark);color:var(--band-dark-ink)}
+.band-blue{background:var(--blue);color:var(--blue-ink)}
+.band-blue .num{color:var(--red)}
+.band-blue .shead{border-color:rgba(35,24,21,.3)}
+.band-blue .shead .lbl{color:rgba(35,24,21,.65)}
+
+/* Hero */
+.hero{padding-block:clamp(36px,6vw,72px) clamp(56px,8vw,96px)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,64px);align-items:stretch}
+.hero .left{display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.hero .meta-row{display:flex;justify-content:space-between;gap:16px;font:600 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line-2);padding-bottom:16px}
+:root[lang="ar"] .hero .meta-row{letter-spacing:0;font-size:13.5px}
+.giant{font:400 clamp(64px,13vw,168px)/.82 var(--display);font-family:"Bodoni Moda",serif;letter-spacing:-.04em;color:var(--ink);margin-top:10px}
+.giant i{font-style:italic;color:var(--accent)}
+.hero h1{font-size:clamp(30px,3.6vw,46px);line-height:1.15;font-weight:500}
+:root[lang="ar"] .hero h1{line-height:1.5;font-weight:700}
+.hero h1 em{font-style:italic;color:var(--accent)}
+:root[lang="ar"] .hero h1 em{font-style:normal}
+.hero .lede{color:var(--ink-soft);font-size:clamp(16.5px,1.5vw,18.5px);max-width:52ch}
+.name-line{display:flex;align-items:center;gap:16px}
+.name-line .signature{width:min(230px,55%);aspect-ratio:1000/354}
+.name-line .ar-name{font:700 22px/1.3 "Amiri",serif;color:var(--ink-soft)}
+.name-line .ar-name:empty{display:none}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px}
+.works{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);font-weight:500;padding-top:18px;border-top:1px solid var(--line)}
+.works b{color:var(--ink);font-weight:600;direction:ltr}
+.photo{position:relative;background:var(--blue);min-height:520px;display:flex;flex-direction:column}
+.photo .frame{position:relative;flex:1;margin:18px;background:linear-gradient(170deg,rgba(245,239,198,.5),rgba(245,239,198,0) 70%);border:1px solid rgba(35,24,21,.22);overflow:hidden}
+.frame-logo{position:absolute;inset:0;display:grid;place-items:center;padding:10%}
+.frame-logo .mark{width:100%;height:auto;aspect-ratio:1000/354;background:#231815}
+.photo .ph{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:8px;text-align:center;color:var(--java)}
+.photo .ph .mono{font:400 120px/1 "Bodoni Moda",serif;color:var(--red)}
+.photo .ph small{font:600 11.5px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;opacity:.7}
+:root[lang="ar"] .photo .ph small{letter-spacing:0;font-size:13px}
+.photo .cap{display:flex;justify-content:space-between;padding:0 18px 16px;font:600 11.5px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--java)}
+:root[lang="ar"] .photo .cap{letter-spacing:0;font-size:12.5px}
+.photo .tagred{position:absolute;inset-inline-start:-14px;top:40px;background:var(--red);color:var(--red-ink);font:600 11.5px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;padding:12px 16px;z-index:2}
+:root[lang="ar"] .photo .tagred{letter-spacing:0;font-size:13px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px)}
+.about-grid h3{font-size:clamp(26px,3vw,36px);line-height:1.25}
+:root[lang="ar"] .about-grid h3{line-height:1.6}
+.about-body{display:grid;gap:18px;color:var(--ink-soft);align-content:start}
+.about-body .big{font-size:clamp(18px,1.7vw,20px);color:var(--ink);font-weight:500}
+dl.quick{display:grid;grid-template-columns:1fr 1fr;margin:14px 0 0;border-top:1px solid var(--line-2)}
+dl.quick div{padding:16px 0;border-bottom:1px solid var(--line)}
+dl.quick div:nth-child(odd){padding-inline-end:16px}
+dl.quick dt{font:600 11.5px/1.4 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+:root[lang="ar"] dl.quick dt{letter-spacing:0;font-size:13px}
+dl.quick dd{margin:4px 0 0;font-weight:600;color:var(--ink)}
+
+/* Why (red band) */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(245,239,198,.25)}
+.why-item{padding:30px 28px 34px 0;display:grid;gap:12px;align-content:start;border-bottom:1px solid rgba(245,239,198,.25)}
+:root[dir="rtl"] .why-item{padding:30px 0 34px 28px}
+.why-item:not(:nth-child(3n)){border-inline-end:1px solid rgba(245,239,198,.25)}
+.why-item:not(:nth-child(3n+1)){padding-inline-start:28px}
+.why-item .ic{width:34px;height:34px;color:var(--blue)}
+.why-item p{color:rgba(245,239,198,.78);font-size:15.5px}
+.minitags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.minitags span{font:600 10.5px/1 var(--mono);letter-spacing:.06em;padding:5px 7px;border:1px solid rgba(245,239,198,.3);color:rgba(245,239,198,.8);direction:ltr}
+:root[lang="ar"] .minitags span.t{direction:rtl;font-family:var(--body);letter-spacing:0;font-size:11.5px}
+
+/* Toolkit */
+.stack{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-2);border-inline-start:1px solid var(--line-2)}
+.tool{padding:26px 22px;border-inline-end:1px solid var(--line-2);border-bottom:1px solid var(--line-2);display:grid;gap:10px;align-content:start;transition:background .3s}
+.tool:hover{background:var(--card)}
+.tool .ab{font:400 30px/1.1 "Bodoni Moda",serif;color:var(--accent);direction:ltr;letter-spacing:-.01em}
+:root[dir="rtl"] .tool .ab{text-align:right}
+:root[dir="rtl"] .tool h3{text-align:right}
+.tool p{font-size:14.5px;color:var(--ink-soft)}
+.soft-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.soft-row span{font-size:13px;font-weight:600;padding:8px 14px;border:1px solid var(--line-2);color:var(--ink-soft)}
+
+/* Process (dark band) */
+.pipe{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,239,198,.18);border:1px solid rgba(245,239,198,.18)}
+.pstep{background:var(--band-dark);padding:26px;display:grid;gap:14px;align-content:start}
+.pstep .n{display:flex;align-items:baseline;gap:12px}
+.pstep .n b{font:400 40px/1 "Bodoni Moda",serif;color:var(--blue)}
+.pstep .n h3{font-size:21px}
+.pstep .desc{font-size:14.5px;color:var(--band-dark-soft)}
+.panel{background:#1A110F;border:1px solid rgba(245,239,198,.12);padding:14px 16px;font:400 12.5px/1.7 var(--mono);direction:ltr;text-align:left;color:#F5EFC6;min-height:128px}
+.panel .k{color:#E0A0A3}.panel .g{color:#A5BCD6}
+.panel.q{font:500 15px/1.6 var(--body);display:grid;align-content:center}
+:root[lang="ar"] .panel.q{direction:rtl;text-align:right;font-family:"IBM Plex Sans Arabic",sans-serif}
+.panel.q .bub{border-inline-start:2px solid #A5BCD6;padding-inline-start:12px;font-family:"Bodoni Moda",serif;font-style:italic;font-size:18px}
+:root[lang="ar"] .panel.q .bub{font-family:"Amiri",serif;font-style:normal;font-size:20px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
+.kv span:nth-child(odd){color:#9C8B78}
+.mini{display:flex;align-items:flex-end;gap:8px;height:84px;position:relative;padding-top:6px}
+.mini i{flex:1;background:rgba(245,239,198,.2)}
+.mini i.hi{background:#A5BCD6}
+.mini .avg{position:absolute;left:0;right:0;border-top:1px dashed #E0A0A3}
+.mini .avg em{position:absolute;right:0;top:-16px;font:500 10px/1 var(--mono);color:#E0A0A3;font-style:normal}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.check li::before{content:"✓";color:#A5BCD6;margin-right:8px}
+.result{display:grid;gap:8px;align-content:center}
+.result .pill{width:max-content;font:600 10.5px/1 var(--mono);letter-spacing:.1em;padding:5px 8px;background:#4D0E12;color:#F5EFC6}
+.result b{font:500 15px/1.5 var(--body);color:#F5EFC6}
+.pnote{color:var(--band-dark-soft);font-size:13.5px;margin-top:18px;opacity:.8}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.proj{grid-column:span 3;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .3s}
+.proj:hover{border-color:var(--ink)}
+.proj.sm{grid-column:span 2}
+.thumb{position:relative;aspect-ratio:16/8;background:var(--red);overflow:hidden;display:flex;align-items:flex-end;justify-content:space-between;padding:14px 16px}
+.thumb.c-java{background:#231815}
+.thumb.c-soil{background:#4A2E27}
+.thumb.c-blue{background:#A5BCD6}
+.thumb.c-red{background:#4D0E12}
+.proj.sm .thumb{aspect-ratio:16/9}
+.thumb canvas{position:absolute;inset:0;width:100%;height:100%}
+.thumb .badge{position:relative;font:600 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;background:#F5EFC6;color:#231815}
+:root[lang="ar"] .thumb .badge{letter-spacing:0;font-size:12px}
+.thumb .pn{position:relative;font:400 30px/1 "Bodoni Moda",serif;color:#F5EFC6}
+.thumb.c-blue .pn{color:#231815}
+.proj .inner{padding:22px 22px 24px;display:grid;gap:12px;flex:1;align-content:start}
+.proj .meta{font:600 11.5px/1.4 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+:root[lang="ar"] .proj .meta{letter-spacing:0;font-size:13px}
+.proj .goal{color:var(--ink-soft);font-size:15px}
+.proj .goal b{color:var(--accent);font-weight:700}
+.proj ul{margin:0;padding-inline-start:18px;display:grid;gap:5px;color:var(--ink-soft);font-size:14.5px}
+.proj ul li::marker{color:var(--accent)}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:12px}
+.nums div{display:grid;gap:2px}
+.nums b{font:400 26px/1 "Bodoni Moda",serif;font-variant-numeric:lining-nums tabular-nums}
+.nums span{font-size:12px;color:var(--muted);line-height:1.35}
+.proj .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font:500 11px/1 var(--mono);padding:5px 8px;border:1px solid var(--line-2);color:var(--ink-soft);direction:ltr}
+.more{display:inline-flex;align-items:center;gap:8px;font:600 12.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:4px}
+:root[lang="ar"] .more{letter-spacing:0;font-size:14px}
+.more svg{width:14px;height:14px}
+.more.off{border:0;color:var(--muted)}
+
+/* Education (blue band) */
+.edu-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,64px)}
+.degree{display:grid;gap:16px;align-content:start}
+.degree .deg-lbl{font:600 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+:root[lang="ar"] .degree .deg-lbl{letter-spacing:0;font-size:13.5px}
+.degree h3{font-size:clamp(28px,3.4vw,42px);line-height:1.15}
+:root[lang="ar"] .degree h3{line-height:1.5}
+.degree p{color:rgba(35,24,21,.8);font-size:15.5px;max-width:48ch}
+.certs{list-style:none;margin:0;padding:0;border-top:1px solid rgba(35,24,21,.35)}
+.certs li{display:grid;grid-template-columns:64px 1fr;gap:3px 14px;padding:16px 0;border-bottom:1px solid rgba(35,24,21,.2)}
+.certs .yr{font:400 18px/1.4 "Bodoni Moda",serif;color:var(--red)}
+.certs b{font-weight:600;font-size:15.5px}
+.certs small{grid-column:2;color:rgba(35,24,21,.7);font-size:13.5px}
+.certs .bc-desc{grid-column:2;color:rgba(35,24,21,.82);font-size:14px;margin-top:4px}
+.certs .hrs{display:inline-block;font:600 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--red);color:#F5EFC6;padding:4px 7px;margin-inline-start:8px;vertical-align:2px}
+:root[lang="ar"] .certs .hrs{letter-spacing:0;font-size:12px}
+.certs details{grid-column:2;margin-top:8px;border:0}
+.certs summary{display:inline-flex;align-items:center;gap:8px;padding:0;font:600 12px/1.4 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--red);cursor:pointer;list-style:none}
+:root[lang="ar"] .certs summary{letter-spacing:0;font-size:13.5px}
+.certs summary::-webkit-details-marker{display:none}
+.certs summary::after{content:"+";font-size:16px;line-height:1}
+.certs details[open] summary::after{content:"−"}
+.certs ol{margin:10px 0 0;padding-inline-start:22px;display:grid;gap:4px;font-size:13.5px;color:rgba(35,24,21,.85)}
+.certs ol li{display:list-item;padding:0;border:0}
+.certs ol li::marker{color:var(--red);font-family:"Bodoni Moda",serif}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px)}
+.faq-grid h3{font-size:clamp(26px,3vw,36px);line-height:1.25}
+details{border-bottom:1px solid var(--line-2)}
+details:first-of-type{border-top:1px solid var(--line-2)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:500 20px/1.4 var(--display)}
+:root[lang="ar"] summary{font-weight:700}
+summary::-webkit-details-marker{display:none}
+summary .pm{width:26px;height:26px;position:relative;flex:none}
+summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:var(--accent);transform:translate(-50%,-50%)}
+summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
+details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 0 22px;color:var(--ink-soft);max-width:60ch}
+
+/* Contact (red band) */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,80px)}
+.contact .giant{color:#F5EFC6;font-size:clamp(56px,10vw,132px)}
+.contact .giant i{color:#A5BCD6}
+.contact .lede{color:rgba(245,239,198,.78);max-width:46ch;margin-top:22px}
+.contact .cta-row{margin-top:30px}
+.contact .btn-cream{background:#F5EFC6;color:#4D0E12}
+.contact .btn-cream:hover{background:#A5BCD6;color:#231815}
+.contact .btn-line{border-color:rgba(245,239,198,.5);color:#F5EFC6}
+.contact .btn-line:hover{background:#F5EFC6;color:#4D0E12}
+.contact .signature{width:min(240px,60%);aspect-ratio:1000/354;margin-top:44px}
+.contact .signature .mark{background:#F5EFC6}
+.clist{border-top:1px solid rgba(245,239,198,.3);align-self:start}
+.crow{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid rgba(245,239,198,.2);text-decoration:none;color:#F5EFC6}
+.crow svg{width:19px;height:19px;color:#A5BCD6;flex:none}
+.crow .lbl{display:block;font:600 11px/1.4 var(--body);letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,198,.6)}
+:root[lang="ar"] .crow .lbl{letter-spacing:0;font-size:12.5px}
+.crow .val{display:block;font-weight:600;direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}
+:root[dir="rtl"] .crow .val{text-align:right}
+.crow .val.t{direction:inherit}
+.crow .go{margin-inline-start:auto;width:16px;height:16px;opacity:.5;transition:opacity .2s}
+a.crow:hover .go{opacity:1}
+.copy{margin-inline-start:auto;appearance:none;background:transparent;border:1px solid rgba(245,239,198,.4);color:#F5EFC6;height:30px;padding:0 12px;font:600 11.5px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;flex:none}
+:root[lang="ar"] .copy{letter-spacing:0;font-size:12.5px}
+.copy:hover{background:#F5EFC6;color:#4D0E12}
+footer{background:#231815;color:#CBBFA8}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-block:24px;font-size:13px}
+
+/* Motion */
+.rise{transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .8s ease}
+.rise.pre{transform:translateY(20px);opacity:.45}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto!important}
+  .rise.pre{transform:none;opacity:1}
+}
+
+/* Responsive */
+@media (max-width:1000px){
+  nav.links{display:none}
+  .tools{margin-inline-start:auto}
+  .stack{grid-template-columns:repeat(2,1fr)}
+  .pipe{grid-template-columns:1fr 1fr}
+  .projects{grid-template-columns:1fr 1fr}
+  .proj,.proj.sm{grid-column:span 1}
+  .proj:first-child{grid-column:span 2}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .why-item,:root[dir="rtl"] .why-item{padding:28px 22px!important;border-inline-end:0!important}
+  .why-item:nth-child(odd){border-inline-end:1px solid rgba(245,239,198,.25)!important}
+}
+@media (max-width:780px){
+  .hero .wrap,.about-grid,.edu-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .photo{min-height:420px}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .pipe,.projects,.why-grid{grid-template-columns:1fr}
+  .proj:first-child{grid-column:span 1}
+  .why-item:nth-child(odd){border-inline-end:0!important}
+  .why-item,:root[dir="rtl"] .why-item{padding:24px 0!important}
+  dl.quick{grid-template-columns:1fr}
+  .top .btn .t{display:none}
+  .top .btn{padding:0 12px}
+  .brand{width:92px}
+  .btn{flex:1}
+  .shead{grid-template-columns:1fr}
+  .photo .tagred{inset-inline-start:0}
+}
+
+/* CV viewer */
+.cv-modal{position:fixed;inset:0;z-index:100;background:rgba(35,24,21,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column;align-items:center;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px calc(env(safe-area-inset-bottom,0px) + 14px)}
+.cv-modal[hidden],[hidden]{display:none!important}
+.cv-bar{width:min(860px,100%);display:flex;align-items:center;justify-content:space-between;gap:12px;color:#F5EFC6;padding-bottom:12px}
+.cv-bar b{font:500 22px/1.2 var(--display)}
+.cv-close{appearance:none;border:1px solid rgba(245,239,198,.45);background:transparent;color:#F5EFC6;height:40px;padding:0 16px;font:600 12.5px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.cv-close:hover{background:#F5EFC6;color:#4D0E12}
+.cv-scroll{width:min(860px,100%);flex:1;overflow:auto;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.cv-scroll img{display:block;width:100%;height:auto}
+.cv-note{color:rgba(245,239,198,.75);font-size:13px;padding-top:10px;text-align:center}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Raghad Almatrfy"><span class="mark"></span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#toolkit" data-i18n="nav_skills">Toolkit</a>
+      <a href="#process" data-i18n="nav_process">Process</a>
+      <a href="#work" data-i18n="nav_work">Projects</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="tools">
+      <button class="sq lang-btn" id="langBtn" type="button" aria-label="Switch language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/></svg><span id="langLabel">عربي</span></button>
+      <button class="sq" id="themeBtn" type="button" aria-label="Toggle dark mode"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <a class="btn btn-red" href="cv.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg><span class="t" data-i18n="cv_short">CV</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="left">
+      <div class="meta-row"><span data-i18n="meta_l">Portfolio</span><span>2026</span></div>
+      <div>
+        <p class="giant">Portfo<i>lio</i></p>
+      </div>
+      <div class="name-line">
+        <div class="signature" role="img" aria-label="Raghad Almatrfy"><span class="mark"></span></div>
+        <span class="ar-name" data-i18n="name_ar"></span>
+      </div>
+      <h1 data-i18n="hero_title">From raw data to <em>a clear decision</em></h1>
+      <p class="lede" data-i18n="hero_lede">Computer Science student at Umm Al-Qura University, interested in data analytics.</p>
+      <div class="cta-row">
+        <a class="btn btn-red" href="#contact"><span data-i18n="cta_work">Let’s work together</span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-line" href="#work" data-i18n="cta_projects">View projects</a>
+      </div>
+      <div class="works"><span data-i18n="works_with">Works with</span><b>Power BI</b><b>Excel</b><b>SQL</b><b>Python</b><b>Figma</b></div>
+    </div>
+    <div class="photo">
+      <span class="tagred" data-i18n="tag_da">Data Analytics</span>
+      <div class="frame"><div class="frame-logo" role="img" aria-label="Raghad Almatrfy"><span class="mark"></span></div></div>
+      <div class="cap"><span data-i18n="cap_l">Makkah</span><span data-i18n="cap_r">Umm Al-Qura University</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="shead rise"><span class="num">01</span><div><span class="lbl" data-i18n="about_eyebrow">About me</span><h2 data-i18n="about_h">Hello, I’m Raghad</h2></div></div>
+    <div class="about-grid">
+      <h3 class="rise" data-i18n="about_title">Discovering data, information and indicators is what I love.</h3>
+      <div class="about-body rise">
+        <p class="big" data-i18n="about_p1"></p>
+        <p data-i18n="about_p2"></p>
+        <p data-i18n="about_p3"></p>
+        <dl class="quick">
+          <div><dt data-i18n="q_based">Based in</dt><dd data-i18n="q_based_v"></dd></div>
+          <div><dt data-i18n="q_uni">University</dt><dd data-i18n="q_uni_v"></dd></div>
+          <div><dt data-i18n="q_focus">Focus</dt><dd data-i18n="q_focus_v"></dd></div>
+          <div><dt data-i18n="q_lang">Languages</dt><dd data-i18n="q_lang_v"></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 WHY -->
+<section class="band-red">
+  <div class="wrap">
+    <div class="shead rise"><span class="num">02</span><div><span class="lbl" data-i18n="why_eyebrow">Why work with me</span><h2 data-i18n="why_title">What I bring to a data team</h2></div></div>
+    <div class="why-grid">
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><h3 data-i18n="w1_t"></h3><p data-i18n="w1_d"></p><div class="minitags"><span>CHECK</span><span>UNIQUE</span><span>FOREIGN KEY</span></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><h3 data-i18n="w2_t"></h3><p data-i18n="w2_d"></p><div class="minitags"><span>KPIs</span><span>DASHBOARDS</span><span>REPORTS</span></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/></svg><h3 data-i18n="w3_t"></h3><p data-i18n="w3_d"></p><div class="minitags"><span>SDLC</span><span>UML</span><span>IEEE 830</span></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 20c.6-3.4 3.1-5.5 6-5.5s5.4 2.1 6 5.5M15.5 14.8c2.6-.3 4.8 1.4 5.5 4.2"/></svg><h3 data-i18n="w4_t"></h3><p data-i18n="w4_d"></p><div class="minitags"><span class="t" data-i18n="tg_team4">Team of 4</span><span class="t" data-i18n="tg_team5">Team of 5</span></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/></svg><h3 data-i18n="w5_t"></h3><p data-i18n="w5_d"></p><div class="minitags"><span>SATR</span><span>HASH PLUS</span><span>MAWHIBA</span><span>MISK</span></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><h3 data-i18n="w6_t"></h3><p data-i18n="w6_d"></p><div class="minitags"><span>FIGMA</span><span>UI/UX</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 TOOLKIT -->
+<section id="toolkit">
+  <div class="wrap">
+    <div class="shead rise"><span class="num">03</span><div><span class="lbl" data-i18n="skills_eyebrow">Toolkit</span><h2 data-i18n="skills_title">8 tools I work with</h2></div></div>
+    <div class="stack rise">
+      <div class="tool"><h3 class="ab">Power BI</h3><p data-i18n="tk_pbi"></p></div>
+      <div class="tool"><h3 class="ab">Excel</h3><p data-i18n="tk_xl"></p></div>
+      <div class="tool"><h3 class="ab">MySQL</h3><p data-i18n="tk_sql"></p></div>
+      <div class="tool"><h3 class="ab">Python</h3><p data-i18n="tk_py"></p></div>
+      <div class="tool"><h3 class="ab">Java</h3><p data-i18n="tk_java"></p></div>
+      <div class="tool"><h3 class="ab">C++ · OpenGL</h3><p data-i18n="tk_cpp"></p></div>
+      <div class="tool"><h3 class="ab">GitHub</h3><p data-i18n="tk_gh"></p></div>
+      <div class="tool"><h3 class="ab">Figma</h3><p data-i18n="tk_fig"></p></div>
+    </div>
+    <div class="soft-row rise"><span data-i18n="c_team"></span><span data-i18n="c_crit"></span><span data-i18n="c_prob"></span><span data-i18n="c_detail"></span><span data-i18n="c_time"></span><span data-i18n="c_fast"></span></div>
+  </div>
+</section>
+
+<!-- 04 PROCESS -->
+<section class="band-dark" id="process">
+  <div class="wrap">
+    <div class="shead rise"><span class="num">04</span><div><span class="lbl" data-i18n="proc_eyebrow">How it works</span><h2 data-i18n="proc_title">From a question to a decision in 6 steps</h2></div></div>
+    <div class="pipe rise">
+      <div class="pstep"><div class="n"><b>1</b><h3 data-i18n="p_1"></h3></div><div class="panel q"><div class="bub" data-i18n="p_1q"></div></div><p class="desc" data-i18n="p_1d"></p></div>
+      <div class="pstep"><div class="n"><b>2</b><h3 data-i18n="p_2"></h3></div><div class="panel"><div class="kv"><span>entity</span><span class="g">customers, orders</span><span>metric</span><span class="g">SUM(total)</span><span>compare</span><span class="g">AVG(order)</span><span>output</span><span class="g">VIEW → dashboard</span></div></div><p class="desc" data-i18n="p_2d"></p></div>
+      <div class="pstep"><div class="n"><b>3</b><h3 data-i18n="p_3"></h3></div><div class="panel"><span class="k">SELECT</span> c.name, <span class="k">SUM</span>(o.total) spent<br><span class="k">FROM</span> customers c <span class="k">JOIN</span> orders o<br>&nbsp;&nbsp;<span class="k">ON</span> o.customer_id = c.id<br><span class="k">GROUP BY</span> c.name<br><span class="k">ORDER BY</span> spent <span class="k">DESC</span>;</div><p class="desc" data-i18n="p_3d"></p></div>
+      <div class="pstep"><div class="n"><b>4</b><h3 data-i18n="p_4"></h3></div><div class="panel"><div class="mini"><i style="height:38%"></i><i style="height:52%"></i><i class="hi" style="height:88%"></i><i style="height:44%"></i><i class="hi" style="height:72%"></i><div class="avg" style="bottom:58%"><em>AVG</em></div></div></div><p class="desc" data-i18n="p_4d"></p></div>
+      <div class="pstep"><div class="n"><b>5</b><h3 data-i18n="p_5"></h3></div><div class="panel"><ul class="check"><li>no duplicate records</li><li>nulls handled</li><li>totals reconcile</li><li>labels are clear</li></ul></div><p class="desc" data-i18n="p_5d"></p></div>
+      <div class="pstep"><div class="n"><b>6</b><h3 data-i18n="p_6"></h3></div><div class="panel result"><span class="pill">INSIGHT</span><b data-i18n="p_6r"></b></div><p class="desc" data-i18n="p_6d"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 PROJECTS -->
+<section id="work">
+  <div class="wrap">
+    <div class="shead rise"><span class="num">05</span><div><span class="lbl" data-i18n="work_eyebrow">Featured work</span><h2 data-i18n="work_title">Projects, told through their numbers</h2></div></div>
+    <div class="projects">
+      <article class="proj rise">
+        <div class="thumb c-red" data-art="excel"><span class="badge">Excel · KPI</span><span class="pn">01</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="px_meta"></p><h3 data-i18n="px_t"></h3><p class="goal" data-i18n="px_g"></p>
+          <ul><li data-i18n="px_b1"></li><li data-i18n="px_b2"></li><li data-i18n="px_b3"></li></ul>
+          <div class="nums"><div><b>15</b><span data-i18n="n_cust"></span></div><div><b>5</b><span data-i18n="n_kpi"></span></div><div><b>4–5×</b><span data-i18n="n_usage"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">COUNT</span><span class="tag">AVERAGE</span><span class="tag">SUM</span><span class="tag">Charts</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/excel-basics-data-analysis" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+      </article>
+      <article class="proj rise">
+        <div class="thumb c-java" data-art="schema"><span class="badge">MySQL</span><span class="pn">02</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="p1_meta"></p><h3 data-i18n="p1_t"></h3><p class="goal" data-i18n="p1_g"></p>
+          <ul><li data-i18n="p1_b1"></li><li data-i18n="p1_b2"></li><li data-i18n="p1_b3"></li></ul>
+          <div class="nums"><div><b>6</b><span data-i18n="n_tables"></span></div><div><b>80</b><span data-i18n="n_records"></span></div><div><b>8+</b><span data-i18n="n_constraints"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">MySQL</span><span class="tag">Stored procedure</span><span class="tag">Indexing</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/satr-sql" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+      </article>
+      <article class="proj sm rise">
+        <div class="thumb c-soil" data-art="bars"><span class="badge">SQL · KPI</span><span class="pn">03</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="p2_meta"></p><h3 data-i18n="p2_t"></h3><p class="goal" data-i18n="p2_g"></p>
+          <ul><li data-i18n="p2_b1"></li><li data-i18n="p2_b2"></li><li data-i18n="p2_b3"></li></ul>
+          <div class="nums"><div><b>4</b><span data-i18n="n_linked"></span></div><div><b>4</b><span data-i18n="n_join"></span></div><div><b>1</b><span data-i18n="n_view"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">JOIN</span><span class="tag">GROUP BY</span><span class="tag">VIEW</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/-eyecare-optical-shop-sql" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+      </article>
+      <article class="proj sm rise">
+        <div class="thumb c-blue" data-art="ui"><span class="badge">JavaFX</span><span class="pn">04</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="pj_meta"></p><h3 data-i18n="pj_t"></h3><p class="goal" data-i18n="pj_g"></p>
+          <ul><li data-i18n="pj_b1"></li><li data-i18n="pj_b2"></li><li data-i18n="pj_b3"></li></ul>
+          <div class="nums"><div><b>6</b><span data-i18n="n_screens"></span></div><div><b>0–100</b><span data-i18n="n_range"></span></div><div><b>MVC</b><span data-i18n="n_arch"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">Java 11+</span><span class="tag">JavaFX 21</span><span class="tag">Maven</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/student-grade-management-javafx" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+      </article>
+      <article class="proj sm rise">
+        <div class="thumb c-red" data-art="flow"><span class="badge" data-i18n="p3_tag"></span><span class="pn">05</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="p3_meta"></p><h3 data-i18n="p3_t"></h3><p class="goal" data-i18n="p3_g"></p>
+          <ul><li data-i18n="p3_b1"></li><li data-i18n="p3_b2"></li><li data-i18n="p3_b3"></li></ul>
+          <div class="nums"><div><b>14</b><span data-i18n="n_req"></span></div><div><b>9</b><span data-i18n="n_uc"></span></div><div><b>75%</b><span data-i18n="n_pass"></span></div></div>
+          <div class="foot"><span></span><span class="more off" data-i18n="course"></span></div>
+        </div>
+      </article>
+      <article class="proj rise">
+        <div class="thumb c-java" data-art="rings"><span class="badge" data-i18n="p4_tag"></span><span class="pn">06</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="p4_meta"></p><h3 data-i18n="p4_t"></h3><p class="goal" data-i18n="p4_g"></p>
+          <ul><li data-i18n="p4_b1"></li><li data-i18n="p4_b2"></li></ul>
+          
+          <div class="foot"><span></span><a class="more" href="https://www.figma.com/design/Y7AHYf91AVdoqZQb4BhjDY/capsule" target="_blank" rel="noopener"><span data-i18n="proto"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+      </article>
+      <article class="proj rise">
+        <div class="thumb c-soil" data-art="rain"><span class="badge" data-i18n="p5_tag"></span><span class="pn">07</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="p5_meta"></p><h3 data-i18n="p5_t"></h3><p class="goal" data-i18n="p5_g"></p>
+          <ul><li data-i18n="p5_b1"></li><li data-i18n="p5_b2"></li><li data-i18n="p5_b3"></li></ul>
+          <div class="nums"><div><b>5</b><span data-i18n="n_scenes"></span></div><div><b>100</b><span data-i18n="n_particles"></span></div><div><b>60</b><span data-i18n="n_fps"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">GLUT</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/the-missing-panda-opengl" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 06 EDUCATION -->
+<section class="band-blue" id="education">
+  <div class="wrap">
+    <div class="shead rise"><span class="num">06</span><div><span class="lbl" data-i18n="edu_eyebrow">Education</span><h2 data-i18n="edu_title">Learning, with a clear direction</h2></div></div>
+    <div class="edu-grid">
+      <div class="degree rise">
+        <span class="deg-lbl" data-i18n="deg_eyebrow"></span>
+        <h3 data-i18n="deg_t"></h3>
+        <p data-i18n="deg_c"></p>
+      </div>
+      <ul class="certs rise">
+        <li><span class="yr">2026</span><b><span data-i18n="bc_t"></span><span class="hrs" data-i18n="bc_h"></span></b><small>Hash Plus</small><p class="bc-desc" data-i18n="bc_d"></p><details><summary data-i18n="bc_more"></summary><ol id="bcList"></ol></details></li>
+        <li><span class="yr">2026</span><b data-i18n="ce1"></b><small>Hash Plus</small></li>
+        <li><span class="yr">2026</span><b data-i18n="ce2"></b><small>Hash Plus</small></li>
+        <li><span class="yr">2026</span><b data-i18n="ce3"></b><small>Hash Plus</small></li>
+        <li><span class="yr">2026</span><b data-i18n="ce4"></b><small data-i18n="satr"></small></li>
+        <li><span class="yr">2023</span><b data-i18n="ce5"></b><small data-i18n="ce5s"></small></li>
+        <li><span class="yr">2022</span><b data-i18n="ce6"></b><small data-i18n="ce6s"></small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CONTACT -->
+<section class="band-red contact" id="contact">
+  <div class="wrap">
+    <div class="shead rise"><span class="num">07</span><div><span class="lbl" data-i18n="c_eyebrow">Contact</span></div></div>
+    <div class="contact-grid">
+      <div class="rise">
+        <p class="giant" data-i18n="c_giant">Let’s work <i>together</i></p>
+        <p class="lede" data-i18n="c_lede"></p>
+        <div class="cta-row">
+          <a class="btn btn-cream" href="mailto:raghadalmatrfy2006@gmail.com"><span data-i18n="c_mail"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="cv.pdf" target="_blank" rel="noopener" data-i18n="cta_cv">View my CV</a>
+        </div>
+        <div class="signature" role="img" aria-label="Raghad Almatrfy"><span class="mark"></span></div>
+      </div>
+      <div class="clist rise">
+        <div class="crow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14"/><path d="M3 7l9 6 9-6"/></svg><div><span class="lbl" data-i18n="l_email"></span><span class="val" id="emailVal">raghadalmatrfy2006@gmail.com</span></div><button class="copy" id="copyBtn" type="button" data-i18n="copy">Copy</button></div>
+        <a class="crow" href="https://www.linkedin.com/in/raghad-almatrfy-3ab180363" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><div><span class="lbl">LinkedIn</span><span class="val">raghad-almatrfy</span></div><svg class="go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a class="crow" href="https://github.com/RaghadAlmatrfy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4 1.4-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><div><span class="lbl">GitHub</span><span class="val">RaghadAlmatrfy</span></div><svg class="go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <a class="crow" href="https://x.com/raghad_almatrfy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 16M20 4L4 20"/></svg><div><span class="lbl">X</span><span class="val">@raghad_almatrfy</span></div><svg class="go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <div class="crow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><span class="lbl" data-i18n="l_loc"></span><span class="val t" data-i18n="q_based_v"></span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span data-i18n="foot"></span><span data-i18n="foot2"></span></div></footer>
+
+<script>
+const T={
+en:{
+nav_about:"About",nav_skills:"Toolkit",nav_process:"Process",nav_work:"Projects",nav_contact:"Contact",cv_short:"CV",
+meta_l:"Portfolio",name_ar:"",tag_da:"Data Analytics",cap_l:"Makkah",cap_r:"Umm Al-Qura University",
+hero_title:"From raw data to <em>a clear decision</em>",
+hero_lede:"Computer Science student at Umm Al-Qura University, interested in data analytics.",
+cta_work:"Let’s work together",cta_projects:"View projects",cta_cv:"View my CV",works_with:"Works with",
+photo_ph:"Official photo",photo_alt:"Raghad Almatrfy",
+about_eyebrow:"About me",about_h:"Hello, I’m Raghad",
+about_title:"Discovering data, information and indicators is what I love.",
+about_p1:"I’m Raghad Almatrfy, a third-year Computer Science student in Makkah who enjoys the moment a messy table turns into a clear answer.",
+about_p2:"I work with databases and decision-making. I build Power BI dashboards that keep data accurate from the start, and I have a working knowledge of SQL. I then turn the results into dashboards and KPIs that anyone on the team can understand in seconds.",
+about_p3:"I pay attention to the small details in all data.",
+q_based:"Based in",q_based_v:"Makkah, Saudi Arabia",q_uni:"University",q_uni_v:"Umm Al-Qura University",q_focus:"Focus",q_focus_v:"Data analytics",q_lang:"Languages",q_lang_v:"Arabic · English",
+why_eyebrow:"Why work with me",why_title:"What I bring to a data team",
+w1_t:"Accuracy first",w1_d:"I build integrity into the data itself, so every chart rests on numbers you can trust.",
+w2_t:"Clear data storytelling",w2_d:"I turn queries into KPIs and dashboards that explain what happened and what to do next.",
+w3_t:"Structured thinking",w3_d:"I understand how a project runs end to end, not only the analysis step.",
+w4_t:"Team first",w4_d:"Team achievement, hard work and collaboration are among my top goals for delivering excellent work.",
+w5_t:"Fast, steady learner",w5_d:"I keep adding new tools and courses, and I finish what I start.",
+w6_t:"An eye for design",w6_d:"With a Figma and UI/UX background, my dashboards look as considered as the analysis behind them.",
+tg_team4:"Team of 4",tg_team5:"Team of 5",
+skills_eyebrow:"Toolkit",skills_title:"8 tools I work with",
+tk_pbi:"Dashboards, visuals and KPI tracking",tk_xl:"PivotTables and data cleaning",tk_sql:"Schemas, joins, views, procedures, indexing",tk_py:"Scripting and analysis",tk_java:"Object-oriented programming",tk_cpp:"Graphics and real-time animation",tk_gh:"Version control and repositories",tk_fig:"UI/UX prototyping",
+c_team:"Teamwork",c_crit:"Critical thinking",c_prob:"Problem solving",c_detail:"Attention to detail",c_time:"Time management",c_fast:"Fast learning",
+proc_eyebrow:"How it works",proc_title:"From a question to a decision in 6 steps",
+p_1:"The question",p_1q:"“Which customers spend above average?”",p_1d:"Start from the decision the data needs to support.",
+p_2:"Reasoning",p_2d:"Break it into entities, metrics and the comparison that answers it.",
+p_3:"Query",p_3d:"Write clean, readable SQL on validated tables.",
+p_4:"Visualize",p_4d:"Show the answer in a chart that reads at a glance.",
+p_5:"Quality check",p_5d:"Check the data and the chart before anyone relies on them.",
+p_6:"Result",p_6r:"Above-average customers flagged. A reusable view feeds the dashboard.",p_6d:"Share the finding and the next step, in Arabic or English.",
+p_note:"Walkthrough modeled on the EyeCare project. The chart shows the pattern, not real figures.",
+work_eyebrow:"Featured work",work_title:"Projects, told through their numbers",
+px_meta:"Hash Plus Excel course · With distinction",px_t:"Telecom Customer Usage &amp; Billing Analysis",px_g:"<b>Goal:</b> understand how internet usage and bills differ across plans and cities.",
+px_b1:"Analyzed customer data across five Saudi cities: plan type, internet usage and bill amount",px_b2:"Built KPIs with COUNT, AVERAGE, MAX, MIN and SUM, plus a column chart and a pie chart",px_b3:"Found that Unlimited-plan customers used 4–5 times more data than Basic-plan customers",
+n_cust:"customers",n_kpi:"KPI formulas",n_usage:"usage, Unlimited vs Basic",
+pj_meta:"Desktop application",pj_t:"Student Grade Management System",pj_g:"<b>Goal:</b> give administrators one place to manage students, grades and grade statistics.",
+pj_b1:"Built login, dashboard, add student, add grades, student table and reports screens",pj_b2:"Validated input, including scores between 0 and 100, with clear error handling",pj_b3:"Reports show total grades, average, highest and lowest score",
+n_screens:"screens",n_range:"score validation",n_arch:"architecture",
+p1_meta:"Personal project · July 2026",p1_t:"Excellence Academy Database",p1_g:"<b>Goal:</b> model a full academy of students, teachers and courses with data that stays correct as it grows.",
+p1_b1:"Designed a relational system with 1:N and M:N relationships through three join tables",p1_b2:"Enforced integrity with CHECK, UNIQUE and FOREIGN KEY constraints",p1_b3:"Automated tasks with a stored procedure and a view, and added indexes for faster queries",
+n_tables:"tables",n_records:"students, teachers &amp; courses",n_constraints:"constraints",repo:"View repository",
+p2_meta:"Introduction to Database course · Team of 3",p2_t:"EyeCare: Optical Shop Database",p2_g:"<b>Goal:</b> turn raw order records into clear customer spending insights.",
+p2_b1:"Modeled a normalized schema with full DDL and DML scripts",p2_b2:"Built an order-history report with a four-table JOIN, then calculated per-customer spending with GROUP BY, SUM and COUNT",p2_b3:"Flagged above-average orders with an AVG() subquery and saved a reusable VIEW for dashboards",
+n_linked:"linked tables",n_join:"tables in one JOIN",n_view:"dashboard-ready view",course:"Course project",
+p3_tag:"Team of 4",p3_meta:"Foundations of Software Engineering",p3_t:"SafeStep: Women’s Safety App",p3_g:"<b>Goal:</b> plan and specify a mobile app that helps women feel safer on the move.",
+p3_b1:"Documented requirements to IEEE 830 and a 15-week, 4-phase plan",p3_b2:"Designed use case and class diagrams plus 8 UI screens",p3_b3:"Ran risk analysis across 6 categories and 4 test cases",
+n_req:"requirements",n_uc:"use cases",n_pass:"test pass rate",
+p4_tag:"Figma · Team of 5",p4_meta:"High school graduation project · 2024",p4_t:"Capsule: AR Pharmacy App",p4_g:"<b>Goal:</b> help people check whether a medicine suits their chronic conditions and compare prices across pharmacies.",
+p4_b1:"Designed screens for search by keyword and image, AR medicine recognition, ordering and payment",p4_b2:"Defined requirements and a 6-month plan, and co-wrote the research report",proto:"View prototype",
+p5_tag:"C++ · Team of 5",p5_meta:"Computer Graphics course · Team of 5",p5_t:"The Missing Panda: 2D Animated Story",p5_g:"<b>Goal:</b> tell the story of a mother panda searching for her lost baby through interactive animated scenes.",
+p5_b1:"Programmed keyboard-controlled scene switching with texture-mapped backgrounds",p5_b2:"Built a particle rain system and an alpha-blended heart animation",p5_b3:"Led the final reunion scene with its animated hearts",
+n_scenes:"scenes",n_particles:"particles",n_fps:"FPS loop",
+edu_eyebrow:"Education",edu_title:"Learning, with a clear direction",deg_eyebrow:"B.Sc. · Expected 2028",deg_t:"Computer Science, Umm Al-Qura University",
+deg_c:"Relevant coursework: Intro to Database, Data Structures &amp; Algorithms, Statistics &amp; Probability, Artificial Intelligence, OOP (Java), Software Engineering.",
+bc_t:"Data Analysis with AI Bootcamp",bc_h:"30 hours",bc_d:"How to use data analysis and AI tools within one practical methodology, knowing when and how to use each tool to turn data into documented insights and decisions.",bc_more:"16 modules",bc_mods:["Introduction to analytical thinking and the data analysis cycle", "Defining analysis questions, framing problems and getting to know AI tools", "Traditional vs. AI-assisted analysis", "Data analysis in Excel with AI tools", "Data preparation and cleaning, handling missing values and errors with AI", "Exploratory analysis: finding patterns and trends with AI", "Creating charts and visualizations with AI", "Data analysis with SQL and AI tools", "Introduction to data analysis with Python", "Data cleaning and analysis with Python + AI", "Building simple predictive models with Python and AI", "Building KPIs and dashboards with Power BI and AI", "Extracting insights and recommendations, and turning results into data storytelling", "Building an analytics app with Claude Code + Lovable", "Building an AI Data Analyst Agent to automate analysis and reporting", "A complete real-world analytics project and a professional portfolio"],
+ce1:"Power BI Fundamentals &amp; Data Analysis, Intermediate &amp; Advanced",ce2:"Data Analysis Using Excel",ce3:"Excel Fundamentals &amp; Data Analysis",ce4:"SQL 101, 102, 103 and Python",satr:"Satr Platform",ce5:"Mawhiba Academic Enrichment: Data Science &amp; AI",ce5s:"Mawhiba in partnership with Umm Al-Qura University",ce6:"Misk Future Path Program",ce6s:"Critical thinking, project planning, financial analysis, data analysis, emotional intelligence, productivity and time management",
+faq_eyebrow:"FAQ",faq_title:"Good to know",faq_side:"Quick answers for recruiters and teams.",
+f1q:"What kind of roles are you looking for?",f1a:"Data Analytics and IT internships, and data-focused projects where I can clean, analyze and present real data.",
+f2q:"Which tools do you use most?",f2a:"Power BI and Excel for dashboards and reporting, SQL (MySQL) for querying and modeling, and Python for scripting and analysis.",
+f3q:"Do you work in Arabic and English?",f3a:"Yes. I write reports, present findings and communicate with teams comfortably in both languages.",
+f4q:"Where are you based?",f4a:"Makkah, Saudi Arabia. Get in touch to discuss on-site or remote arrangements.",
+f5q:"How can I get your CV?",f5a:"Use the CV button at the top of the page or in the contact section, or email me and I’ll send it right away.",
+c_eyebrow:"Contact",c_giant:"Let’s work <i>together</i>",c_lede:"Have an internship, a dataset or a question that needs a clear answer? I’d love to hear about it.",c_mail:"Email me",
+l_email:"Email",l_loc:"Location",copy:"Copy",copied:"Copied",
+foot:"© 2026 Raghad Almatrfy",foot2:"Makkah · Data Analytics Portfolio",
+langLabel:"عربي",cv_title:"Curriculum Vitae",cv_close:"Close",cv_dl:"Download PDF",title:"Raghad Almatrfy"
+},
+ar:{
+nav_about:"نبذة",nav_skills:"الأدوات",nav_process:"المنهجية",nav_work:"المشاريع",nav_contact:"تواصل",cv_short:"سيرتي",
+meta_l:"ملف أعمال",name_ar:"رغد المطرفي",tag_da:"تحليل البيانات",cap_l:"مكة المكرمة",cap_r:"جامعة أم القرى",
+hero_title:"من البيانات الخام إلى <em>قرار واضح</em>",
+hero_lede:"طالبة علوم حاسب في جامعة أم القرى، مهتمة بتحليل البيانات.",
+cta_work:"لنعمل معًا",cta_projects:"عرض المشاريع",cta_cv:"عرض السيرة الذاتية",works_with:"أعمل بـ",
+photo_ph:"الصورة الرسمية",photo_alt:"رغد المطرفي",
+about_eyebrow:"نبذة عني",about_h:"أهلًا، أنا رغد",
+about_title:"اكتشاف البيانات والمعلومات والمؤشرات من اهتماماتي.",
+about_p1:"أنا رغد المطرفي، طالبة في السنة الثالثة بتخصص علوم الحاسب في مكة المكرمة، وأستمتع باللحظة التي يتحول فيها جدول مبعثر إلى إجابة واضحة.",
+about_p2:"أعمل في قواعد البيانات ودعم اتخاذ القرار. أصمم لوحات Power BI تحافظ على دقة البيانات من البداية، ولدي معرفة في SQL، ثم أحوّل النتائج إلى لوحات ومؤشرات أداء يفهمها أي شخص في الفريق خلال ثوانٍ.",
+about_p3:"أهتم بالتفاصيل الصغيرة في كل البيانات.",
+q_based:"المدينة",q_based_v:"مكة المكرمة، السعودية",q_uni:"الجامعة",q_uni_v:"جامعة أم القرى",q_focus:"التركيز",q_focus_v:"تحليل البيانات",q_lang:"اللغات",q_lang_v:"العربية · الإنجليزية",
+why_eyebrow:"لماذا تعمل معي",why_title:"ما أضيفه لفريق البيانات",
+w1_t:"الدقة أولًا",w1_d:"أبني سلامة البيانات في أساسها، لتقوم كل رسمة بيانية على أرقام موثوقة.",
+w2_t:"سرد واضح بالأرقام",w2_d:"أحوّل الاستعلامات إلى مؤشرات ولوحات توضّح ما حدث وما الخطوة التالية.",
+w3_t:"تفكير منظّم",w3_d:"أفهم مسار المشروع كاملًا، وليس مرحلة التحليل فقط.",
+w4_t:"إنجاز الفريق",w4_d:"إنجاز الفريق والعمل والتعاون من أهم أهدافي لتحقيق عمل مثالي.",
+w5_t:"تعلّم سريع ومستمر",w5_d:"أضيف أدوات ودورات جديدة باستمرار، وأُكمل ما أبدأه.",
+w6_t:"حسّ تصميمي",w6_d:"بخلفيتي في Figma وتجربة المستخدم، تبدو لوحاتي بنفس عناية التحليل الذي خلفها.",
+tg_team4:"فريق من 4",tg_team5:"فريق من 5",
+skills_eyebrow:"الأدوات",skills_title:"8 أدوات أعمل بها",
+tk_pbi:"لوحات ورسوم وتتبّع مؤشرات الأداء",tk_xl:"الجداول المحورية وتنظيف البيانات",tk_sql:"المخططات والربط والعروض والإجراءات والفهرسة",tk_py:"البرمجة والتحليل",tk_java:"البرمجة الكائنية",tk_cpp:"الرسوميات والحركة في الوقت الحقيقي",tk_gh:"إدارة النسخ والمستودعات",tk_fig:"نماذج تجربة المستخدم",
+c_team:"العمل الجماعي",c_crit:"التفكير النقدي",c_prob:"حل المشكلات",c_detail:"الاهتمام بالتفاصيل",c_time:"إدارة الوقت",c_fast:"سرعة التعلّم",
+proc_eyebrow:"كيف أعمل",proc_title:"من السؤال إلى القرار في 6 خطوات",
+p_1:"السؤال",p_1q:"«من العملاء الذين ينفقون أكثر من المتوسط؟»",p_1d:"أبدأ من القرار الذي يجب أن تدعمه البيانات.",
+p_2:"التفكير",p_2d:"أقسّم السؤال إلى كيانات ومقاييس والمقارنة التي تجيب عنه.",
+p_3:"الاستعلام",p_3d:"أكتب SQL واضحًا ومقروءًا على جداول تم التحقق منها.",
+p_4:"التصوير",p_4d:"أعرض الإجابة في رسم بياني يُفهم من النظرة الأولى.",
+p_5:"فحص الجودة",p_5d:"أراجع البيانات والرسم قبل أن يعتمد عليهما أحد.",
+p_6:"النتيجة",p_6r:"تم تمييز العملاء الأعلى من المتوسط، وعرض قابل لإعادة الاستخدام يغذّي اللوحة.",p_6d:"أشارك النتيجة والخطوة التالية، بالعربية أو الإنجليزية.",
+p_note:"مثال مبني على مشروع EyeCare. الرسم يوضّح الفكرة وليس أرقامًا حقيقية.",
+work_eyebrow:"أعمال مختارة",work_title:"مشاريع تحكيها أرقامها",
+px_meta:"دورة Excel من هاش بلس · بامتياز",px_t:"تحليل استخدام وفواتير عملاء الاتصالات",px_g:"<b>الهدف:</b> فهم اختلاف استخدام الإنترنت والفواتير بين الباقات والمدن.",
+px_b1:"تحليل بيانات عملاء من خمس مدن سعودية: نوع الباقة واستخدام الإنترنت ومبلغ الفاتورة",px_b2:"بناء مؤشرات أداء باستخدام COUNT وAVERAGE وMAX وMIN وSUM، مع رسم أعمدة ورسم دائري",px_b3:"اكتشاف أن عملاء الباقة غير المحدودة يستهلكون 4 إلى 5 أضعاف عملاء الباقة الأساسية",
+n_cust:"عميلًا",n_kpi:"معادلات مؤشرات",n_usage:"الاستهلاك: غير المحدودة مقابل الأساسية",
+pj_meta:"تطبيق سطح مكتب",pj_t:"نظام إدارة درجات الطلاب",pj_g:"<b>الهدف:</b> مكان واحد للمسؤول لإدارة الطلاب والدرجات وإحصاءاتها.",
+pj_b1:"بناء شاشات الدخول، ولوحة التحكم، وإضافة طالب، وإضافة درجات، وجدول الطلاب، والتقارير",pj_b2:"التحقق من المدخلات، ومنها أن تكون الدرجة بين 0 و100، مع معالجة واضحة للأخطاء",pj_b3:"تقارير تعرض عدد الدرجات والمتوسط وأعلى وأقل درجة",
+n_screens:"شاشات",n_range:"التحقق من الدرجة",n_arch:"المعمارية",
+p1_meta:"مشروع شخصي · يوليو 2026",p1_t:"قاعدة بيانات أكاديمية التميّز",p1_g:"<b>الهدف:</b> نمذجة أكاديمية كاملة من طلاب ومعلمين ومقررات، ببيانات تبقى صحيحة مع نموها.",
+p1_b1:"صممت نظامًا علائقيًا بعلاقات 1:N وM:N عبر ثلاثة جداول ربط",p1_b2:"فرضت سلامة البيانات بقيود CHECK وUNIQUE وFOREIGN KEY",p1_b3:"أتمتة المهام بإجراء مخزّن وعرض (View)، وإضافة فهارس لتسريع الاستعلامات",
+n_tables:"جداول",n_records:"طالبًا ومعلمًا ومقررًا",n_constraints:"قيود",repo:"عرض المستودع",
+p2_meta:"مقرر مقدمة في قواعد البيانات · فريق من 3",p2_t:"EyeCare: قاعدة بيانات محل نظارات",p2_g:"<b>الهدف:</b> تحويل سجلات الطلبات الخام إلى رؤى واضحة عن إنفاق العملاء.",
+p2_b1:"نمذجة مخطط مُطبَّع مع سكربتات DDL وDML كاملة",p2_b2:"بناء تقرير لسجل الطلبات بربط أربعة جداول، ثم حساب إنفاق كل عميل باستخدام GROUP BY وSUM وCOUNT",p2_b3:"تمييز الطلبات الأعلى من المتوسط باستعلام فرعي AVG()، وحفظ View قابل لإعادة الاستخدام في اللوحات",
+n_linked:"جداول مترابطة",n_join:"جداول في ربط واحد",n_view:"عرض جاهز للوحات",course:"مشروع مقرر",
+p3_tag:"فريق من 4",p3_meta:"مقرر أساسيات هندسة البرمجيات",p3_t:"SafeStep: تطبيق لسلامة المرأة",p3_g:"<b>الهدف:</b> تخطيط وتوصيف تطبيق جوال يساعد المرأة على الشعور بأمان أكبر أثناء تنقلها.",
+p3_b1:"توثيق المتطلبات وفق IEEE 830 وخطة من 15 أسبوعًا على 4 مراحل",p3_b2:"تصميم مخططات حالات الاستخدام والفئات و8 شاشات للواجهة",p3_b3:"تحليل المخاطر في 6 فئات وتنفيذ 4 حالات اختبار",
+n_req:"متطلبًا",n_uc:"حالات استخدام",n_pass:"نسبة نجاح الاختبار",
+p4_tag:"Figma · فريق من 5",p4_meta:"مشروع التخرج من الثانوية · 2024",p4_t:"Capsule: صيدلية بالواقع المعزّز",p4_g:"<b>الهدف:</b> مساعدة المستخدم على معرفة مدى ملاءمة الدواء لأمراضه المزمنة ومقارنة أسعاره بين الصيدليات.",
+p4_b1:"تصميم شاشات البحث بالكلمات والصور، والتعرّف على الدواء بالواقع المعزّز، والطلب والدفع",p4_b2:"تحديد المتطلبات وخطة من 6 أشهر، والمشاركة في كتابة التقرير البحثي",proto:"عرض النموذج",
+p5_tag:"C++ · فريق من 5",p5_meta:"مقرر رسومات الحاسب · فريق من 5",p5_t:"الباندا المفقودة: قصة متحركة ثنائية الأبعاد",p5_g:"<b>الهدف:</b> سرد قصة أم باندا تبحث عن صغيرها المفقود عبر مشاهد متحركة وتفاعلية.",
+p5_b1:"برمجة التنقل بين المشاهد بلوحة المفاتيح مع خلفيات بخامات مصوّرة",p5_b2:"بناء نظام مطر من الجسيمات وحركة قلب بشفافية ألفا",p5_b3:"قيادة مشهد اللقاء الأخير مع حركة القلوب",
+n_scenes:"مشاهد",n_particles:"جسيم",n_fps:"إطار في الثانية",
+edu_eyebrow:"التعليم",edu_title:"تعلّم باتجاه واضح",deg_eyebrow:"بكالوريوس · التخرج المتوقع 2028",deg_t:"علوم الحاسب، جامعة أم القرى",
+deg_c:"مقررات ذات صلة: مقدمة في قواعد البيانات، هياكل البيانات والخوارزميات، الإحصاء والاحتمالات، الذكاء الاصطناعي، البرمجة الكائنية (Java)، هندسة البرمجيات.",
+bc_t:"معسكر تحليل البيانات بالذكاء الاصطناعي",bc_h:"30 ساعة تدريبية",bc_d:"استخدام أدوات تحليل البيانات والذكاء الاصطناعي ضمن منهجية عملية واحدة، مع فهم متى وكيف نستخدم كل أداة للوصول من البيانات إلى رؤى وقرارات موثّقة.",bc_more:"محاور المعسكر (16)",bc_mods:["مدخل إلى التفكير التحليلي وفهم دورة تحليل البيانات", "تحديد أسئلة التحليل وصياغة المشكلات والتعرف على أدوات AI", "الفرق بين التحليل التقليدي والمدعوم بالذكاء الاصطناعي", "تحليل البيانات باستخدام Excel مع أدوات الذكاء الاصطناعي", "تنظيف وتجهيز البيانات ومعالجة القيم المفقودة والأخطاء بالـ AI", "التحليل الاستكشافي للبيانات واكتشاف الأنماط والاتجاهات بـ AI", "إنشاء الرسوم البيانية والتصورات باستخدام AI", "تحليل البيانات باستخدام SQL وأدوات الذكاء الاصطناعي", "مدخل إلى تحليل البيانات باستخدام Python", "تنظيف وتحليل البيانات باستخدام Python + AI", "بناء نماذج تنبؤية مبسطة باستخدام Python والذكاء الاصطناعي", "بناء مؤشرات الأداء وإنشاء Dashboards باستخدام Power BI وAI", "استخراج الرؤى والتوصيات وتحويل النتائج إلى Data Storytelling", "بناء تطبيق تحليلي باستخدام Claude Code + Lovable", "بناء AI Data Analyst Agent لأتمتة التحليل والتقارير", "بناء مشروع تحليلي واقعي متكامل وملف أعمال احترافي (Portfolio)"],
+ce1:"أساسيات Power BI وتحليل البيانات، المستوى المتوسط والمتقدم",ce2:"تحليل البيانات باستخدام Excel",ce3:"أساسيات Excel وتحليل البيانات",ce4:"SQL 101 و102 و103، وPython",satr:"منصة سطر",ce5:"برنامج موهبة للإثراء الأكاديمي: علم البيانات والذكاء الاصطناعي",ce5s:"موهبة بالتعاون مع جامعة أم القرى",ce6:"برنامج مسك «مسار المستقبل»",ce6s:"التفكير النقدي، تخطيط المشاريع، التحليل المالي، تحليل البيانات، الذكاء العاطفي، الإنتاجية وإدارة الوقت",
+faq_eyebrow:"أسئلة شائعة",faq_title:"معلومات تهمّك",faq_side:"إجابات سريعة لجهات التوظيف والفرق.",
+f1q:"ما نوع الفرص التي تبحثين عنها؟",f1a:"تدريب في تحليل البيانات أو تقنية المعلومات، ومشاريع تركّز على البيانات أستطيع فيها تنظيف بيانات حقيقية وتحليلها وعرضها.",
+f2q:"ما الأدوات التي تستخدمينها أكثر؟",f2a:"Power BI وExcel للوحات والتقارير، وSQL (MySQL) للاستعلام والنمذجة، وPython للبرمجة والتحليل.",
+f3q:"هل تعملين بالعربية والإنجليزية؟",f3a:"نعم، أكتب التقارير وأعرض النتائج وأتواصل مع الفرق بارتياح باللغتين.",
+f4q:"أين تقيمين؟",f4a:"في مكة المكرمة، السعودية. تواصل معي لمناقشة العمل الحضوري أو عن بُعد.",
+f5q:"كيف أحصل على سيرتك الذاتية؟",f5a:"من زر السيرة الذاتية أعلى الصفحة أو في قسم التواصل، أو راسلني عبر البريد وسأرسلها فورًا.",
+c_eyebrow:"تواصل",c_giant:"لنعمل <i>معًا</i>",c_lede:"لديك فرصة تدريب، أو بيانات، أو سؤال يحتاج إجابة واضحة؟ يسعدني أن أسمع منك.",c_mail:"راسلني",
+l_email:"البريد الإلكتروني",l_loc:"الموقع",copy:"نسخ",copied:"تم النسخ",
+foot:"© 2026 رغد المطرفي",foot2:"مكة المكرمة · ملف أعمال تحليل البيانات",
+langLabel:"EN",cv_title:"السيرة الذاتية",cv_close:"إغلاق",cv_dl:"تحميل PDF",title:"رغد المطرفي · Raghad Almatrfy"
+}};
+
+const root=document.documentElement;
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+function applyLang(l){
+  const d=T[l];
+  root.lang=l; root.dir=l==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{const v=d[el.dataset.i18n]; if(v!==undefined) el.innerHTML=v;});
+  document.querySelectorAll("[data-i18n-alt]").forEach(el=>{el.alt=d[el.dataset.i18nAlt]||el.alt;});
+  document.getElementById("langLabel").textContent=d.langLabel;
+  document.getElementById("langBtn").setAttribute("aria-label",l==="ar"?"Switch to English":"التبديل إلى العربية");
+  const bl=document.getElementById("bcList"); if(bl&&d.bc_mods) bl.innerHTML=d.bc_mods.map(m=>`<li>${m}</li>`).join("");
+  document.title=d.title;
+  store.set("rg-lang",l);
+  drawArt();
+}
+let lang=store.get("rg-lang")||((navigator.language||"").toLowerCase().startsWith("ar")?"ar":"en");
+document.getElementById("langBtn").addEventListener("click",()=>{lang=lang==="ar"?"en":"ar";applyLang(lang);});
+
+const mq=window.matchMedia("(prefers-color-scheme: dark)");
+function isDark(){const t=root.getAttribute("data-theme");return t?t==="dark":mq.matches;}
+function syncThemeIcon(){document.getElementById("themeBtn").classList.toggle("is-dark",isDark());}
+const savedTheme=store.get("rg-theme"); if(savedTheme) root.setAttribute("data-theme",savedTheme);
+document.getElementById("themeBtn").addEventListener("click",()=>{const next=isDark()?"light":"dark";root.setAttribute("data-theme",next);store.set("rg-theme",next);syncThemeIcon();});
+mq.addEventListener?.("change",syncThemeIcon);
+new MutationObserver(syncThemeIcon).observe(root,{attributes:true,attributeFilter:["data-theme"]});
+
+document.getElementById("copyBtn").addEventListener("click",e=>{
+  const btn=e.currentTarget,txt=document.getElementById("emailVal").textContent;
+  const done=()=>{btn.textContent=T[lang].copied;setTimeout(()=>btn.textContent=T[lang].copy,1600);};
+  const fallback=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById("emailVal"));const s=getSelection();s.removeAllRanges();s.addRange(r);};
+  try{navigator.clipboard.writeText(txt).then(done,fallback);}catch(err){fallback();}
+});
+
+// Project thumbnails in the palette
+function drawArt(){
+  document.querySelectorAll(".thumb").forEach(el=>{
+    let c=el.querySelector("canvas"); if(!c){c=document.createElement("canvas");el.prepend(c);}
+    const w=el.clientWidth,h=el.clientHeight,dpr=Math.min(devicePixelRatio||1,2);
+    if(!w||!h) return;
+    c.width=w*dpr;c.height=h*dpr;const g=c.getContext("2d");g.scale(dpr,dpr);g.clearRect(0,0,w,h);
+    const onBlue=el.classList.contains("c-blue");
+    const cream=onBlue?"rgba(35,24,21,":"rgba(245,239,198,", blue=onBlue?"rgba(77,14,18,":"rgba(165,188,214,";
+    g.lineWidth=1;
+    const t=el.dataset.art;
+    if(t==="schema"){
+      const b=[[.1,.14],[.4,.08],[.7,.16],[.22,.48],[.55,.46],[.82,.52]],L=[[0,3],[1,3],[1,4],[2,4],[4,5],[0,1]];
+      g.strokeStyle=blue+".6)";L.forEach(([a,z])=>{g.beginPath();g.moveTo(b[a][0]*w+30,b[a][1]*h+14);g.lineTo(b[z][0]*w+30,b[z][1]*h+14);g.stroke();});
+      b.forEach(([x,y],i)=>{g.fillStyle="rgba(35,24,21,.95)";g.fillRect(x*w,y*h,60,30);g.strokeStyle=(i===4?blue:cream)+".7)";g.strokeRect(x*w+.5,y*h+.5,60,30);g.fillStyle=cream+".5)";g.fillRect(x*w+8,y*h+9,30,2);g.fillRect(x*w+8,y*h+17,20,2);});
+    }else if(t==="bars"){
+      const v=[.35,.52,.44,.7,.6,.86,.66],bw=w/(v.length*1.9);
+      v.forEach((q,i)=>{const x=w*.1+i*bw*1.6,bh=q*h*.6;g.fillStyle=q>.59?blue+".95)":cream+".18)";g.fillRect(x,h*.78-bh,bw,bh);});
+      const ay=h*.78-.59*h*.6;g.strokeStyle="rgba(224,160,163,.9)";g.setLineDash([4,5]);g.beginPath();g.moveTo(w*.06,ay);g.lineTo(w*.96,ay);g.stroke();g.setLineDash([]);
+    }else if(t==="excel"){
+      const v=[.3,.42,.36,.55,.9,.82,.4,.95],bw=w*.045;
+      v.forEach((q,i)=>{const x=w*.08+i*bw*1.7,bh=q*h*.55;g.fillStyle=q>.7?blue+".95)":cream+".25)";g.fillRect(x,h*.78-bh,bw,bh);});
+      const cx=w*.78,cy=h*.42,r=Math.min(w,h)*.2;[[0,.33,cream+".3)"],[.33,.62,cream+".6)"],[.62,1,blue+".95)"]].forEach(([s0,s1,c])=>{g.fillStyle=c;g.beginPath();g.moveTo(cx,cy);g.arc(cx,cy,r,s0*2*Math.PI-Math.PI/2,s1*2*Math.PI-Math.PI/2);g.closePath();g.fill();});
+    }else if(t==="ui"){
+      const x0=w*.12,y0=h*.12,W=w*.76,H=h*.62;g.fillStyle="rgba(245,239,198,.55)";g.fillRect(x0,y0,W,H);g.strokeStyle=cream+".7)";g.strokeRect(x0+.5,y0+.5,W,H);
+      g.fillStyle=cream+".85)";g.fillRect(x0,y0,W,12);for(let i=0;i<3;i++){g.fillStyle="rgba(77,14,18,.8)";g.beginPath();g.arc(x0+10+i*10,y0+6,2.5,0,7);g.fill();}
+      for(let r=0;r<5;r++){const y=y0+22+r*(H-30)/5;g.fillStyle=r===0?"rgba(77,14,18,.75)":cream+".35)";g.fillRect(x0+10,y,W*.55,6);g.fillRect(x0+W*.7,y,W*.2,6);}
+    }else if(t==="flow"){
+      for(let i=0;i<4;i++){const x=w*(.14+i*.24),y=h*.4;g.strokeStyle=(i===1?blue:cream)+".7)";g.beginPath();g.arc(x,y,16,0,Math.PI*2);g.stroke();if(i<3){g.strokeStyle=cream+".3)";g.beginPath();g.moveTo(x+20,y);g.lineTo(x+w*.24-20,y);g.stroke();}}
+    }else if(t==="rings"){
+      for(let i=1;i<7;i++){g.strokeStyle=(i===3?blue+".8)":cream+(.4-i*.045)+")");g.beginPath();g.arc(w*.68,h*.42,i*16,0,Math.PI*2);g.stroke();}
+    }else if(t==="rain"){
+      let s=7;const R=()=>(s=(s*9301+49297)%233280)/233280;
+      for(let i=0;i<100;i++){const x=R()*w,y=R()*h*.8,l=6+R()*10;g.strokeStyle=(i%8===0?blue:cream)+(.18+R()*.4)+")";g.beginPath();g.moveTo(x,y);g.lineTo(x-2,y+l);g.stroke();}
+    }
+  });
+}
+
+const io="IntersectionObserver" in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target);}}),{rootMargin:"0px 0px -8% 0px"}):null;
+if(io && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+  document.querySelectorAll(".rise").forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add("pre");io.observe(el);}});
+}
+let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(drawArt,150);});
+
+
+applyLang(lang);
+syncThemeIcon();
+</script>
+
+</body>
+</html>
