@@ -4,307 +4,423 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" href="logo.png">
+<style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
 <title>Raghad Almatrfy</title>
 <meta name="description" content="Raghad Almatrfy — Computer Science student at Umm Al-Qura University, interested in data analytics.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..800;1,6..96,400..600&family=Manrope:wght@400;500;600;700&family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Bodoni+Moda:ital,opsz,wght@1,6..96,400..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Palette: Transparent Yellow #F5EFC6 · Sceptre Red #4D0E12 · Cerulean #A5BCD6 · Potting Soil #4A2E27 · Java #231815 */
+/* Palette: Cherry Red #8E1825 · Black Cherry #702D3D · Ice Blue #C8D9EC · Butter #FFEDAD · Vanilla #F4EBDD · Ballet Slipper #EACDD4 · Dark Chocolate #3D2722 */
 :root{
-  --bg:#F8F4DC; --paper:#F5EFC6; --card:#FBF8E8;
-  --ink:#231815; --ink-soft:#4A2E27; --muted:#7D6A5F;
-  --red:#4D0E12; --red-ink:#F5EFC6; --accent:#7A1D24;
-  --blue:#A5BCD6; --blue-ink:#231815; --blue-soft:rgba(165,188,214,.35);
-  --soil:#4A2E27; --java:#231815;
-  --line:rgba(35,24,21,.16); --line-2:rgba(35,24,21,.3);
-  --band-dark:#231815; --band-dark-ink:#F5EFC6; --band-dark-soft:#CBBFA8;
-  --display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
-  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  --bg:#F7EEDD; --surface:#FFF8EC; --card:#FFFBF3;
+  --ink:#3D2722; --ink-soft:#5E3F35; --muted:#7E5F52;
+  --cherry:#8E1825; --cherry-2:#702D3D; --on-cherry:#FFF4DE;
+  --accent:#8E1825; --accent-soft:rgba(142,24,37,.1);
+  --ice:#C8D9EC; --ice-2:#A9C2DE; --butter:#FFEDAD; --pink:#EACDD4; --choc:#3D2722;
+  --line:rgba(61,39,34,.18); --line-2:rgba(61,39,34,.34);
+  --shadow:0 2px 4px rgba(61,39,34,.06),0 22px 44px -24px rgba(112,45,61,.5);
+  --stripe:repeating-linear-gradient(90deg,var(--cherry) 0 14px,var(--ice) 14px 28px);
+  --deep:#3D2722; --deep-panel:#2E1D19;
+  --title:"Bodoni Moda","Didot",Georgia,serif;
+  --font:"Amiri","Noto Naskh Arabic",Georgia,serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#1B1210; --paper:#231815; --card:#2A1D19;
-    --ink:#F5EFC6; --ink-soft:#DCD2B4; --muted:#A8977F;
-    --red:#4D0E12; --red-ink:#F5EFC6; --accent:#D98C8F;
-    --blue:#A5BCD6; --blue-ink:#231815; --blue-soft:rgba(165,188,214,.16);
-    --line:rgba(245,239,198,.14); --line-2:rgba(245,239,198,.28);
-    --band-dark:#2E1F1B; --band-dark-ink:#F5EFC6; --band-dark-soft:#CBBFA8;
+    --bg:#4A1822; --surface:#56202B; --card:#5C2430;
+    --deep:#1F2C47; --deep-panel:#16213A;
+    --ink:#FFF4DE; --ink-soft:#F4E2CC; --muted:#E2C3B6;
+    --accent:#FFEDAD; --accent-soft:rgba(255,237,173,.12);
+    --line:rgba(255,244,222,.2); --line-2:rgba(255,244,222,.4);
+    --shadow:0 2px 4px rgba(40,10,16,.3),0 24px 48px -24px rgba(40,10,16,.75);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#1B1210; --paper:#231815; --card:#2A1D19;
-  --ink:#F5EFC6; --ink-soft:#DCD2B4; --muted:#A8977F;
-  --red:#4D0E12; --red-ink:#F5EFC6; --accent:#D98C8F;
-  --blue:#A5BCD6; --blue-ink:#231815; --blue-soft:rgba(165,188,214,.16);
-  --line:rgba(245,239,198,.14); --line-2:rgba(245,239,198,.28);
-  --band-dark:#2E1F1B; --band-dark-ink:#F5EFC6; --band-dark-soft:#CBBFA8;
+  --bg:#4A1822; --surface:#56202B; --card:#5C2430;
+  --ink:#FFF4DE; --ink-soft:#F4E2CC; --muted:#E2C3B6;
+  --accent:#FFEDAD; --accent-soft:rgba(255,237,173,.12);
+  --line:rgba(255,244,222,.2); --line-2:rgba(255,244,222,.4);
+  --shadow:0 2px 4px rgba(40,10,16,.3),0 24px 48px -24px rgba(40,10,16,.75);
   color-scheme:dark;
-}
-:root[lang="ar"]{
-  --display:"Amiri","Noto Naskh Arabic",serif;
-  --body:"IBM Plex Sans Arabic",Tahoma,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;transition:background-color .4s,color .4s}
-:root[lang="ar"] body{line-height:1.9}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:19px;line-height:1.65;-webkit-font-smoothing:antialiased;transition:background-color .4s,color .4s}
+:root[lang="ar"] body{font-size:20px;line-height:1.85}
 a{color:inherit}
-::selection{background:var(--blue);color:var(--java)}
+::selection{background:var(--pink);color:#3D2722}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
 p{margin:0}
-h1,h2,h3{margin:0;font-family:var(--display);font-weight:500;text-wrap:balance}
-:root[lang="ar"] h1,:root[lang="ar"] h2,:root[lang="ar"] h3{font-weight:700}
-h2{font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-.01em}
-:root[lang="ar"] h2{line-height:1.4;letter-spacing:0}
-h3{font-size:22px;line-height:1.25}
+h1,h2,h3{margin:0;font-family:var(--font);font-weight:700;text-wrap:balance}
+h2{font-size:clamp(34px,5vw,58px);line-height:1.15}
+:root[lang="ar"] h2{line-height:1.45}
+h3{font-size:25px;line-height:1.3}
 :root[dir="rtl"] .flip{transform:scaleX(-1)}
+.stripe{height:10px;background:var(--stripe);opacity:.9}
 
 /* Header */
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--bg);border-bottom:1px solid var(--line);transition:background-color .4s}
+header.top::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;background:var(--stripe);opacity:.75}
 .top .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
 .brand{display:block;width:112px;aspect-ratio:1000/354;flex:none}
 .mark{display:block;width:100%;height:100%;background:var(--ink);-webkit-mask:url(logo.png) center/contain no-repeat;mask:url(logo.png) center/contain no-repeat}
-nav.links{display:flex;gap:28px;margin-inline:auto;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-:root[lang="ar"] nav.links{letter-spacing:0;font-size:14.5px}
-nav.links a{text-decoration:none;color:var(--ink-soft);padding-block:4px;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
-nav.links a:hover{color:var(--ink);border-color:var(--accent)}
+nav.links{display:flex;gap:26px;margin-inline:auto;font-size:17px;font-weight:700}
+nav.links a{text-decoration:none;color:var(--ink-soft);padding-block:2px;border-bottom:2px solid transparent;transition:border-color .2s,color .2s}
+nav.links a:hover{color:var(--accent);border-color:var(--accent)}
 .tools{display:flex;gap:6px;align-items:center}
-.sq{appearance:none;border:1px solid var(--line-2);background:transparent;color:var(--ink);height:38px;min-width:38px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;gap:7px;font:600 12.5px/1 var(--body);cursor:pointer;transition:background .2s,border-color .2s}
-.sq:hover{background:var(--card);border-color:var(--ink)}
+.sq{appearance:none;border:1.5px solid var(--line-2);background:transparent;color:var(--ink);height:40px;min-width:40px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;gap:7px;font:700 15px/1 var(--font);cursor:pointer;border-radius:999px;transition:background .2s,border-color .2s}
+.sq:hover{background:var(--surface);border-color:var(--accent)}
 .sq svg{width:16px;height:16px}
-.lang-btn span{font-family:"IBM Plex Sans Arabic","Manrope",sans-serif}
 .icon-sun{display:none}.is-dark .icon-sun{display:block}.is-dark .icon-moon{display:none}
 
 /* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:52px;padding:0 26px;text-decoration:none;font:600 13.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,gap .25s}
-:root[lang="ar"] .btn{letter-spacing:0;font-size:15px}
-.btn svg{width:16px;height:16px}
-.btn:hover{gap:16px}
-.btn-red{background:var(--red);color:var(--red-ink)}
-.btn-red:hover{background:#6A1419}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;height:54px;padding:0 28px;text-decoration:none;font:700 18px/1 var(--font);border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:background .25s,color .25s,border-color .25s,gap .25s,transform .25s}
+.btn svg{width:17px;height:17px}
+.btn:hover{gap:16px;transform:translateY(-2px)}
+.btn-red{background:var(--cherry);color:var(--on-cherry)}
+.btn-red:hover{background:var(--cherry-2)}
 .btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
 .btn-line:hover{background:var(--ink);color:var(--bg)}
-.top .btn{height:38px;padding:0 16px;font-size:12px}
+.top .btn{height:40px;padding:0 18px;font-size:15px}
+:root[data-theme="dark"] .btn-red{background:var(--butter);color:#702D3D}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-red{background:var(--butter);color:#702D3D}}
 
 /* Section scaffold */
-section{padding-block:clamp(72px,10vw,128px)}
-.shead{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;align-items:end;border-bottom:1px solid var(--line-2);padding-bottom:22px;margin-bottom:clamp(36px,5vw,60px)}
-.num{font:400 clamp(56px,8vw,104px)/.8 var(--display);color:var(--accent);font-family:"Bodoni Moda",serif;font-variant-numeric:lining-nums}
-.shead .lbl{display:block;font:600 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-:root[lang="ar"] .shead .lbl{letter-spacing:0;font-size:13.5px}
-.band-red{background:var(--red);color:var(--red-ink)}
-.band-red .num,.band-dark .num{color:var(--blue)}
-.band-red .shead,.band-dark .shead{border-color:rgba(245,239,198,.25)}
-.band-red .shead .lbl,.band-dark .shead .lbl{color:rgba(245,239,198,.65)}
-.band-dark{background:var(--band-dark);color:var(--band-dark-ink)}
-.band-blue{background:var(--blue);color:var(--blue-ink)}
-.band-blue .num{color:var(--red)}
-.band-blue .shead{border-color:rgba(35,24,21,.3)}
-.band-blue .shead .lbl{color:rgba(35,24,21,.65)}
+section{padding-block:clamp(72px,10vw,124px)}
+.shead{display:grid;grid-template-columns:auto 1fr;gap:10px 28px;align-items:end;border-bottom:1.5px solid var(--line-2);padding-bottom:22px;margin-bottom:clamp(34px,5vw,56px)}
+.num{font:italic 400 clamp(56px,8vw,100px)/.8 var(--font);color:var(--accent);font-variant-numeric:lining-nums}
+.shead .lbl{display:block;font:700 17px/1 var(--font);color:var(--accent);margin-bottom:12px}
+.shead .sub{display:block;font:italic 400 22px/1.4 var(--font);color:var(--ink-soft);margin-top:8px}
+.band-red{background:var(--cherry);color:var(--on-cherry)}
+.band-red .num{color:var(--butter)}
+.band-red .shead{border-color:rgba(255,244,222,.35)}
+.band-red .shead .lbl{color:var(--ice)}
+.band-dark{background:var(--deep);color:#FFF4DE}
+.band-dark .num{color:var(--ice)}
+.band-dark .shead{border-color:rgba(255,244,222,.3)}
+.band-dark .shead .lbl{color:var(--butter)}
+.band-blue{background:var(--ice);color:#3D2722}
+.band-blue .num{color:var(--cherry)}
+.band-blue .shead{border-color:rgba(61,39,34,.35)}
+.band-blue .shead .lbl{color:var(--cherry)}
+.band-blue .shead .sub{color:#5E3F35}
 
 /* Hero */
-.hero{padding-block:clamp(36px,6vw,72px) clamp(56px,8vw,96px)}
-.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,64px);align-items:stretch}
-.hero .left{display:flex;flex-direction:column;justify-content:space-between;gap:28px}
-.hero .meta-row{display:flex;justify-content:space-between;gap:16px;font:600 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line-2);padding-bottom:16px}
-:root[lang="ar"] .hero .meta-row{letter-spacing:0;font-size:13.5px}
-.giant{font:400 clamp(64px,13vw,168px)/.82 var(--display);font-family:"Bodoni Moda",serif;letter-spacing:-.04em;color:var(--ink);margin-top:10px}
-.giant i{font-style:italic;color:var(--accent)}
-.hero h1{font-size:clamp(30px,3.6vw,46px);line-height:1.15;font-weight:500}
-:root[lang="ar"] .hero h1{line-height:1.5;font-weight:700}
+.hero{padding-block:clamp(30px,5vw,60px) clamp(56px,8vw,96px)}
+.hero .wrap{display:grid;gap:clamp(16px,3vw,28px)}
+.hero .meta-row{display:flex;justify-content:space-between;gap:16px;font:700 17px/1 var(--font);color:var(--accent);border-bottom:1.5px solid var(--line-2);padding-bottom:14px}
+.giant{font:italic 400 clamp(76px,17vw,232px)/.85 var(--title);letter-spacing:-.035em;color:var(--ink);margin:6px 0 0}
+.giant i{color:var(--cherry)}
+:root[data-theme="dark"] .giant i{color:var(--butter)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .giant i{color:var(--butter)}}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,72px);align-items:end;border-top:1.5px solid var(--line-2);padding-top:clamp(22px,3vw,34px)}
+.hero-a,.hero-b{display:grid;gap:22px;align-content:start}
+.hero h1{font-size:clamp(34px,4vw,52px);line-height:1.2}
+:root[lang="ar"] .hero h1{line-height:1.5}
 .hero h1 em{font-style:italic;color:var(--accent)}
 :root[lang="ar"] .hero h1 em{font-style:normal}
-.hero .lede{color:var(--ink-soft);font-size:clamp(16.5px,1.5vw,18.5px);max-width:52ch}
+.hero .lede{color:var(--ink-soft);font-size:clamp(19px,1.7vw,22px);max-width:46ch}
 .name-line{display:flex;align-items:center;gap:16px}
 .name-line .signature{width:min(230px,55%);aspect-ratio:1000/354}
-.name-line .ar-name{font:700 22px/1.3 "Amiri",serif;color:var(--ink-soft)}
+.name-line .ar-name{font:700 26px/1.3 var(--font);color:var(--ink-soft)}
 .name-line .ar-name:empty{display:none}
 .cta-row{display:flex;flex-wrap:wrap;gap:10px}
-.works{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--muted);font-weight:500;padding-top:18px;border-top:1px solid var(--line)}
-.works b{color:var(--ink);font-weight:600;direction:ltr}
-.photo{position:relative;background:var(--blue);min-height:520px;display:flex;flex-direction:column}
-.photo .frame{position:relative;flex:1;margin:18px;background:linear-gradient(170deg,rgba(245,239,198,.5),rgba(245,239,198,0) 70%);border:1px solid rgba(35,24,21,.22);overflow:hidden}
-.frame-logo{position:absolute;inset:0;display:grid;place-items:center;padding:10%}
-.frame-logo .mark{width:100%;height:auto;aspect-ratio:1000/354;background:#231815}
-.photo .ph{position:absolute;inset:0;display:grid;place-items:center;align-content:center;gap:8px;text-align:center;color:var(--java)}
-.photo .ph .mono{font:400 120px/1 "Bodoni Moda",serif;color:var(--red)}
-.photo .ph small{font:600 11.5px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;opacity:.7}
-:root[lang="ar"] .photo .ph small{letter-spacing:0;font-size:13px}
-.photo .cap{display:flex;justify-content:space-between;padding:0 18px 16px;font:600 11.5px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--java)}
-:root[lang="ar"] .photo .cap{letter-spacing:0;font-size:12.5px}
-.photo .tagred{position:absolute;inset-inline-start:-14px;top:40px;background:var(--red);color:var(--red-ink);font:600 11.5px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;padding:12px 16px;z-index:2}
-:root[lang="ar"] .photo .tagred{letter-spacing:0;font-size:13px}
+.works{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:16px;color:var(--muted);padding-top:18px;border-top:1px solid var(--line)}
+.works b{color:var(--ink);font-weight:700;direction:ltr;padding:4px 12px;border-radius:999px;background:var(--ice);color:#3D2722}
+.works b:nth-child(odd){background:var(--butter)}
 
 /* About */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px)}
-.about-grid h3{font-size:clamp(26px,3vw,36px);line-height:1.25}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px)}
+.about-grid h3{font-size:clamp(28px,3.2vw,40px);line-height:1.35;color:var(--accent)}
 :root[lang="ar"] .about-grid h3{line-height:1.6}
 .about-body{display:grid;gap:18px;color:var(--ink-soft);align-content:start}
-.about-body .big{font-size:clamp(18px,1.7vw,20px);color:var(--ink);font-weight:500}
-dl.quick{display:grid;grid-template-columns:1fr 1fr;margin:14px 0 0;border-top:1px solid var(--line-2)}
-dl.quick div{padding:16px 0;border-bottom:1px solid var(--line)}
-dl.quick div:nth-child(odd){padding-inline-end:16px}
-dl.quick dt{font:600 11.5px/1.4 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-:root[lang="ar"] dl.quick dt{letter-spacing:0;font-size:13px}
-dl.quick dd{margin:4px 0 0;font-weight:600;color:var(--ink)}
+.about-body .big{font-size:clamp(20px,1.9vw,23px);color:var(--ink)}
+dl.quick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 0}
+dl.quick div{padding:14px 16px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px}
+dl.quick dt{font:700 15px/1.4 var(--font);color:var(--accent)}
+dl.quick dd{margin:2px 0 0;font-weight:700;color:var(--ink)}
 
-/* Why (red band) */
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(245,239,198,.25)}
-.why-item{padding:30px 28px 34px 0;display:grid;gap:12px;align-content:start;border-bottom:1px solid rgba(245,239,198,.25)}
-:root[dir="rtl"] .why-item{padding:30px 0 34px 28px}
-.why-item:not(:nth-child(3n)){border-inline-end:1px solid rgba(245,239,198,.25)}
-.why-item:not(:nth-child(3n+1)){padding-inline-start:28px}
-.why-item .ic{width:34px;height:34px;color:var(--blue)}
-.why-item p{color:rgba(245,239,198,.78);font-size:15.5px}
+/* Why (cherry band) */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.why-item{padding:26px;display:grid;gap:12px;align-content:start;background:rgba(255,244,222,.07);border:1.5px solid rgba(255,244,222,.22);border-radius:18px;transition:background .3s,transform .3s}
+.why-item:hover{background:rgba(255,244,222,.13);transform:translateY(-3px)}
+.why-item .ic{width:34px;height:34px;color:var(--butter)}
+.why-item p{color:rgba(255,244,222,.95);font-size:18px}
 .minitags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
-.minitags span{font:600 10.5px/1 var(--mono);letter-spacing:.06em;padding:5px 7px;border:1px solid rgba(245,239,198,.3);color:rgba(245,239,198,.8);direction:ltr}
-:root[lang="ar"] .minitags span.t{direction:rtl;font-family:var(--body);letter-spacing:0;font-size:11.5px}
+.minitags span{font:600 11px/1 var(--mono);padding:6px 8px;border-radius:999px;background:rgba(200,217,236,.18);color:#F6F0E6;direction:ltr}
+:root[lang="ar"] .minitags span.t{direction:rtl;font-family:var(--font);font-size:14px}
+.evid{display:grid;gap:8px;margin-top:6px;padding-top:12px;border-top:1px dashed rgba(255,244,222,.3)}
+.evl{font:700 15px/1 var(--font);color:var(--ice)}
+.evlinks{display:flex;flex-wrap:wrap;gap:6px}
+.evlinks a{display:inline-flex;align-items:center;gap:5px;font:700 15px/1 var(--font);color:#3D2722;text-decoration:none;padding:7px 11px;background:var(--butter);border-radius:999px;transition:background .2s,transform .2s}
+.evlinks a:hover{background:var(--ice);transform:translateY(-2px)}
+.evlinks svg{width:11px;height:11px;flex:none}
+:root[dir="rtl"] .evlinks svg{transform:scaleX(-1)}
 
-/* Toolkit */
-.stack{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-2);border-inline-start:1px solid var(--line-2)}
-.tool{padding:26px 22px;border-inline-end:1px solid var(--line-2);border-bottom:1px solid var(--line-2);display:grid;gap:10px;align-content:start;transition:background .3s}
-.tool:hover{background:var(--card)}
-.tool .ab{font:400 30px/1.1 "Bodoni Moda",serif;color:var(--accent);direction:ltr;letter-spacing:-.01em}
-:root[dir="rtl"] .tool .ab{text-align:right}
-:root[dir="rtl"] .tool h3{text-align:right}
-.tool p{font-size:14.5px;color:var(--ink-soft)}
-.soft-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
-.soft-row span{font-size:13px;font-weight:600;padding:8px 14px;border:1px solid var(--line-2);color:var(--ink-soft)}
+/* Skills */
+.skgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:start}
+.skcard{background:var(--surface);border:1.5px solid var(--line);border-radius:22px;padding:26px 26px 28px;display:grid;gap:16px;align-content:start;position:relative;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s}
+.skcard::before{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:6px;background:var(--cherry)}
+.skcard:nth-child(2)::before{background:var(--ice-2)}.skcard:nth-child(3)::before{background:#E9C85A}.skcard:nth-child(4)::before{background:var(--pink)}
+.skcard:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow)}
+.skcard header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.skcard h3{font-size:26px}
+.skcard .cnt{font:italic 400 30px/1 var(--font);color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:700 16px/1 var(--font);padding:9px 14px;border-radius:999px;background:var(--bg);border:1.5px solid var(--line-2);color:var(--ink);transition:background .2s,color .2s,border-color .2s,transform .2s;cursor:default}
+.chip.lt{direction:ltr}
+.chip:hover{background:var(--cherry);border-color:var(--cherry);color:var(--on-cherry);transform:translateY(-2px)}
+.skcard:nth-child(2) .chip:hover{background:var(--ice);border-color:var(--ice);color:#3D2722}
+.skcard:nth-child(3) .chip:hover{background:var(--butter);border-color:var(--butter);color:#3D2722}
+.skcard:nth-child(4) .chip:hover{background:var(--pink);border-color:var(--pink);color:#3D2722}
+.coursework{margin-top:22px;padding:22px 26px;border-radius:22px;background:var(--accent-soft);display:grid;gap:14px}
+.coursework h3{font-size:22px;color:var(--accent)}
 
-/* Process (dark band) */
-.pipe{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(245,239,198,.18);border:1px solid rgba(245,239,198,.18)}
-.pstep{background:var(--band-dark);padding:26px;display:grid;gap:14px;align-content:start}
-.pstep .n{display:flex;align-items:baseline;gap:12px}
-.pstep .n b{font:400 40px/1 "Bodoni Moda",serif;color:var(--blue)}
-.pstep .n h3{font-size:21px}
-.pstep .desc{font-size:14.5px;color:var(--band-dark-soft)}
-.panel{background:#1A110F;border:1px solid rgba(245,239,198,.12);padding:14px 16px;font:400 12.5px/1.7 var(--mono);direction:ltr;text-align:left;color:#F5EFC6;min-height:128px}
-.panel .k{color:#E0A0A3}.panel .g{color:#A5BCD6}
-.panel.q{font:500 15px/1.6 var(--body);display:grid;align-content:center}
-:root[lang="ar"] .panel.q{direction:rtl;text-align:right;font-family:"IBM Plex Sans Arabic",sans-serif}
-.panel.q .bub{border-inline-start:2px solid #A5BCD6;padding-inline-start:12px;font-family:"Bodoni Moda",serif;font-style:italic;font-size:18px}
-:root[lang="ar"] .panel.q .bub{font-family:"Amiri",serif;font-style:normal;font-size:20px}
+/* Skills accordion */
+.sktools{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+.skall{appearance:none;border:1.5px solid var(--ink);background:transparent;color:var(--ink);height:44px;padding:0 20px;border-radius:999px;font:700 17px/1 var(--font);cursor:pointer;transition:background .2s,color .2s}
+.skall:hover,.skall.on{background:var(--cherry);border-color:var(--cherry);color:var(--on-cherry)}
+.skhint{font-size:16px;color:var(--muted)}
+.skcard{padding:0!important;gap:0!important}
+.skbtn{appearance:none;width:100%;background:transparent;border:0;color:var(--ink);display:flex;align-items:center;gap:14px;padding:24px 26px;cursor:pointer;text-align:start;font:inherit}
+.skbtn h3{flex:1;font-size:26px}
+.skbtn .cnt{font:italic 400 30px/1 var(--font);color:var(--accent)}
+.skbtn .chev{width:30px;height:30px;padding:6px;border-radius:50%;background:var(--accent-soft);color:var(--accent);transition:transform .35s cubic-bezier(.2,.7,.2,1),background .2s}
+.skbtn:hover .chev{background:var(--cherry);color:var(--on-cherry)}
+.skbtn[aria-expanded="true"] .chev{transform:rotate(180deg);background:var(--cherry);color:var(--on-cherry)}
+.skpanel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s cubic-bezier(.2,.7,.2,1)}
+.skpanel.open{grid-template-rows:1fr}
+.skin{overflow:hidden}
+.skin .chips{padding:0 26px 26px}
+.skpanel.open .chip{animation:fup .35s both}
+.skpanel.open .chip:nth-child(n+4){animation-delay:.05s}.skpanel.open .chip:nth-child(n+8){animation-delay:.1s}.skpanel.open .chip:nth-child(n+12){animation-delay:.15s}
+.skcard:nth-child(5)::before{background:#C8D9EC}.skcard:nth-child(6)::before{background:#702D3D}
+.skcard:nth-child(5) .chip:hover{background:var(--ice);border-color:var(--ice);color:#3D2722}
+.skcard:nth-child(6) .chip:hover{background:#702D3D;border-color:#702D3D;color:#FFF4DE}
+
+/* Process (chocolate band) */
+.flow{border:1.5px solid rgba(255,244,222,.25);border-radius:22px;overflow:hidden}
+.flow-nav{display:grid;grid-template-columns:repeat(6,1fr);border-bottom:1.5px solid rgba(255,244,222,.2)}
+.fstep{appearance:none;background:transparent;border:0;border-inline-end:1px solid rgba(255,244,222,.14);color:rgba(255,244,222,.7);padding:18px 16px 20px;display:flex;align-items:center;gap:10px;cursor:pointer;position:relative;text-align:start;font:700 17px/1.3 var(--font);transition:background .25s,color .25s}
+.fstep:last-child{border-inline-end:0}
+.fstep:hover{background:rgba(255,244,222,.06);color:#FFF4DE}
+.fstep .fn{font:italic 400 28px/1 var(--font);color:rgba(200,217,236,.7)}
+.fstep.on{background:rgba(255,237,173,.1);color:#FFF4DE}
+.fstep.on .fn,.fstep.done .fn{color:var(--butter)}
+.fstep.done{color:rgba(255,244,222,.9)}
+.fbar{position:absolute;left:0;right:0;bottom:-1px;height:3px}
+.fbar b{display:block;height:100%;width:0;background:var(--butter)}
+:root[dir="rtl"] .fbar b{margin-inline-start:auto}
+.fstep.done .fbar b{width:100%;background:rgba(255,237,173,.45)}
+.fstep.on .fbar b{width:100%}
+.flow.playing .fstep.on .fbar b{width:0;animation:fbar var(--dur,5s) linear forwards}
+@keyframes fbar{to{width:100%}}
+.flow-stage{position:relative;min-height:300px}
+.fpanel{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(20px,4vw,48px);padding:clamp(22px,4vw,40px);align-items:center}
+.fpanel[hidden]{display:none}
+.ftext{display:grid;gap:12px;align-content:start}
+.fbig{font:italic 400 clamp(64px,8vw,96px)/.8 var(--font);color:var(--ice)}
+.ftext h3{font-size:clamp(28px,3vw,36px);color:var(--butter)}
+.ftext .desc{font-size:19px;color:#FFF4DE}
+.ftext .fx{font-size:17px;color:#EBDCCB;border-inline-start:3px solid var(--cherry);padding-inline-start:12px}
+.panel{background:var(--deep-panel);border:1px solid rgba(255,244,222,.14);border-radius:14px;padding:22px 24px;font:400 14px/1.75 var(--mono);direction:ltr;text-align:left;color:#FFF4DE;min-height:200px;display:grid;align-content:center}
+.panel .k{color:#F4A6B2}.panel .g{color:var(--ice)}
+.panel.q{font:400 24px/1.6 var(--font)}
+:root[lang="ar"] .panel.q{direction:rtl;text-align:right}
+.panel.q .bub{border-inline-start:3px solid var(--butter);padding-inline-start:14px;font-style:italic}
+:root[lang="ar"] .panel.q .bub{font-style:normal;font-size:26px}
+.caret{display:inline-block;width:2px;height:22px;background:var(--butter);margin-top:10px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px}
-.kv span:nth-child(odd){color:#9C8B78}
-.mini{display:flex;align-items:flex-end;gap:8px;height:84px;position:relative;padding-top:6px}
-.mini i{flex:1;background:rgba(245,239,198,.2)}
-.mini i.hi{background:#A5BCD6}
-.mini .avg{position:absolute;left:0;right:0;border-top:1px dashed #E0A0A3}
-.mini .avg em{position:absolute;right:0;top:-16px;font:500 10px/1 var(--mono);color:#E0A0A3;font-style:normal}
-.check{list-style:none;margin:0;padding:0;display:grid;gap:6px}
-.check li::before{content:"✓";color:#A5BCD6;margin-right:8px}
-.result{display:grid;gap:8px;align-content:center}
-.result .pill{width:max-content;font:600 10.5px/1 var(--mono);letter-spacing:.1em;padding:5px 8px;background:#4D0E12;color:#F5EFC6}
-.result b{font:500 15px/1.5 var(--body);color:#F5EFC6}
-.pnote{color:var(--band-dark-soft);font-size:13.5px;margin-top:18px;opacity:.8}
+.kv span:nth-child(odd){color:#C9A99A}
+.sql .ln{display:block}
+.mini{display:flex;align-items:flex-end;gap:12px;height:150px;position:relative;padding-top:6px;margin-bottom:20px}
+.mini i{flex:1;height:var(--h);background:rgba(255,244,222,.22);border-radius:6px 6px 0 0;position:relative;transform-origin:bottom;transition:background .2s}
+.mini i.hi{background:var(--ice)}
+.mini i:hover{background:var(--butter)}
+.mini i::after{content:attr(data-l);position:absolute;bottom:-20px;left:0;right:0;text-align:center;font:500 11px/1 var(--mono);color:#C9A99A}
+.mini .avg{position:absolute;left:0;right:0;border-top:1.5px dashed #F4A6B2}
+.mini .avg em{position:absolute;right:0;top:-16px;font:500 10px/1 var(--mono);color:#F4A6B2;font-style:normal}
+.check{list-style:none;margin:0;padding:0;display:grid;gap:12px;font-size:15px}
+.check li::before{content:"✓";color:var(--butter);margin-right:8px}
+.result{display:grid;gap:10px;align-content:center}
+.result .pill{width:max-content;font:600 11px/1 var(--mono);letter-spacing:.1em;padding:6px 10px;background:var(--cherry);color:#FFF4DE;border-radius:999px}
+.result b{font:700 22px/1.5 var(--font);color:#FFF4DE}
+.fpanel.anim .ftext>*{animation:fup .5s cubic-bezier(.2,.7,.2,1) both}
+.fpanel.anim .ftext>*:nth-child(2){animation-delay:.06s}.fpanel.anim .ftext>*:nth-child(3){animation-delay:.12s}.fpanel.anim .ftext>*:nth-child(4){animation-delay:.18s}
+.fpanel.anim .bub{animation:fup .6s .15s both}
+.fpanel.anim .kv span{animation:fin .4s both}
+.fpanel.anim .kv span:nth-child(3),.fpanel.anim .kv span:nth-child(4){animation-delay:.25s}
+.fpanel.anim .kv span:nth-child(5),.fpanel.anim .kv span:nth-child(6){animation-delay:.5s}
+.fpanel.anim .kv span:nth-child(7),.fpanel.anim .kv span:nth-child(8){animation-delay:.75s}
+.fpanel.anim .sql .ln{animation:fline .45s both}
+.fpanel.anim .sql .ln:nth-child(2){animation-delay:.3s}.fpanel.anim .sql .ln:nth-child(3){animation-delay:.6s}.fpanel.anim .sql .ln:nth-child(4){animation-delay:.9s}.fpanel.anim .sql .ln:nth-child(5){animation-delay:1.2s}
+.fpanel.anim .mini i{animation:fgrow .7s cubic-bezier(.2,.7,.2,1) both}
+.fpanel.anim .mini i:nth-child(2){animation-delay:.1s}.fpanel.anim .mini i:nth-child(3){animation-delay:.2s}.fpanel.anim .mini i:nth-child(4){animation-delay:.3s}.fpanel.anim .mini i:nth-child(5){animation-delay:.4s}
+.fpanel.anim .mini .avg{animation:fin .4s .8s both}
+.fpanel.anim .check li{animation:fin .35s both}
+.fpanel.anim .check li:nth-child(2){animation-delay:.35s}.fpanel.anim .check li:nth-child(3){animation-delay:.7s}.fpanel.anim .check li:nth-child(4){animation-delay:1.05s}
+.fpanel.anim .result .pill{animation:fpop .4s both}
+.fpanel.anim .result b{animation:fup .6s .25s both}
+@keyframes fup{from{opacity:0;transform:translateY(12px)}}
+@keyframes fin{from{opacity:0}}
+@keyframes fline{from{opacity:0;transform:translateX(-10px)}}
+@keyframes fgrow{from{transform:scaleY(0)}}
+@keyframes fpop{0%{opacity:0;transform:scale(.6)}70%{transform:scale(1.08)}}
+.flow-ctrl{display:flex;align-items:center;gap:8px;padding:14px clamp(16px,3vw,24px);border-top:1.5px solid rgba(255,244,222,.2);flex-wrap:wrap}
+.fc{appearance:none;height:42px;min-width:42px;padding:0 14px;border:1.5px solid rgba(255,244,222,.4);background:transparent;color:#FFF4DE;display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 16px/1 var(--font);border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.fc:hover{background:var(--butter);color:#3D2722;border-color:var(--butter)}
+.fc svg{width:16px;height:16px}
+.fplay .i-pause{display:none}
+.flow.playing .fplay .i-pause{display:block}.flow.playing .fplay .i-play{display:none}
+.fcount{margin-inline-start:12px;font:italic 400 20px/1 var(--font);color:#EBDCCB}
+.fcount b{color:var(--butter);font-weight:400}
+.fhint{margin-inline-start:auto;font-size:15px;color:rgba(255,244,222,.6)}
 
 /* Projects */
-.projects{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-.proj{grid-column:span 3;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column;transition:border-color .3s}
-.proj:hover{border-color:var(--ink)}
-.proj.sm{grid-column:span 2}
-.thumb{position:relative;aspect-ratio:16/8;background:var(--red);overflow:hidden;display:flex;align-items:flex-end;justify-content:space-between;padding:14px 16px}
-.thumb.c-java{background:#231815}
-.thumb.c-soil{background:#4A2E27}
-.thumb.c-blue{background:#A5BCD6}
-.thumb.c-red{background:#4D0E12}
-.proj.sm .thumb{aspect-ratio:16/9}
-.thumb canvas{position:absolute;inset:0;width:100%;height:100%}
-.thumb .badge{position:relative;font:600 11px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;background:#F5EFC6;color:#231815}
-:root[lang="ar"] .thumb .badge{letter-spacing:0;font-size:12px}
-.thumb .pn{position:relative;font:400 30px/1 "Bodoni Moda",serif;color:#F5EFC6}
-.thumb.c-blue .pn{color:#231815}
-.proj .inner{padding:22px 22px 24px;display:grid;gap:12px;flex:1;align-content:start}
-.proj .meta{font:600 11.5px/1.4 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-:root[lang="ar"] .proj .meta{letter-spacing:0;font-size:13px}
-.proj .goal{color:var(--ink-soft);font-size:15px}
-.proj .goal b{color:var(--accent);font-weight:700}
-.proj ul{margin:0;padding-inline-start:18px;display:grid;gap:5px;color:var(--ink-soft);font-size:14.5px}
+.pfilter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.pf{appearance:none;border:1.5px solid var(--ink);background:transparent;color:var(--ink);height:44px;padding:0 18px;display:inline-flex;align-items:center;gap:10px;font:700 17px/1 var(--font);border-radius:999px;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.pf b{font:italic 400 18px/1 var(--font);color:var(--accent)}
+.pf:hover{transform:translateY(-2px)}
+.pf.on{background:var(--cherry);border-color:var(--cherry);color:var(--on-cherry)}
+.pf.on b{color:var(--butter)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.proj{background:var(--card);border:1.5px solid var(--line-2);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .3s;will-change:transform}
+.proj:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.proj.out{display:none}
+.proj.pop{animation:ppop .45s cubic-bezier(.2,.7,.2,1) both}
+@keyframes ppop{from{opacity:0;transform:translateY(16px) scale(.98)}}
+.thumb{position:relative;aspect-ratio:16/8;overflow:hidden;display:flex;align-items:flex-end;justify-content:space-between;padding:14px 16px;background:var(--cherry)}
+.thumb.c-bc{background:#702D3D}.thumb.c-choc{background:var(--deep)}.thumb.c-ice{background:#C8D9EC}.thumb.c-butter{background:#FFEDAD}.thumb.c-pink{background:#EACDD4}
+.thumb canvas{position:absolute;inset:0;width:100%;height:100%;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.thumb img.shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.proj:hover .thumb canvas,.proj:hover .thumb img.shot{transform:scale(1.05)}
+.thumb .badge{position:relative;font:700 14px/1 var(--font);padding:7px 12px;background:#FFF4DE;color:#702D3D;border-radius:999px}
+.thumb .pn{position:relative;font:italic 400 34px/1 var(--font);color:#FFF4DE;text-shadow:0 1px 6px rgba(61,39,34,.35)}
+.thumb.c-ice .pn,.thumb.c-butter .pn,.thumb.c-pink .pn{color:#702D3D;text-shadow:none}
+.proj .inner{padding:22px 24px 24px;display:grid;gap:12px;flex:1;align-content:start}
+.proj .meta{font:700 15px/1.4 var(--font);color:var(--accent)}
+.proj h3{font-size:27px}
+.proj .goal{color:var(--ink-soft);font-size:18px}
+.proj .goal b{color:var(--accent)}
+.proj ul{margin:0;padding-inline-start:20px;display:grid;gap:4px;color:var(--ink-soft);font-size:17px}
 .proj ul li::marker{color:var(--accent)}
-.nums{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-block:12px}
-.nums div{display:grid;gap:2px}
-.nums b{font:400 26px/1 "Bodoni Moda",serif;font-variant-numeric:lining-nums tabular-nums}
-.nums span{font-size:12px;color:var(--muted);line-height:1.35}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.nums div{display:grid;gap:2px;padding:10px 12px;border-radius:12px;background:var(--bg)}
+.nums b{font:italic 400 28px/1 var(--font);font-variant-numeric:lining-nums tabular-nums;color:var(--accent);direction:ltr;unicode-bidi:isolate}
+:root[dir="rtl"] .nums b{text-align:right}
+.nums span{font-size:14px;color:var(--muted);line-height:1.35}
+.skills{display:grid;gap:8px;padding:12px 14px;background:var(--accent-soft);border-radius:14px}
+.sk-l{font:700 15px/1 var(--font);color:var(--accent)}
+.sk{display:flex;flex-wrap:wrap;gap:6px}
+.sk span{font:700 15px/1 var(--font);padding:7px 11px;border-radius:999px;background:var(--card);color:var(--ink);border:1px solid var(--line-2);transition:background .2s,color .2s}
+.proj:hover .sk span{background:var(--ice);color:#3D2722;border-color:var(--ice)}
+.proj:hover .sk span:nth-child(even){background:var(--butter);border-color:var(--butter)}
 .proj .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:auto}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{font:500 11px/1 var(--mono);padding:5px 8px;border:1px solid var(--line-2);color:var(--ink-soft);direction:ltr}
-.more{display:inline-flex;align-items:center;gap:8px;font:600 12.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:4px}
-:root[lang="ar"] .more{letter-spacing:0;font-size:14px}
+.tag{font:500 11.5px/1 var(--mono);padding:6px 9px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink-soft);direction:ltr}
+.plinks{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.more{display:inline-flex;align-items:center;gap:7px;font:700 17px/1 var(--font);text-decoration:none;color:var(--accent);border-bottom:1.5px solid currentColor;padding-bottom:3px}
 .more svg{width:14px;height:14px}
+.more svg:first-child:not(.flip){width:16px;height:16px}
+.more.live{color:var(--on-cherry);background:var(--cherry);border:0;padding:8px 14px;border-radius:999px}
+:root[data-theme="dark"] .more.live{background:var(--butter);color:#702D3D}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .more.live{background:var(--butter);color:#702D3D}}
 .more.off{border:0;color:var(--muted)}
+.org{position:relative;width:40px;height:40px;display:grid;place-items:center;background:#FFF8EC;border:1.5px solid var(--line-2);border-radius:50%;cursor:help;flex:none;transition:transform .2s,border-color .2s}
+.org img{width:27px;height:27px;border-radius:4px;object-fit:contain}
+.org .txt{font:700 11px/1 var(--font);color:#8E1825;letter-spacing:.02em;text-align:center}
+.org .mono{font:700 13px/1 var(--font);color:#8E1825}
+.org:hover,.org:focus-visible{transform:scale(1.1);border-color:var(--accent)}
+.org::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);inset-inline-end:-6px;white-space:nowrap;background:#702D3D;color:#FFF4DE;font:700 15px/1 var(--font);padding:9px 12px;border-radius:10px;opacity:0;transform:translateY(4px);pointer-events:none;transition:opacity .2s,transform .2s;z-index:5}
+.org:hover::after,.org:focus-visible::after{opacity:1;transform:none}
 
-/* Education (blue band) */
-.edu-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,64px)}
-.degree{display:grid;gap:16px;align-content:start}
-.degree .deg-lbl{font:600 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
-:root[lang="ar"] .degree .deg-lbl{letter-spacing:0;font-size:13.5px}
-.degree h3{font-size:clamp(28px,3.4vw,42px);line-height:1.15}
-:root[lang="ar"] .degree h3{line-height:1.5}
-.degree p{color:rgba(35,24,21,.8);font-size:15.5px;max-width:48ch}
-.certs{list-style:none;margin:0;padding:0;border-top:1px solid rgba(35,24,21,.35)}
-.certs li{display:grid;grid-template-columns:64px 1fr;gap:3px 14px;padding:16px 0;border-bottom:1px solid rgba(35,24,21,.2)}
-.certs .yr{font:400 18px/1.4 "Bodoni Moda",serif;color:var(--red)}
-.certs b{font-weight:600;font-size:15.5px}
-.certs small{grid-column:2;color:rgba(35,24,21,.7);font-size:13.5px}
-.certs .bc-desc{grid-column:2;color:rgba(35,24,21,.82);font-size:14px;margin-top:4px}
-.certs .hrs{display:inline-block;font:600 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;background:var(--red);color:#F5EFC6;padding:4px 7px;margin-inline-start:8px;vertical-align:2px}
-:root[lang="ar"] .certs .hrs{letter-spacing:0;font-size:12px}
-.certs details{grid-column:2;margin-top:8px;border:0}
-.certs summary{display:inline-flex;align-items:center;gap:8px;padding:0;font:600 12px/1.4 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--red);cursor:pointer;list-style:none}
-:root[lang="ar"] .certs summary{letter-spacing:0;font-size:13.5px}
+/* Education (ice band) */
+.edu-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.degree{background:#FFF8EC;border-radius:24px;padding:clamp(24px,3.5vw,36px);display:grid;gap:16px;color:#3D2722;box-shadow:0 22px 44px -28px rgba(61,39,34,.5)}
+.deg-lbl{font:700 16px/1 var(--font);color:#8E1825}
+.degree h3{font-size:clamp(30px,3.4vw,40px);line-height:1.2}
+.degree .uni{font-size:20px;color:#5E3F35}
+.degree p{color:#5E3F35;font-size:18px}
+.degree .chips .chip{background:#F7EEDD;border-color:rgba(61,39,34,.25);color:#3D2722;font-size:15px}
+.gpa{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;align-items:center;padding:18px 20px;border-radius:18px;background:#8E1825;color:#FFF4DE}
+.gpa .glbl{grid-column:1/-1;font:700 15px/1 var(--font);color:#FFEDAD}
+.gpa b{font:italic 400 64px/1 var(--font);color:#FFF4DE}
+.gpa .gout{font-size:18px;color:rgba(255,244,222,.85)}
+.gbar{grid-column:1/-1;height:10px;border-radius:999px;background:rgba(255,244,222,.2);overflow:hidden}
+.gbar i{display:block;height:100%;width:var(--w);background:repeating-linear-gradient(90deg,#FFEDAD 0 10px,#C8D9EC 10px 20px);border-radius:999px}
+.member{display:grid;gap:10px;padding-top:6px}
+.mrow{display:flex;align-items:center;gap:14px;background:#C8D9EC;padding:14px 16px;border-radius:16px}
+.mrow .org{background:#FFF8EC;border-color:rgba(61,39,34,.25);width:48px;height:48px}
+.mrow .org img{width:34px;height:34px}
+.mrow .org .mono{color:#FFF4DE}
+.mrow b{display:block;font-weight:700;font-size:19px}
+.mrow small{color:#5E3F35;font-size:16px}
+.certs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.certs>li{position:relative;display:grid;grid-template-columns:64px 1fr;gap:3px 14px;padding:16px 18px;padding-inline-end:110px;background:rgba(255,248,236,.72);border-radius:16px;color:#3D2722}
+.certs .yr{font:italic 400 22px/1.3 var(--font);color:#8E1825}
+.certs b{font-weight:700;font-size:19px}
+.certs small{grid-column:2;color:#5E3F35;font-size:16px}
+.certs .bc-desc{grid-column:2;color:#5E3F35;font-size:16px;margin-top:4px}
+.hrs{display:inline-block;font:700 13px/1 var(--font);background:#8E1825;color:#FFF4DE;padding:5px 9px;border-radius:999px;margin-inline-start:8px;vertical-align:3px}
+.certs details{grid-column:2;margin-top:8px}
+.certs summary{display:inline-flex;align-items:center;gap:8px;font:700 16px/1.4 var(--font);color:#8E1825;cursor:pointer;list-style:none;padding:6px 12px;border-radius:999px;border:1.5px solid rgba(142,24,37,.35);transition:background .2s,color .2s}
+.certs summary:hover{background:#8E1825;color:#FFF4DE}
 .certs summary::-webkit-details-marker{display:none}
-.certs summary::after{content:"+";font-size:16px;line-height:1}
+.certs summary::after{content:"+";font-size:18px;line-height:1}
+.certs details[open] summary{background:#8E1825;color:#FFF4DE}
 .certs details[open] summary::after{content:"−"}
-.certs ol{margin:10px 0 0;padding-inline-start:22px;display:grid;gap:4px;font-size:13.5px;color:rgba(35,24,21,.85)}
-.certs ol li{display:list-item;padding:0;border:0}
-.certs ol li::marker{color:var(--red);font-family:"Bodoni Moda",serif}
+.certs details[open]>*:not(summary){animation:fup .35s both}
+.certs ol{margin:10px 0 0;padding-inline-start:22px;display:grid;gap:4px;font-size:16px;color:#3D2722}
+.certs .chips{margin-top:10px}
+.certs .chips .chip{font-size:14.5px;padding:7px 11px;background:#FFEDAD;border-color:transparent;color:#3D2722}
+.corgs{position:absolute;top:14px;inset-inline-end:14px;display:flex;gap:6px}
+.corgs .org{width:38px;height:38px}
+.corgs .org img{width:25px;height:25px}
+@media (max-width:600px){.certs>li{padding-inline-end:18px;padding-top:58px}.corgs{top:12px;inset-inline-end:auto;inset-inline-start:96px}}
+.cproj{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px;font-size:15px;color:#5E3F35}
+.cproj a{font-weight:700;color:#8E1825;text-decoration:none;border-bottom:1.5px solid currentColor}
 
-/* FAQ */
-.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px)}
-.faq-grid h3{font-size:clamp(26px,3vw,36px);line-height:1.25}
-details{border-bottom:1px solid var(--line-2)}
-details:first-of-type{border-top:1px solid var(--line-2)}
-summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:500 20px/1.4 var(--display)}
-:root[lang="ar"] summary{font-weight:700}
-summary::-webkit-details-marker{display:none}
-summary .pm{width:26px;height:26px;position:relative;flex:none}
-summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:var(--accent);transform:translate(-50%,-50%)}
-summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .3s}
-details[open] summary .pm::after{transform:translate(-50%,-50%) rotate(0)}
-details p{padding:0 0 22px;color:var(--ink-soft);max-width:60ch}
-
-/* Contact (red band) */
+/* Contact (cherry band) */
 .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,80px)}
-.contact .giant{color:#F5EFC6;font-size:clamp(56px,10vw,132px)}
-.contact .giant i{color:#A5BCD6}
-.contact .lede{color:rgba(245,239,198,.78);max-width:46ch;margin-top:22px}
+.contact .giant{color:#FFF4DE;font:italic 700 clamp(52px,9vw,118px)/1.05 var(--font);letter-spacing:0}
+.contact .giant i{color:var(--butter)}
+.contact .lede{color:rgba(255,244,222,.92);max-width:44ch;margin-top:22px;font-size:21px}
 .contact .cta-row{margin-top:30px}
-.contact .btn-cream{background:#F5EFC6;color:#4D0E12}
-.contact .btn-cream:hover{background:#A5BCD6;color:#231815}
-.contact .btn-line{border-color:rgba(245,239,198,.5);color:#F5EFC6}
-.contact .btn-line:hover{background:#F5EFC6;color:#4D0E12}
+.contact .btn-cream{background:var(--butter);color:#702D3D}
+.contact .btn-cream:hover{background:var(--ice);color:#3D2722}
+.contact .btn-line{border-color:rgba(255,244,222,.6);color:#FFF4DE}
+.contact .btn-line:hover{background:#FFF4DE;color:#8E1825}
 .contact .signature{width:min(240px,60%);aspect-ratio:1000/354;margin-top:44px}
-.contact .signature .mark{background:#F5EFC6}
-.clist{border-top:1px solid rgba(245,239,198,.3);align-self:start}
-.crow{display:flex;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid rgba(245,239,198,.2);text-decoration:none;color:#F5EFC6}
-.crow svg{width:19px;height:19px;color:#A5BCD6;flex:none}
-.crow .lbl{display:block;font:600 11px/1.4 var(--body);letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,198,.6)}
-:root[lang="ar"] .crow .lbl{letter-spacing:0;font-size:12.5px}
-.crow .val{display:block;font-weight:600;direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}
+.contact .signature .mark{background:#FFF4DE}
+.clist{display:grid;gap:10px;align-self:start}
+.crow{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:16px;background:rgba(255,244,222,.08);border:1.5px solid rgba(255,244,222,.2);text-decoration:none;color:#FFF4DE;transition:background .2s,border-color .2s}
+a.crow:hover{background:rgba(255,244,222,.15);border-color:var(--butter)}
+.crow svg{width:20px;height:20px;color:var(--butter);flex:none}
+.crow .lbl{display:block;font:700 15px/1.4 var(--font);color:var(--ice)}
+.crow .val{display:block;font-weight:700;direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}
 :root[dir="rtl"] .crow .val{text-align:right}
 .crow .val.t{direction:inherit}
-.crow .go{margin-inline-start:auto;width:16px;height:16px;opacity:.5;transition:opacity .2s}
-a.crow:hover .go{opacity:1}
-.copy{margin-inline-start:auto;appearance:none;background:transparent;border:1px solid rgba(245,239,198,.4);color:#F5EFC6;height:30px;padding:0 12px;font:600 11.5px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;flex:none}
-:root[lang="ar"] .copy{letter-spacing:0;font-size:12.5px}
-.copy:hover{background:#F5EFC6;color:#4D0E12}
-footer{background:#231815;color:#CBBFA8}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-block:24px;font-size:13px}
+.crow .go{margin-inline-start:auto;width:16px;height:16px;opacity:.6}
+.copy{margin-inline-start:auto;appearance:none;background:var(--butter);border:0;color:#702D3D;height:32px;padding:0 14px;font:700 15px/1 var(--font);border-radius:999px;cursor:pointer;flex:none}
+.copy:hover{background:var(--ice)}
+footer{background:var(--deep);color:#EBDCCB}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-block:24px;font-size:16px}
+
+/* CV viewer */
+.cv-modal{position:fixed;inset:0;z-index:100;background:rgba(61,39,34,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column;align-items:center;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px calc(env(safe-area-inset-bottom,0px) + 14px)}
+.cv-modal[hidden]{display:none}
+.cv-bar{width:min(860px,100%);display:flex;align-items:center;justify-content:space-between;gap:12px;color:#FFF4DE;padding-bottom:12px}
+.cv-bar b{font:700 24px/1.2 var(--font)}
+.cv-close{appearance:none;border:1.5px solid rgba(255,244,222,.5);background:transparent;color:#FFF4DE;height:40px;padding:0 18px;font:700 16px/1 var(--font);border-radius:999px;cursor:pointer}
+.cv-close:hover{background:var(--butter);color:#702D3D}
+.cv-scroll{width:min(860px,100%);flex:1;overflow:auto;background:#fff;border-radius:12px;box-shadow:0 20px 60px rgba(40,10,16,.5)}
+.cv-scroll img{display:block;width:100%;height:auto}
+.cv-note{color:rgba(255,244,222,.8);font-size:15px;padding-top:10px;text-align:center}
 
 /* Motion */
 .rise{transition:transform .8s cubic-bezier(.2,.7,.2,1),opacity .8s ease}
@@ -312,50 +428,38 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto!important}
   .rise.pre{transform:none;opacity:1}
+  .fpanel.anim *{animation:none!important}
+  .proj{transform:none!important}.proj.pop{animation:none}
 }
 
 /* Responsive */
 @media (max-width:1000px){
   nav.links{display:none}
   .tools{margin-inline-start:auto}
-  .stack{grid-template-columns:repeat(2,1fr)}
-  .pipe{grid-template-columns:1fr 1fr}
-  .projects{grid-template-columns:1fr 1fr}
-  .proj,.proj.sm{grid-column:span 1}
-  .proj:first-child{grid-column:span 2}
   .why-grid{grid-template-columns:1fr 1fr}
-  .why-item,:root[dir="rtl"] .why-item{padding:28px 22px!important;border-inline-end:0!important}
-  .why-item:nth-child(odd){border-inline-end:1px solid rgba(245,239,198,.25)!important}
+}
+@media (max-width:860px){
+  .flow-nav{display:flex;overflow-x:auto;scrollbar-width:none}
+  .flow-nav::-webkit-scrollbar{display:none}
+  .fstep{flex:none;padding:14px 16px 16px}
+  .fpanel{grid-template-columns:1fr}
+  .fhint{display:none}
 }
 @media (max-width:780px){
-  .hero .wrap,.about-grid,.edu-grid,.faq-grid,.contact-grid{grid-template-columns:1fr}
-  .photo{min-height:420px}
+  .hero-grid,.about-grid,.edu-grid,.contact-grid,.skgrid,.projects{grid-template-columns:1fr}
 }
 @media (max-width:600px){
-  body{font-size:16px}
-  .pipe,.projects,.why-grid{grid-template-columns:1fr}
-  .proj:first-child{grid-column:span 1}
-  .why-item:nth-child(odd){border-inline-end:0!important}
-  .why-item,:root[dir="rtl"] .why-item{padding:24px 0!important}
+  body{font-size:18px}
+  .why-grid{grid-template-columns:1fr}
   dl.quick{grid-template-columns:1fr}
   .top .btn .t{display:none}
   .top .btn{padding:0 12px}
   .brand{width:92px}
   .btn{flex:1}
   .shead{grid-template-columns:1fr}
-  .photo .tagred{inset-inline-start:0}
+  .nums b{font-size:24px}
 }
 
-/* CV viewer */
-.cv-modal{position:fixed;inset:0;z-index:100;background:rgba(35,24,21,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;flex-direction:column;align-items:center;padding:calc(env(safe-area-inset-top,0px) + 14px) 16px calc(env(safe-area-inset-bottom,0px) + 14px)}
-.cv-modal[hidden],[hidden]{display:none!important}
-.cv-bar{width:min(860px,100%);display:flex;align-items:center;justify-content:space-between;gap:12px;color:#F5EFC6;padding-bottom:12px}
-.cv-bar b{font:500 22px/1.2 var(--display)}
-.cv-close{appearance:none;border:1px solid rgba(245,239,198,.45);background:transparent;color:#F5EFC6;height:40px;padding:0 16px;font:600 12.5px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
-.cv-close:hover{background:#F5EFC6;color:#4D0E12}
-.cv-scroll{width:min(860px,100%);flex:1;overflow:auto;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.cv-scroll img{display:block;width:100%;height:auto}
-.cv-note{color:rgba(245,239,198,.75);font-size:13px;padding-top:10px;text-align:center}
 </style>
 
 </head>
@@ -365,7 +469,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
     <a class="brand" href="#top" aria-label="Raghad Almatrfy"><span class="mark"></span></a>
     <nav class="links" aria-label="Sections">
       <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#toolkit" data-i18n="nav_skills">Toolkit</a>
+      <a href="#skills" data-i18n="nav_skills">Toolkit</a>
       <a href="#process" data-i18n="nav_process">Process</a>
       <a href="#work" data-i18n="nav_work">Projects</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
@@ -382,30 +486,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="left">
-      <div class="meta-row"><span data-i18n="meta_l">Portfolio</span><span>2026</span></div>
-      <div>
-        <p class="giant">Portfo<i>lio</i></p>
+    <div class="meta-row"><span data-i18n="meta_l">Portfolio</span><span data-i18n="tag_da">Data Analytics</span><span>2026</span></div>
+    <p class="giant">Portfo<i>lio</i></p>
+    <div class="hero-grid">
+      <div class="hero-a">
+        <div class="name-line">
+          <div class="signature" role="img" aria-label="Raghad Almatrfy"><span class="mark"></span></div>
+          <span class="ar-name" data-i18n="name_ar"></span>
+        </div>
+        <h1 data-i18n="hero_title">From raw data to <em>a clear decision</em></h1>
       </div>
-      <div class="name-line">
-        <div class="signature" role="img" aria-label="Raghad Almatrfy"><span class="mark"></span></div>
-        <span class="ar-name" data-i18n="name_ar"></span>
+      <div class="hero-b">
+        <p class="lede" data-i18n="hero_lede">Computer Science student at Umm Al-Qura University, interested in data analytics.</p>
+        <div class="cta-row">
+          <a class="btn btn-red" href="#contact"><span data-i18n="cta_work">Let’s work together</span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-line" href="#work" data-i18n="cta_projects">View projects</a>
+        </div>
+        <div class="works"><span data-i18n="works_with">Works with</span><b>Power BI</b><b>Excel</b><b>SQL</b><b>Python</b><b>Figma</b></div>
       </div>
-      <h1 data-i18n="hero_title">From raw data to <em>a clear decision</em></h1>
-      <p class="lede" data-i18n="hero_lede">Computer Science student at Umm Al-Qura University, interested in data analytics.</p>
-      <div class="cta-row">
-        <a class="btn btn-red" href="#contact"><span data-i18n="cta_work">Let’s work together</span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-line" href="#work" data-i18n="cta_projects">View projects</a>
-      </div>
-      <div class="works"><span data-i18n="works_with">Works with</span><b>Power BI</b><b>Excel</b><b>SQL</b><b>Python</b><b>Figma</b></div>
-    </div>
-    <div class="photo">
-      <span class="tagred" data-i18n="tag_da">Data Analytics</span>
-      <div class="frame"><div class="frame-logo" role="img" aria-label="Raghad Almatrfy"><span class="mark"></span></div></div>
-      <div class="cap"><span data-i18n="cap_l">Makkah</span><span data-i18n="cap_r">Umm Al-Qura University</span></div>
     </div>
   </div>
 </section>
+
+<div class="stripe" aria-hidden="true"></div>
 
 <!-- 01 ABOUT -->
 <section id="about">
@@ -433,31 +536,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
   <div class="wrap">
     <div class="shead rise"><span class="num">02</span><div><span class="lbl" data-i18n="why_eyebrow">Why work with me</span><h2 data-i18n="why_title">What I bring to a data team</h2></div></div>
     <div class="why-grid">
-      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><h3 data-i18n="w1_t"></h3><p data-i18n="w1_d"></p><div class="minitags"><span>CHECK</span><span>UNIQUE</span><span>FOREIGN KEY</span></div></div>
-      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><h3 data-i18n="w2_t"></h3><p data-i18n="w2_d"></p><div class="minitags"><span>KPIs</span><span>DASHBOARDS</span><span>REPORTS</span></div></div>
-      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/></svg><h3 data-i18n="w3_t"></h3><p data-i18n="w3_d"></p><div class="minitags"><span>SDLC</span><span>UML</span><span>IEEE 830</span></div></div>
-      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 20c.6-3.4 3.1-5.5 6-5.5s5.4 2.1 6 5.5M15.5 14.8c2.6-.3 4.8 1.4 5.5 4.2"/></svg><h3 data-i18n="w4_t"></h3><p data-i18n="w4_d"></p><div class="minitags"><span class="t" data-i18n="tg_team4">Team of 4</span><span class="t" data-i18n="tg_team5">Team of 5</span></div></div>
-      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/></svg><h3 data-i18n="w5_t"></h3><p data-i18n="w5_d"></p><div class="minitags"><span>SATR</span><span>HASH PLUS</span><span>MAWHIBA</span><span>MISK</span></div></div>
-      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><h3 data-i18n="w6_t"></h3><p data-i18n="w6_d"></p><div class="minitags"><span>FIGMA</span><span>UI/UX</span></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg><h3 data-i18n="w1_t"></h3><p data-i18n="w1_d"></p><div class="minitags"><span>CHECK</span><span>UNIQUE</span><span>FOREIGN KEY</span></div><div class="evid"><span class="evl" data-i18n="ev_lbl"></span><div class="evlinks"><a href="https://github.com/RaghadAlmatrfy/satr-sql" target="_blank" rel="noopener"><span data-i18n="pn_academy"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/-eyecare-optical-shop-sql" target="_blank" rel="noopener"><span data-i18n="pn_eyecare"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/student-grade-management-javafx" target="_blank" rel="noopener"><span data-i18n="pn_grades"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><h3 data-i18n="w2_t"></h3><p data-i18n="w2_d"></p><div class="minitags"><span>KPIs</span><span>CHARTS</span><span>INSIGHTS</span></div><div class="evid"><span class="evl" data-i18n="ev_lbl"></span><div class="evlinks"><a href="https://github.com/RaghadAlmatrfy/excel-basics-data-analysis" target="_blank" rel="noopener"><span data-i18n="pn_telecom"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/-eyecare-optical-shop-sql" target="_blank" rel="noopener"><span data-i18n="pn_eyecare"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/></svg><h3 data-i18n="w3_t"></h3><p data-i18n="w3_d"></p><div class="minitags"><span>IEEE 830</span><span>UML</span><span>MVC</span></div><div class="evid"><span class="evl" data-i18n="ev_lbl"></span><div class="evlinks"><a href="https://github.com/RaghadAlmatrfy/safestep-womens-safety-app" target="_blank" rel="noopener"><span data-i18n="pn_safestep"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://www.figma.com/design/Y7AHYf91AVdoqZQb4BhjDY/capsule" target="_blank" rel="noopener"><span data-i18n="pn_capsule"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/student-grade-management-javafx" target="_blank" rel="noopener"><span data-i18n="pn_grades"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 20c.6-3.4 3.1-5.5 6-5.5s5.4 2.1 6 5.5M15.5 14.8c2.6-.3 4.8 1.4 5.5 4.2"/></svg><h3 data-i18n="w4_t"></h3><p data-i18n="w4_d"></p><div class="minitags"><span class="t" data-i18n="tg_teams">Teams of 3–5</span></div><div class="evid"><span class="evl" data-i18n="ev_lbl"></span><div class="evlinks"><a href="https://github.com/RaghadAlmatrfy/safestep-womens-safety-app" target="_blank" rel="noopener"><span data-i18n="pn_safestep"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/-eyecare-optical-shop-sql" target="_blank" rel="noopener"><span data-i18n="pn_eyecare"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/the-missing-panda-opengl" target="_blank" rel="noopener"><span data-i18n="pn_panda"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://www.figma.com/design/Y7AHYf91AVdoqZQb4BhjDY/capsule" target="_blank" rel="noopener"><span data-i18n="pn_capsule"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/></svg><h3 data-i18n="w5_t"></h3><p data-i18n="w5_d"></p><div class="minitags"><span>HASH PLUS</span><span>SATR</span><span>IBM SKILLSBUILD</span><span>MAWHIBA</span><span>MISK</span></div></div>
+      <div class="why-item rise"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg><h3 data-i18n="w6_t"></h3><p data-i18n="w6_d"></p><div class="minitags"><span>FIGMA</span><span>JAVAFX</span><span>OPENGL</span></div><div class="evid"><span class="evl" data-i18n="ev_lbl"></span><div class="evlinks"><a href="https://www.figma.com/design/Y7AHYf91AVdoqZQb4BhjDY/capsule" target="_blank" rel="noopener"><span data-i18n="pn_capsule"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/student-grade-management-javafx" target="_blank" rel="noopener"><span data-i18n="pn_grades"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/the-missing-panda-opengl" target="_blank" rel="noopener"><span data-i18n="pn_panda"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a href="https://github.com/RaghadAlmatrfy/excel-basics-data-analysis" target="_blank" rel="noopener"><span data-i18n="pn_telecom"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- 03 TOOLKIT -->
-<section id="toolkit">
+<!-- 03 SKILLS -->
+<section id="skills">
   <div class="wrap">
-    <div class="shead rise"><span class="num">03</span><div><span class="lbl" data-i18n="skills_eyebrow">Toolkit</span><h2 data-i18n="skills_title">8 tools I work with</h2></div></div>
-    <div class="stack rise">
-      <div class="tool"><h3 class="ab">Power BI</h3><p data-i18n="tk_pbi"></p></div>
-      <div class="tool"><h3 class="ab">Excel</h3><p data-i18n="tk_xl"></p></div>
-      <div class="tool"><h3 class="ab">MySQL</h3><p data-i18n="tk_sql"></p></div>
-      <div class="tool"><h3 class="ab">Python</h3><p data-i18n="tk_py"></p></div>
-      <div class="tool"><h3 class="ab">Java</h3><p data-i18n="tk_java"></p></div>
-      <div class="tool"><h3 class="ab">C++ · OpenGL</h3><p data-i18n="tk_cpp"></p></div>
-      <div class="tool"><h3 class="ab">GitHub</h3><p data-i18n="tk_gh"></p></div>
-      <div class="tool"><h3 class="ab">Figma</h3><p data-i18n="tk_fig"></p></div>
+    <div class="shead rise"><span class="num">03</span><div><span class="lbl" data-i18n="skills_eyebrow">Skills</span><h2 data-i18n="skills_title">What I use to get from a raw table to a decision.</h2></div></div>
+    <div class="sktools rise"><button class="skall" type="button" id="skAll"><span data-i18n="sk_openall">Open all</span></button><span class="skhint" data-i18n="sk_hint">Tap a category to see what’s inside</span></div>
+    <div class="skgrid">
+      <article class="skcard rise"><button class="skbtn" type="button" aria-expanded="false" aria-controls="skp0" id="skb0"><h3 data-i18n="sg_bi"></h3><span class="cnt">14</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="skpanel" id="skp0" role="region" aria-labelledby="skb0"><div class="skin"><div class="chips"><span class="chip lt">Power BI</span><span class="chip" data-i18n="sk_kpicards"></span><span class="chip lt">DAX</span><span class="chip lt">Power Query</span><span class="chip" data-i18n="sk_model"></span><span class="chip lt">Power BI Copilot</span><span class="chip lt">Excel</span><span class="chip lt">SUMIFS / COUNTIF</span><span class="chip lt">INDEX-MATCH</span><span class="chip lt">PivotTables</span><span class="chip" data-i18n="sk_clean"></span><span class="chip" data-i18n="sk_eda"></span><span class="chip" data-i18n="sk_viz"></span><span class="chip" data-i18n="sk_trend"></span></div></div></div></article>
+      <article class="skcard rise"><button class="skbtn" type="button" aria-expanded="false" aria-controls="skp1" id="skb1"><h3 data-i18n="sg_db"></h3><span class="cnt">11</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="skpanel" id="skp1" role="region" aria-labelledby="skb1"><div class="skin"><div class="chips"><span class="chip lt">MySQL</span><span class="chip" data-i18n="sk_reldesign"></span><span class="chip" data-i18n="sk_norm"></span><span class="chip lt">JOINs</span><span class="chip" data-i18n="sk_subq"></span><span class="chip" data-i18n="sk_aggs"></span><span class="chip" data-i18n="sk_views"></span><span class="chip" data-i18n="sk_procs"></span><span class="chip" data-i18n="sk_indexes"></span><span class="chip lt">DDL / DML</span><span class="chip lt">CRUD</span></div></div></div></article>
+      <article class="skcard rise"><button class="skbtn" type="button" aria-expanded="false" aria-controls="skp2" id="skb2"><h3 data-i18n="sg_prog"></h3><span class="cnt">8</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="skpanel" id="skp2" role="region" aria-labelledby="skb2"><div class="skin"><div class="chips"><span class="chip lt">Python</span><span class="chip lt">Pandas</span><span class="chip lt">OOP</span><span class="chip lt">Java</span><span class="chip lt">C++</span><span class="chip lt">HTML</span><span class="chip lt">CSS</span><span class="chip lt">JavaScript</span></div></div></div></article>
+      <article class="skcard rise"><button class="skbtn" type="button" aria-expanded="false" aria-controls="skp3" id="skb3"><h3 data-i18n="sg_tools"></h3><span class="cnt">6</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="skpanel" id="skp3" role="region" aria-labelledby="skb3"><div class="skin"><div class="chips"><span class="chip lt">Git & GitHub</span><span class="chip lt">Figma</span><span class="chip lt">VS Code</span><span class="chip lt">MySQL Workbench</span><span class="chip lt">Canva</span><span class="chip lt">Microsoft Office</span></div></div></div></article>
+      <article class="skcard rise"><button class="skbtn" type="button" aria-expanded="false" aria-controls="skp4" id="skb4"><h3 data-i18n="sg_soft"></h3><span class="cnt">7</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="skpanel" id="skp4" role="region" aria-labelledby="skb4"><div class="skin"><div class="chips"><span class="chip" data-i18n="ss_team"></span><span class="chip" data-i18n="ss_fast"></span><span class="chip" data-i18n="ss_create"></span><span class="chip" data-i18n="ss_tech"></span><span class="chip" data-i18n="ss_pressure"></span><span class="chip" data-i18n="ss_prob"></span><span class="chip" data-i18n="ss_eq"></span></div></div></div></article>
+      <article class="skcard rise"><button class="skbtn" type="button" aria-expanded="false" aria-controls="skp5" id="skb5"><h3 data-i18n="cw_t"></h3><span class="cnt">6</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="skpanel" id="skp5" role="region" aria-labelledby="skb5"><div class="skin"><div class="chips"><span class="chip" data-i18n="cw_db"></span><span class="chip" data-i18n="cw_dsa"></span><span class="chip" data-i18n="cw_stat"></span><span class="chip" data-i18n="cw_ai"></span><span class="chip" data-i18n="cw_oop"></span><span class="chip" data-i18n="cw_se"></span></div></div></div></article>
     </div>
-    <div class="soft-row rise"><span data-i18n="c_team"></span><span data-i18n="c_crit"></span><span data-i18n="c_prob"></span><span data-i18n="c_detail"></span><span data-i18n="c_time"></span><span data-i18n="c_fast"></span></div>
   </div>
 </section>
 
@@ -465,13 +566,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <section class="band-dark" id="process">
   <div class="wrap">
     <div class="shead rise"><span class="num">04</span><div><span class="lbl" data-i18n="proc_eyebrow">How it works</span><h2 data-i18n="proc_title">From a question to a decision in 6 steps</h2></div></div>
-    <div class="pipe rise">
-      <div class="pstep"><div class="n"><b>1</b><h3 data-i18n="p_1"></h3></div><div class="panel q"><div class="bub" data-i18n="p_1q"></div></div><p class="desc" data-i18n="p_1d"></p></div>
-      <div class="pstep"><div class="n"><b>2</b><h3 data-i18n="p_2"></h3></div><div class="panel"><div class="kv"><span>entity</span><span class="g">customers, orders</span><span>metric</span><span class="g">SUM(total)</span><span>compare</span><span class="g">AVG(order)</span><span>output</span><span class="g">VIEW → dashboard</span></div></div><p class="desc" data-i18n="p_2d"></p></div>
-      <div class="pstep"><div class="n"><b>3</b><h3 data-i18n="p_3"></h3></div><div class="panel"><span class="k">SELECT</span> c.name, <span class="k">SUM</span>(o.total) spent<br><span class="k">FROM</span> customers c <span class="k">JOIN</span> orders o<br>&nbsp;&nbsp;<span class="k">ON</span> o.customer_id = c.id<br><span class="k">GROUP BY</span> c.name<br><span class="k">ORDER BY</span> spent <span class="k">DESC</span>;</div><p class="desc" data-i18n="p_3d"></p></div>
-      <div class="pstep"><div class="n"><b>4</b><h3 data-i18n="p_4"></h3></div><div class="panel"><div class="mini"><i style="height:38%"></i><i style="height:52%"></i><i class="hi" style="height:88%"></i><i style="height:44%"></i><i class="hi" style="height:72%"></i><div class="avg" style="bottom:58%"><em>AVG</em></div></div></div><p class="desc" data-i18n="p_4d"></p></div>
-      <div class="pstep"><div class="n"><b>5</b><h3 data-i18n="p_5"></h3></div><div class="panel"><ul class="check"><li>no duplicate records</li><li>nulls handled</li><li>totals reconcile</li><li>labels are clear</li></ul></div><p class="desc" data-i18n="p_5d"></p></div>
-      <div class="pstep"><div class="n"><b>6</b><h3 data-i18n="p_6"></h3></div><div class="panel result"><span class="pill">INSIGHT</span><b data-i18n="p_6r"></b></div><p class="desc" data-i18n="p_6d"></p></div>
+    <div class="flow rise" id="flow">
+      <div class="flow-nav" role="tablist" aria-label="Steps"><button class="fstep on" type="button" role="tab" id="ftab0" aria-controls="fpan0" aria-selected="true" tabindex="0" data-i="0"><span class="fn">1</span><span class="ft" data-i18n="p_1"></span><i class="fbar"><b></b></i></button><button class="fstep" type="button" role="tab" id="ftab1" aria-controls="fpan1" aria-selected="false" tabindex="-1" data-i="1"><span class="fn">2</span><span class="ft" data-i18n="p_2"></span><i class="fbar"><b></b></i></button><button class="fstep" type="button" role="tab" id="ftab2" aria-controls="fpan2" aria-selected="false" tabindex="-1" data-i="2"><span class="fn">3</span><span class="ft" data-i18n="p_3"></span><i class="fbar"><b></b></i></button><button class="fstep" type="button" role="tab" id="ftab3" aria-controls="fpan3" aria-selected="false" tabindex="-1" data-i="3"><span class="fn">4</span><span class="ft" data-i18n="p_4"></span><i class="fbar"><b></b></i></button><button class="fstep" type="button" role="tab" id="ftab4" aria-controls="fpan4" aria-selected="false" tabindex="-1" data-i="4"><span class="fn">5</span><span class="ft" data-i18n="p_5"></span><i class="fbar"><b></b></i></button><button class="fstep" type="button" role="tab" id="ftab5" aria-controls="fpan5" aria-selected="false" tabindex="-1" data-i="5"><span class="fn">6</span><span class="ft" data-i18n="p_6"></span><i class="fbar"><b></b></i></button></div>
+      <div class="flow-stage"><div class="fpanel on" role="tabpanel" id="fpan0" aria-labelledby="ftab0"><div class="ftext"><span class="fbig">01</span><h3 data-i18n="p_1"></h3><p class="desc" data-i18n="p_1d"></p><p class="fx" data-i18n="p_1x"></p></div><div class="fvis"><div class="panel q"><div class="bub" data-i18n="p_1q"></div><span class="caret" aria-hidden="true"></span></div></div></div><div class="fpanel" role="tabpanel" id="fpan1" aria-labelledby="ftab1" hidden><div class="ftext"><span class="fbig">02</span><h3 data-i18n="p_2"></h3><p class="desc" data-i18n="p_2d"></p><p class="fx" data-i18n="p_2x"></p></div><div class="fvis"><div class="panel"><div class="kv"><span>entity</span><span class="g">customers, orders</span><span>metric</span><span class="g">SUM(total)</span><span>compare</span><span class="g">AVG(order)</span><span>output</span><span class="g">VIEW → dashboard</span></div></div></div></div><div class="fpanel" role="tabpanel" id="fpan2" aria-labelledby="ftab2" hidden><div class="ftext"><span class="fbig">03</span><h3 data-i18n="p_3"></h3><p class="desc" data-i18n="p_3d"></p><p class="fx" data-i18n="p_3x"></p></div><div class="fvis"><div class="panel sql"><span class="ln"><span class="k">SELECT</span> c.name, <span class="k">SUM</span>(o.total) <span class="k">AS</span> spent</span><span class="ln"><span class="k">FROM</span> customers c</span><span class="ln"><span class="k">JOIN</span> orders o <span class="k">ON</span> o.customer_id = c.id</span><span class="ln"><span class="k">GROUP BY</span> c.name</span><span class="ln"><span class="k">ORDER BY</span> spent <span class="k">DESC</span>;</span></div></div></div><div class="fpanel" role="tabpanel" id="fpan3" aria-labelledby="ftab3" hidden><div class="ftext"><span class="fbig">04</span><h3 data-i18n="p_4"></h3><p class="desc" data-i18n="p_4d"></p><p class="fx" data-i18n="p_4x"></p></div><div class="fvis"><div class="panel"><div class="mini"><i style="--h:38%" data-l="A"></i><i style="--h:52%" data-l="B"></i><i class="hi" style="--h:88%" data-l="C"></i><i style="--h:44%" data-l="D"></i><i class="hi" style="--h:72%" data-l="E"></i><div class="avg" style="bottom:58%"><em>AVG</em></div></div></div></div></div><div class="fpanel" role="tabpanel" id="fpan4" aria-labelledby="ftab4" hidden><div class="ftext"><span class="fbig">05</span><h3 data-i18n="p_5"></h3><p class="desc" data-i18n="p_5d"></p><p class="fx" data-i18n="p_5x"></p></div><div class="fvis"><div class="panel"><ul class="check"><li>no duplicate records</li><li>nulls handled</li><li>totals reconcile</li><li>labels are clear</li></ul></div></div></div><div class="fpanel" role="tabpanel" id="fpan5" aria-labelledby="ftab5" hidden><div class="ftext"><span class="fbig">06</span><h3 data-i18n="p_6"></h3><p class="desc" data-i18n="p_6d"></p><p class="fx" data-i18n="p_6x"></p></div><div class="fvis"><div class="panel result"><span class="pill">INSIGHT</span><b data-i18n="p_6r"></b></div></div></div></div>
+      <div class="flow-ctrl">
+        <button class="fc" id="fPrev" type="button" aria-label="Previous step"><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 6l-6 6 6 6"/></svg></button>
+        <button class="fc fplay" id="fPlay" type="button"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg><span id="fPlayLbl" data-i18n="f_play">Play</span></button>
+        <button class="fc" id="fNext" type="button" aria-label="Next step"><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg></button>
+        <span class="fcount"><b id="fNow">1</b> / 6</span>
+        <span class="fhint" data-i18n="f_hint">Click a step or use the arrows</span>
+      </div>
     </div>
   </div>
 </section>
@@ -479,69 +583,113 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <!-- 05 PROJECTS -->
 <section id="work">
   <div class="wrap">
-    <div class="shead rise"><span class="num">05</span><div><span class="lbl" data-i18n="work_eyebrow">Featured work</span><h2 data-i18n="work_title">Projects, told through their numbers</h2></div></div>
-    <div class="projects">
-      <article class="proj rise">
-        <div class="thumb c-red" data-art="excel"><span class="badge">Excel · KPI</span><span class="pn">01</span></div>
+    <div class="shead rise"><span class="num">05</span><div><span class="lbl" data-i18n="work_eyebrow">Featured work</span><h2 data-i18n="work_title">Projects, told through their numbers</h2><span class="sub" data-i18n="work_sub">Each one has its files and documentation on GitHub.</span></div></div>
+    <div class="pfilter rise" role="group" aria-label="Filter projects">
+      <button type="button" class="pf on" data-f="all"><span data-i18n="f_all">All</span><b></b></button>
+      <button type="button" class="pf" data-f="data"><span data-i18n="f_data">Data analysis</span><b></b></button>
+      <button type="button" class="pf" data-f="db"><span data-i18n="f_db">Databases</span><b></b></button>
+      <button type="button" class="pf" data-f="soft"><span data-i18n="f_soft">Software</span><b></b></button>
+      <button type="button" class="pf" data-f="design"><span data-i18n="f_design">Design &amp; graphics</span><b></b></button>
+    </div>
+    <div class="projects" id="projGrid">
+      <article class="proj rise" data-cat="data" data-k="pc">
+        <div class="thumb c-cherry" data-art="dash"><img class="shot" src="car-rental.png" alt="" onerror="this.remove()"><span class="badge">Power BI</span><span class="pn">01</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="pc_meta"></p><h3 data-i18n="pc_t"></h3><p class="goal" data-i18n="pc_g"></p>
+          <ul><li data-i18n="pc_b1"></li><li data-i18n="pc_b2"></li><li data-i18n="pc_b3"></li></ul>
+          
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_pbi"></span><span data-i18n="s_dash"></span><span data-i18n="s_viz"></span><span data-i18n="s_da"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">Power BI</span><span class="tag">Slicers</span><span class="tag">KPI cards</span></div><div class="plinks"><a class="more" href="https://github.com/RaghadAlmatrfy?tab=repositories" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="hashplus" role="img"><img src="org-hashplus.png" alt=""></span></div></div>
+        </div>
+      </article>
+      <article class="proj rise" data-cat="data" data-k="pr">
+        <div class="thumb c-ice" data-art="dash"><img class="shot" src="retail-sales.png" alt="" onerror="this.remove()"><span class="badge">Power BI · DAX</span><span class="pn">02</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="pr_meta"></p><h3 data-i18n="pr_t"></h3><p class="goal" data-i18n="pr_g"></p>
+          <ul><li data-i18n="pr_b1"></li><li data-i18n="pr_b2"></li><li data-i18n="pr_b3"></li></ul>
+          
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_kpi"></span><span data-i18n="s_dax"></span><span data-i18n="s_pbi"></span><span data-i18n="s_viz"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">KPIs</span></div><div class="plinks"><a class="more" href="https://github.com/RaghadAlmatrfy?tab=repositories" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="hashplus" role="img"><img src="org-hashplus.png" alt=""></span></div></div>
+        </div>
+      </article>
+      <article class="proj rise" data-cat="data" data-k="px">
+        <div class="thumb c-bc" data-art="excel"><span class="badge">Excel · KPI</span><span class="pn">03</span></div>
         <div class="inner">
           <p class="meta" data-i18n="px_meta"></p><h3 data-i18n="px_t"></h3><p class="goal" data-i18n="px_g"></p>
           <ul><li data-i18n="px_b1"></li><li data-i18n="px_b2"></li><li data-i18n="px_b3"></li></ul>
-          <div class="nums"><div><b>15</b><span data-i18n="n_cust"></span></div><div><b>5</b><span data-i18n="n_kpi"></span></div><div><b>4–5×</b><span data-i18n="n_usage"></span></div></div>
-          <div class="foot"><div class="tags"><span class="tag">COUNT</span><span class="tag">AVERAGE</span><span class="tag">SUM</span><span class="tag">Charts</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/excel-basics-data-analysis" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <div class="nums"><div><b data-count="15">15</b><span data-i18n="n_cust"></span></div><div><b data-count="5">5</b><span data-i18n="n_kpi"></span></div><div><b data-count="4–5×">4–5×</b><span data-i18n="n_usage"></span></div></div>
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_clean"></span><span data-i18n="s_xlf"></span><span data-i18n="s_kpi"></span><span data-i18n="s_viz"></span><span data-i18n="s_insight"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">COUNT</span><span class="tag">AVERAGE</span><span class="tag">SUM</span></div><div class="plinks"><a class="more" href="https://github.com/RaghadAlmatrfy/excel-basics-data-analysis" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="hashplus" role="img"><img src="org-hashplus.png" alt=""></span></div></div>
         </div>
       </article>
-      <article class="proj rise">
-        <div class="thumb c-java" data-art="schema"><span class="badge">MySQL</span><span class="pn">02</span></div>
+      <article class="proj rise" data-cat="db" data-k="p1">
+        <div class="thumb c-choc" data-art="schema"><span class="badge">MySQL</span><span class="pn">04</span></div>
         <div class="inner">
           <p class="meta" data-i18n="p1_meta"></p><h3 data-i18n="p1_t"></h3><p class="goal" data-i18n="p1_g"></p>
           <ul><li data-i18n="p1_b1"></li><li data-i18n="p1_b2"></li><li data-i18n="p1_b3"></li></ul>
-          <div class="nums"><div><b>6</b><span data-i18n="n_tables"></span></div><div><b>80</b><span data-i18n="n_records"></span></div><div><b>8+</b><span data-i18n="n_constraints"></span></div></div>
-          <div class="foot"><div class="tags"><span class="tag">MySQL</span><span class="tag">Stored procedure</span><span class="tag">Indexing</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/satr-sql" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <div class="nums"><div><b data-count="6">6</b><span data-i18n="n_tables"></span></div><div><b data-count="80">80</b><span data-i18n="n_records"></span></div><div><b data-count="8+">8+</b><span data-i18n="n_constraints"></span></div></div>
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_model"></span><span data-i18n="s_integ"></span><span data-i18n="s_proc"></span><span data-i18n="s_index"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">MySQL</span><span class="tag">Stored procedure</span><span class="tag">Indexing</span></div><div class="plinks"><a class="more" href="https://github.com/RaghadAlmatrfy/satr-sql" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="satr" role="img"><img src="org-satr.png" alt=""></span></div></div>
         </div>
       </article>
-      <article class="proj sm rise">
-        <div class="thumb c-soil" data-art="bars"><span class="badge">SQL · KPI</span><span class="pn">03</span></div>
+      <article class="proj rise" data-cat="db" data-k="p2">
+        <div class="thumb c-butter" data-art="bars"><span class="badge">SQL · KPI</span><span class="pn">05</span></div>
         <div class="inner">
           <p class="meta" data-i18n="p2_meta"></p><h3 data-i18n="p2_t"></h3><p class="goal" data-i18n="p2_g"></p>
           <ul><li data-i18n="p2_b1"></li><li data-i18n="p2_b2"></li><li data-i18n="p2_b3"></li></ul>
-          <div class="nums"><div><b>4</b><span data-i18n="n_linked"></span></div><div><b>4</b><span data-i18n="n_join"></span></div><div><b>1</b><span data-i18n="n_view"></span></div></div>
-          <div class="foot"><div class="tags"><span class="tag">JOIN</span><span class="tag">GROUP BY</span><span class="tag">VIEW</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/-eyecare-optical-shop-sql" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <div class="nums"><div><b data-count="4">4</b><span data-i18n="n_linked"></span></div><div><b data-count="4">4</b><span data-i18n="n_join"></span></div><div><b data-count="1">1</b><span data-i18n="n_view"></span></div></div>
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_erd"></span><span data-i18n="s_norm"></span><span data-i18n="s_join"></span><span data-i18n="s_agg"></span><span data-i18n="s_team"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">JOIN</span><span class="tag">GROUP BY</span><span class="tag">VIEW</span></div><div class="plinks"><a class="more" href="https://github.com/RaghadAlmatrfy/-eyecare-optical-shop-sql" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="uqu" role="img"><img src="org-uqu.png" alt=""></span></div></div>
         </div>
       </article>
-      <article class="proj sm rise">
-        <div class="thumb c-blue" data-art="ui"><span class="badge">JavaFX</span><span class="pn">04</span></div>
+      <article class="proj rise" data-cat="soft" data-k="pq">
+        <div class="thumb c-cherry" data-art="quote"><span class="badge">Laravel · PHP</span><span class="pn">06</span></div>
+        <div class="inner">
+          <p class="meta" data-i18n="pq_meta"></p><h3 data-i18n="pq_t"></h3><p class="goal" data-i18n="pq_g"></p>
+          <ul><li data-i18n="pq_b1"></li><li data-i18n="pq_b2"></li><li data-i18n="pq_b3"></li></ul>
+          
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_laravel"></span><span data-i18n="s_web"></span><span data-i18n="s_pg"></span><span data-i18n="s_docker"></span><span data-i18n="s_deploy"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">Laravel</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span></div><div class="plinks"><a class="more live" href="https://quoteit-sg.onrender.com" target="_blank" rel="noopener"><span data-i18n="live"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a class="more" href="https://github.com/RaghadAlmatrfy/quoteit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="tuwaiq" role="img"><img src="org-tuwaiq.png" alt=""></span></div></div>
+        </div>
+      </article>
+      <article class="proj rise" data-cat="soft" data-k="pj">
+        <div class="thumb c-pink" data-art="ui"><span class="badge">JavaFX</span><span class="pn">07</span></div>
         <div class="inner">
           <p class="meta" data-i18n="pj_meta"></p><h3 data-i18n="pj_t"></h3><p class="goal" data-i18n="pj_g"></p>
           <ul><li data-i18n="pj_b1"></li><li data-i18n="pj_b2"></li><li data-i18n="pj_b3"></li></ul>
-          <div class="nums"><div><b>6</b><span data-i18n="n_screens"></span></div><div><b>0–100</b><span data-i18n="n_range"></span></div><div><b>MVC</b><span data-i18n="n_arch"></span></div></div>
-          <div class="foot"><div class="tags"><span class="tag">Java 11+</span><span class="tag">JavaFX 21</span><span class="tag">Maven</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/student-grade-management-javafx" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <div class="nums"><div><b data-count="6">6</b><span data-i18n="n_screens"></span></div><div><b data-count="0–100">0–100</b><span data-i18n="n_range"></span></div><div><b data-count="MVC">MVC</b><span data-i18n="n_arch"></span></div></div>
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_oop"></span><span data-i18n="s_gui"></span><span data-i18n="s_mvc"></span><span data-i18n="s_valid"></span><span data-i18n="s_file"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">Java 11+</span><span class="tag">JavaFX 21</span><span class="tag">Maven</span></div><div class="plinks"><a class="more" href="https://github.com/RaghadAlmatrfy/student-grade-management-javafx" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="uqu" role="img"><img src="org-uqu.png" alt=""></span></div></div>
         </div>
       </article>
-      <article class="proj sm rise">
-        <div class="thumb c-red" data-art="flow"><span class="badge" data-i18n="p3_tag"></span><span class="pn">05</span></div>
+      <article class="proj rise" data-cat="soft" data-k="p3">
+        <div class="thumb c-bc" data-art="flow"><span class="badge" data-i18n="p3_tag"></span><span class="pn">08</span></div>
         <div class="inner">
           <p class="meta" data-i18n="p3_meta"></p><h3 data-i18n="p3_t"></h3><p class="goal" data-i18n="p3_g"></p>
           <ul><li data-i18n="p3_b1"></li><li data-i18n="p3_b2"></li><li data-i18n="p3_b3"></li></ul>
-          <div class="nums"><div><b>14</b><span data-i18n="n_req"></span></div><div><b>9</b><span data-i18n="n_uc"></span></div><div><b>75%</b><span data-i18n="n_pass"></span></div></div>
-          <div class="foot"><span></span><span class="more off" data-i18n="course"></span></div>
+          <div class="nums"><div><b data-count="14">14</b><span data-i18n="n_req"></span></div><div><b data-count="9">9</b><span data-i18n="n_uc"></span></div><div><b data-count="75%">75%</b><span data-i18n="n_pass"></span></div></div>
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_req"></span><span data-i18n="s_uml"></span><span data-i18n="s_risk"></span><span data-i18n="s_test"></span><span data-i18n="s_plan"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">IEEE 830</span><span class="tag">UML</span></div><div class="plinks"><a class="more" href="https://github.com/RaghadAlmatrfy/safestep-womens-safety-app" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="uqu" role="img"><img src="org-uqu.png" alt=""></span></div></div>
         </div>
       </article>
-      <article class="proj rise">
-        <div class="thumb c-java" data-art="rings"><span class="badge" data-i18n="p4_tag"></span><span class="pn">06</span></div>
+      <article class="proj rise" data-cat="design" data-k="p4">
+        <div class="thumb c-ice" data-art="rings"><span class="badge" data-i18n="p4_tag"></span><span class="pn">09</span></div>
         <div class="inner">
           <p class="meta" data-i18n="p4_meta"></p><h3 data-i18n="p4_t"></h3><p class="goal" data-i18n="p4_g"></p>
           <ul><li data-i18n="p4_b1"></li><li data-i18n="p4_b2"></li></ul>
           
-          <div class="foot"><span></span><a class="more" href="https://www.figma.com/design/Y7AHYf91AVdoqZQb4BhjDY/capsule" target="_blank" rel="noopener"><span data-i18n="proto"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_ux"></span><span data-i18n="s_proto"></span><span data-i18n="s_req"></span><span data-i18n="s_research"></span><span data-i18n="s_team"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">Figma</span><span class="tag">AR</span></div><div class="plinks"><a class="more" href="https://www.figma.com/design/Y7AHYf91AVdoqZQb4BhjDY/capsule" target="_blank" rel="noopener"><span data-i18n="proto"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div></div>
         </div>
       </article>
-      <article class="proj rise">
-        <div class="thumb c-soil" data-art="rain"><span class="badge" data-i18n="p5_tag"></span><span class="pn">07</span></div>
+      <article class="proj rise" data-cat="design" data-k="p5">
+        <div class="thumb c-choc" data-art="rain"><span class="badge" data-i18n="p5_tag"></span><span class="pn">10</span></div>
         <div class="inner">
           <p class="meta" data-i18n="p5_meta"></p><h3 data-i18n="p5_t"></h3><p class="goal" data-i18n="p5_g"></p>
           <ul><li data-i18n="p5_b1"></li><li data-i18n="p5_b2"></li><li data-i18n="p5_b3"></li></ul>
-          <div class="nums"><div><b>5</b><span data-i18n="n_scenes"></span></div><div><b>100</b><span data-i18n="n_particles"></span></div><div><b>60</b><span data-i18n="n_fps"></span></div></div>
-          <div class="foot"><div class="tags"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">GLUT</span></div><a class="more" href="https://github.com/RaghadAlmatrfy/the-missing-panda-opengl" target="_blank" rel="noopener"><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+          <div class="nums"><div><b data-count="5">5</b><span data-i18n="n_scenes"></span></div><div><b data-count="100">100</b><span data-i18n="n_particles"></span></div><div><b data-count="60">60</b><span data-i18n="n_fps"></span></div></div>
+          <div class="skills"><span class="sk-l" data-i18n="sk_lbl"></span><div class="sk"><span data-i18n="s_cpp"></span><span data-i18n="s_gfx"></span><span data-i18n="s_anim"></span><span data-i18n="s_story"></span><span data-i18n="s_team"></span></div></div>
+          <div class="foot"><div class="tags"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">GLUT</span></div><div class="plinks"><a class="more" href="https://github.com/RaghadAlmatrfy/the-missing-panda-opengl" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg><span data-i18n="repo"></span><svg class="flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a><span class="org" tabindex="0" data-org="uqu" role="img"><img src="org-uqu.png" alt=""></span></div></div>
         </div>
       </article>
     </div>
@@ -551,26 +699,37 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <!-- 06 EDUCATION -->
 <section class="band-blue" id="education">
   <div class="wrap">
-    <div class="shead rise"><span class="num">06</span><div><span class="lbl" data-i18n="edu_eyebrow">Education</span><h2 data-i18n="edu_title">Learning, with a clear direction</h2></div></div>
+    <div class="shead rise"><span class="num">06</span><div><span class="lbl" data-i18n="edu_eyebrow">Education</span><h2 data-i18n="edu_title">Where I study.</h2></div></div>
     <div class="edu-grid">
       <div class="degree rise">
         <span class="deg-lbl" data-i18n="deg_eyebrow"></span>
         <h3 data-i18n="deg_t"></h3>
+        <p class="uni" data-i18n="deg_uni"></p>
         <p data-i18n="deg_c"></p>
+        <div class="chips"><span class="chip" data-i18n="cw_db"></span><span class="chip" data-i18n="cw_dsa"></span><span class="chip" data-i18n="cw_stat"></span><span class="chip" data-i18n="cw_ai"></span><span class="chip" data-i18n="cw_se"></span></div>
+        <div class="gpa"><span class="glbl" data-i18n="gpa_l">GPA</span><b>3.55</b><span class="gout" data-i18n="gpa_out">out of 4.00</span><span class="gbar"><i style="--w:88.75%"></i></span></div>
+        <div class="member">
+          <span class="deg-lbl" data-i18n="mem_lbl">Memberships</span>
+          <div class="mrow"><span class="org" tabindex="0" data-org="tuwaiqclub" role="img"><img src="org-tuwaiq.png" alt=""></span><div><b data-i18n="mem_t"></b><small data-i18n="mem_s"></small></div></div>
+        </div>
       </div>
-      <ul class="certs rise">
-        <li><span class="yr">2026</span><b><span data-i18n="bc_t"></span><span class="hrs" data-i18n="bc_h"></span></b><small>Hash Plus</small><p class="bc-desc" data-i18n="bc_d"></p><details><summary data-i18n="bc_more"></summary><ol id="bcList"></ol></details></li>
-        <li><span class="yr">2026</span><b data-i18n="ce1"></b><small>Hash Plus</small></li>
-        <li><span class="yr">2026</span><b data-i18n="ce2"></b><small>Hash Plus</small></li>
-        <li><span class="yr">2026</span><b data-i18n="ce3"></b><small>Hash Plus</small></li>
-        <li><span class="yr">2026</span><b data-i18n="ce4"></b><small data-i18n="satr"></small></li>
-        <li><span class="yr">2023</span><b data-i18n="ce5"></b><small data-i18n="ce5s"></small></li>
-        <li><span class="yr">2022</span><b data-i18n="ce6"></b><small data-i18n="ce6s"></small></li>
-      </ul>
+      <div class="rise">
+        <ul class="certs">
+        <li><span class="yr">2026</span><b><span data-i18n="bc_t"></span><span class="hrs" data-i18n="bc_h"></span></b><small>Hash Plus</small><p class="bc-desc" data-i18n="bc_d"></p><details><summary data-i18n="bc_more"></summary><ol id="bcList"></ol></details><span class="corgs"><span class="org corg" tabindex="0" data-org="hashplus" role="img"><img src="org-hashplus.png" alt=""></span></span></li>
+        <li><span class="yr">2026</span><b><span data-i18n="ce_pbi"></span></b><small>Hash Plus</small><details><summary data-i18n="c_learned"></summary><div class="chips"><span class="chip" data-i18n="ls_model"></span><span class="chip" data-i18n="ls_clean"></span><span class="chip" data-i18n="ls_pq"></span><span class="chip" data-i18n="ls_kpi"></span><span class="chip" data-i18n="ls_dax"></span><span class="chip" data-i18n="ls_dash"></span><span class="chip" data-i18n="ls_trend"></span><span class="chip" data-i18n="ls_viz"></span></div><div class="cproj"><span data-i18n="c_projects"></span><a href="#work" data-jump="pc" data-i18n="pc_t"></a><a href="#work" data-jump="pr" data-i18n="pr_t"></a></div></details><span class="corgs"><span class="org corg" tabindex="0" data-org="hashplus" role="img"><img src="org-hashplus.png" alt=""></span></span></li>
+        <li><span class="yr">2026</span><b><span data-i18n="ce_xl"></span></b><small>Hash Plus</small><details><summary data-i18n="c_learned"></summary><div class="chips"><span class="chip" data-i18n="ls_excel"></span><span class="chip" data-i18n="ls_da"></span><span class="chip" data-i18n="ls_viz"></span></div><div class="cproj"><span data-i18n="c_projects"></span><a href="#work" data-jump="px" data-i18n="px_t"></a></div></details><span class="corgs"><span class="org corg" tabindex="0" data-org="hashplus" role="img"><img src="org-hashplus.png" alt=""></span></span></li>
+        <li><span class="yr">2026</span><b><span data-i18n="ce_sql"></span></b><small data-i18n="satr"></small><details><summary data-i18n="c_learned"></summary><div class="chips"><span class="chip" data-i18n="ls_rdb"></span><span class="chip" data-i18n="ls_dbm"></span><span class="chip" data-i18n="ls_crud"></span><span class="chip" data-i18n="ls_sqlq"></span><span class="chip" data-i18n="ls_aggf"></span></div><div class="cproj"><span data-i18n="c_projects"></span><a href="#work" data-jump="p1" data-i18n="p1_t"></a></div></details><span class="corgs"><span class="org corg" tabindex="0" data-org="satr" role="img"><img src="org-satr.png" alt=""></span><span class="org corg" tabindex="0" data-org="tuwaiqacad" role="img"><img src="org-tuwaiq.png" alt=""></span></span></li>
+        <li><span class="yr">2026</span><b><span data-i18n="ce_py"></span></b><small data-i18n="satr"></small><span class="corgs"><span class="org corg" tabindex="0" data-org="satr" role="img"><img src="org-satr.png" alt=""></span><span class="org corg" tabindex="0" data-org="tuwaiqacad" role="img"><img src="org-tuwaiq.png" alt=""></span></span></li>
+        <li><span class="yr">2026</span><b><span data-i18n="ce7"></span></b><small data-i18n="ce7s"></small><span class="corgs"><span class="org corg" tabindex="0" data-org="ibm" role="img"><span class="txt">IBM</span></span></span></li>
+        <li><span class="yr">2023</span><b><span data-i18n="ce5"></span></b><small data-i18n="ce5s"></small><details><summary data-i18n="c_learned"></summary><div class="chips"><span class="chip" data-i18n="ls_pandas"></span><span class="chip" data-i18n="ls_ds"></span></div></details><span class="corgs"><span class="org corg" tabindex="0" data-org="mawhiba" role="img"><span class="txt" data-i18n="mono_mawhiba">موهبة</span></span><span class="org corg" tabindex="0" data-org="uqu" role="img"><img src="org-uqu.png" alt=""></span></span></li>
+        <li><span class="yr">2022</span><b><span data-i18n="ce6"></span></b><small data-i18n="ce6s"></small><details><summary data-i18n="c_learned"></summary><div class="chips"><span class="chip" data-i18n="ls_prod"></span><span class="chip" data-i18n="ls_pm"></span></div></details><span class="corgs"><span class="org corg" tabindex="0" data-org="misk" role="img"><span class="txt" data-i18n="mono_misk">مسك</span></span></span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
+<div class="stripe" aria-hidden="true"></div>
 <!-- 07 CONTACT -->
 <section class="band-red contact" id="contact">
   <div class="wrap">
@@ -590,6 +749,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
         <a class="crow" href="https://www.linkedin.com/in/raghad-almatrfy-3ab180363" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><div><span class="lbl">LinkedIn</span><span class="val">raghad-almatrfy</span></div><svg class="go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         <a class="crow" href="https://github.com/RaghadAlmatrfy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4 1.4-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg><div><span class="lbl">GitHub</span><span class="val">RaghadAlmatrfy</span></div><svg class="go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
         <a class="crow" href="https://x.com/raghad_almatrfy" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 16M20 4L4 20"/></svg><div><span class="lbl">X</span><span class="val">@raghad_almatrfy</span></div><svg class="go flip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+        <div class="crow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><span class="lbl" data-i18n="l_phone">Phone</span><span class="val">+966 55 626 2515</span></div></div>
         <div class="crow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><span class="lbl" data-i18n="l_loc"></span><span class="val t" data-i18n="q_based_v"></span></div></div>
       </div>
     </div>
@@ -601,6 +761,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
 <script>
 const T={
 en:{
+ev_lbl:"From my projects",pn_academy:"Excellence Academy DB",pn_eyecare:"EyeCare",pn_telecom:"Telecom Analysis",pn_grades:"Grade System",pn_safestep:"SafeStep",pn_capsule:"Capsule",pn_panda:"The Missing Panda",tg_teams:"Teams of 3–5",tk_js:"Interactive web pages",tk_html:"Page structure and content",tk_css:"Styling and responsive layouts",f_play:"Play",f_pause:"Pause",f_hint:"Click a step or use the arrow keys",p_1x:"Who will use the answer, and what will they decide with it?",p_2x:"Tables, metric, comparison and output are set before writing any query.",p_3x:"Readable joins and aggregates, written on tables I have already validated.",p_4x:"One chart, one message, with the average as a reference line. Hover a bar.",p_5x:"Nothing is shared until every check passes.",p_6x:"A short finding, the evidence behind it, and a clear next step.",
+s_clean:"Data cleaning",s_xlf:"Excel formulas",s_kpi:"KPI design",s_viz:"Data visualization",s_insight:"Insight writing",s_model:"Relational modeling",s_integ:"Data integrity",s_proc:"Stored procedures &amp; views",s_index:"Query performance",s_erd:"ER diagrams",s_norm:"Normalization",s_join:"Multi-table JOINs",s_agg:"Aggregation &amp; subqueries",s_team:"Teamwork",s_oop:"Java OOP",s_gui:"JavaFX interfaces",s_mvc:"MVC architecture",s_valid:"Input validation",s_file:"File handling",s_req:"Requirements (IEEE 830)",s_uml:"UML modeling",s_risk:"Risk analysis",s_test:"Software testing",s_plan:"Project planning",s_ux:"UI/UX design",s_proto:"Figma prototyping",s_research:"Research writing",s_cpp:"C++ programming",s_gfx:"Computer graphics",s_anim:"Animation",s_story:"Storytelling",s_laravel:"Laravel (PHP)",s_web:"Full-stack web development",s_pg:"PostgreSQL",s_docker:"Docker",s_deploy:"Cloud deployment",sk_lbl:"Skills gained",f_all:"All",f_data:"Data analysis",f_db:"Databases",f_soft:"Software",f_design:"Design &amp; graphics",org_hashplus:"Hash Plus",org_uqu:"Umm Al-Qura University",org_tuwaiq:"Tuwaiq Bootcamp",org_satr:"Satr · Tuwaiq Academy",org_tuwaiqclub:"Tuwaiq Club",mem_lbl:"Memberships",mem_t:"Member, Tuwaiq Club",mem_s:"Umm Al-Qura University",pq_meta:"Tuwaiq bootcamp project · 2026",pq_t:"QuoteIt: Quote-Sharing Web App",pq_g:"<b>Goal:</b> build and deploy a complete web app where people share and browse quotes.",pq_b1:"Built the app with Laravel (PHP) and a Vite front end",pq_b2:"Connected a PostgreSQL database and packaged the app with Docker",pq_b3:"Prepared the app for cloud deployment on Render",
 nav_about:"About",nav_skills:"Toolkit",nav_process:"Process",nav_work:"Projects",nav_contact:"Contact",cv_short:"CV",
 meta_l:"Portfolio",name_ar:"",tag_da:"Data Analytics",cap_l:"Makkah",cap_r:"Umm Al-Qura University",
 hero_title:"From raw data to <em>a clear decision</em>",
@@ -610,18 +772,18 @@ photo_ph:"Official photo",photo_alt:"Raghad Almatrfy",
 about_eyebrow:"About me",about_h:"Hello, I’m Raghad",
 about_title:"Discovering data, information and indicators is what I love.",
 about_p1:"I’m Raghad Almatrfy, a third-year Computer Science student in Makkah who enjoys the moment a messy table turns into a clear answer.",
-about_p2:"I work with databases and decision-making. I build Power BI dashboards that keep data accurate from the start, and I have a working knowledge of SQL. I then turn the results into dashboards and KPIs that anyone on the team can understand in seconds.",
+about_p2:"I work with databases and decision-making. I build Power BI dashboards that keep data accurate from the start, and I’m proficient in SQL, Python, Excel and Power BI. I then turn the results into dashboards and KPIs that anyone on the team can understand in seconds.",
 about_p3:"I pay attention to the small details in all data.",
 q_based:"Based in",q_based_v:"Makkah, Saudi Arabia",q_uni:"University",q_uni_v:"Umm Al-Qura University",q_focus:"Focus",q_focus_v:"Data analytics",q_lang:"Languages",q_lang_v:"Arabic · English",
 why_eyebrow:"Why work with me",why_title:"What I bring to a data team",
-w1_t:"Accuracy first",w1_d:"I build integrity into the data itself, so every chart rests on numbers you can trust.",
-w2_t:"Clear data storytelling",w2_d:"I turn queries into KPIs and dashboards that explain what happened and what to do next.",
-w3_t:"Structured thinking",w3_d:"I understand how a project runs end to end, not only the analysis step.",
+w1_t:"Accuracy first",w1_d:"Keys, constraints and input validation are built into my projects, so every number can be trusted.",
+w2_t:"Clear data storytelling",w2_d:"I turn data into KPIs, charts and one clear finding, like Unlimited customers using 4–5× more data than Basic.",
+w3_t:"Structured thinking",w3_d:"Requirements, UML, risk analysis, testing and clean architecture: I plan a project end to end, not only the analysis step.",
 w4_t:"Team first",w4_d:"Team achievement, hard work and collaboration are among my top goals for delivering excellent work.",
 w5_t:"Fast, steady learner",w5_d:"I keep adding new tools and courses, and I finish what I start.",
-w6_t:"An eye for design",w6_d:"With a Figma and UI/UX background, my dashboards look as considered as the analysis behind them.",
+w6_t:"Presentation &amp; design",w6_d:"From Figma screens to desktop interfaces and animated scenes, I present work so it is easy to read and use.",
 tg_team4:"Team of 4",tg_team5:"Team of 5",
-skills_eyebrow:"Toolkit",skills_title:"8 tools I work with",
+skills_eyebrow:"Toolkit",skills_title:"11 tools I work with",
 tk_pbi:"Dashboards, visuals and KPI tracking",tk_xl:"PivotTables and data cleaning",tk_sql:"Schemas, joins, views, procedures, indexing",tk_py:"Scripting and analysis",tk_java:"Object-oriented programming",tk_cpp:"Graphics and real-time animation",tk_gh:"Version control and repositories",tk_fig:"UI/UX prototyping",
 c_team:"Teamwork",c_crit:"Critical thinking",c_prob:"Problem solving",c_detail:"Attention to detail",c_time:"Time management",c_fast:"Fast learning",
 proc_eyebrow:"How it works",proc_title:"From a question to a decision in 6 steps",
@@ -656,7 +818,7 @@ n_scenes:"scenes",n_particles:"particles",n_fps:"FPS loop",
 edu_eyebrow:"Education",edu_title:"Learning, with a clear direction",deg_eyebrow:"B.Sc. · Expected 2028",deg_t:"Computer Science, Umm Al-Qura University",
 deg_c:"Relevant coursework: Intro to Database, Data Structures &amp; Algorithms, Statistics &amp; Probability, Artificial Intelligence, OOP (Java), Software Engineering.",
 bc_t:"Data Analysis with AI Bootcamp",bc_h:"30 hours",bc_d:"How to use data analysis and AI tools within one practical methodology, knowing when and how to use each tool to turn data into documented insights and decisions.",bc_more:"16 modules",bc_mods:["Introduction to analytical thinking and the data analysis cycle", "Defining analysis questions, framing problems and getting to know AI tools", "Traditional vs. AI-assisted analysis", "Data analysis in Excel with AI tools", "Data preparation and cleaning, handling missing values and errors with AI", "Exploratory analysis: finding patterns and trends with AI", "Creating charts and visualizations with AI", "Data analysis with SQL and AI tools", "Introduction to data analysis with Python", "Data cleaning and analysis with Python + AI", "Building simple predictive models with Python and AI", "Building KPIs and dashboards with Power BI and AI", "Extracting insights and recommendations, and turning results into data storytelling", "Building an analytics app with Claude Code + Lovable", "Building an AI Data Analyst Agent to automate analysis and reporting", "A complete real-world analytics project and a professional portfolio"],
-ce1:"Power BI Fundamentals &amp; Data Analysis, Intermediate &amp; Advanced",ce2:"Data Analysis Using Excel",ce3:"Excel Fundamentals &amp; Data Analysis",ce4:"SQL 101, 102, 103 and Python",satr:"Satr Platform",ce5:"Mawhiba Academic Enrichment: Data Science &amp; AI",ce5s:"Mawhiba in partnership with Umm Al-Qura University",ce6:"Misk Future Path Program",ce6s:"Critical thinking, project planning, financial analysis, data analysis, emotional intelligence, productivity and time management",
+ce1:"Power BI Fundamentals &amp; Data Analysis",dist:"With distinction",ce1s:"Hash Plus · October 2026",ce1b:"Power BI Data Analysis, Intermediate &amp; Advanced",ce7:"EYOUTH Learning Plan",ce7s:"IBM SkillsBuild · March 2026",ce2:"Data Analysis Using Excel",ce3:"Excel Fundamentals &amp; Data Analysis",ce4:"SQL 101, 102, 103 and Python",satr:"Satr Platform",ce5:"Mawhiba Academic Enrichment: Data Science &amp; AI",ce5s:"Mawhiba in partnership with Umm Al-Qura University",ce6:"Misk Future Path Program",ce6s:"Critical thinking, project planning, financial analysis, data analysis, emotional intelligence, productivity and time management",
 faq_eyebrow:"FAQ",faq_title:"Good to know",faq_side:"Quick answers for recruiters and teams.",
 f1q:"What kind of roles are you looking for?",f1a:"Data Analytics and IT internships, and data-focused projects where I can clean, analyze and present real data.",
 f2q:"Which tools do you use most?",f2a:"Power BI and Excel for dashboards and reporting, SQL (MySQL) for querying and modeling, and Python for scripting and analysis.",
@@ -666,9 +828,13 @@ f5q:"How can I get your CV?",f5a:"Use the CV button at the top of the page or in
 c_eyebrow:"Contact",c_giant:"Let’s work <i>together</i>",c_lede:"Have an internship, a dataset or a question that needs a clear answer? I’d love to hear about it.",c_mail:"Email me",
 l_email:"Email",l_loc:"Location",copy:"Copy",copied:"Copied",
 foot:"© 2026 Raghad Almatrfy",foot2:"Makkah · Data Analytics Portfolio",
-langLabel:"عربي",cv_title:"Curriculum Vitae",cv_close:"Close",cv_dl:"Download PDF",title:"Raghad Almatrfy"
+nav_skills:"Skills",skills_eyebrow:"Skills",skills_title:"What I use to get from a raw table to a decision.",sg_bi:"Data analysis &amp; BI",sg_db:"Databases &amp; SQL",sg_prog:"Programming",sg_tools:"Tools",sk_kpicards:"KPI cards &amp; slicers",sk_model:"Data modeling",sk_clean:"Data cleaning",sk_eda:"Exploratory data analysis (EDA)",sk_viz:"Data visualization",sk_trend:"Trend analysis",sk_reldesign:"Relational design",sk_norm:"Normalization",sk_subq:"Subqueries",sk_aggs:"Aggregates",sk_views:"Views",sk_procs:"Stored procedures",sk_indexes:"Indexes",sk_team:"Teamwork",sk_prob:"Problem solving",sk_time:"Time management",sk_pm:"Project management",cw_t:"Relevant coursework",cw_db:"Database Systems",cw_dsa:"Data Structures &amp; Algorithms",cw_stat:"Statistics &amp; Probability",cw_ai:"Artificial Intelligence",cw_oop:"Object-Oriented Programming (Java)",cw_se:"Software Engineering",work_sub:"Each one has its files and documentation on GitHub.",edu_title:"Where I study.",deg_eyebrow:"Level 7 · Expected graduation 2028",deg_t:"B.Sc. Computer Science",deg_uni:"Umm Al-Qura University, Makkah",deg_c:"Coursework in databases, algorithms, statistics, AI, and software engineering.",gpa_l:"GPA",gpa_out:"out of 4.00",mem_t:"Tuwaiq Club, Umm Al-Qura University",mem_s:"Al-Qimma (Summit) Bootcamp · Programming &amp; Development track",org_tuwaiq:"Tuwaiq Club · Summit Bootcamp",org_tuwaiqclub:"Tuwaiq Club",c_learned:"Skills learned",c_projects:"Projects:",ce_pbi:"Power BI Data Analysis: Fundamentals, Intermediate &amp; Advanced",ce_xl:"Excel Fundamentals &amp; Data Analysis Using Excel",ce_sql:"SQL 101, 102, 103",ce_py:"Python 101, 102, 103, 104",ls_model:"Data modeling",ls_clean:"Data cleaning",ls_pq:"Power Query",ls_kpi:"Key performance indicators",ls_dax:"DAX",ls_dash:"Dashboards",ls_trend:"Trend analysis",ls_viz:"Data visualization",ls_excel:"Microsoft Excel",ls_da:"Data analysis",ls_rdb:"Relational databases",ls_dbm:"Database management",ls_crud:"CRUD operations",ls_sqlq:"SQL queries",ls_aggf:"Aggregate functions",ls_pandas:"Python (Pandas)",ls_ds:"Data science &amp; AI",ls_prod:"Productivity &amp; time management",ls_pm:"Project management",ce6s:"Misk Academy",l_phone:"Phone",live:"Live site",s_pbi:"Microsoft Power BI",s_dash:"Dashboards",s_da:"Data analysis",s_dax:"DAX measures",pc_meta:"Power BI · October 2026 · Synthetic data",pc_t:"Car Rental Dashboard",pc_g:"<b>Goal:</b> analyze car rental performance for Q2 2026 in one interactive view.",pc_b1:"Shows total contracts and rental revenue as KPI cards",pc_b2:"Breaks results down by branch, car type and booking status",pc_b3:"Slicers filter every visual dynamically",pr_meta:"Power BI · October 2026 · Synthetic data",pr_t:"Retail Store Sales Dashboard",pr_g:"<b>Goal:</b> track retail store sales performance against targets.",pr_b1:"KPI visuals compare actual vs. target sales and average invoice value",pr_b2:"Built DAX measures for the core metrics",pr_b3:"Breakdowns by branch and product with interactive slicers",pq_meta:"Tuwaiq Club · Summit Bootcamp · Individual project",pq_t:"QuoteIt: Tech Quotes Website",pq_g:"<b>Goal:</b> build and deploy a live website for sharing and browsing tech quotes.",pq_b1:"Built the full site with Laravel (PHP) and a Vite front end",pq_b2:"Connected a PostgreSQL database and packaged the app with Docker",pq_b3:"Deployed it live on Render",pj_meta:"University project · Desktop application",about_p1:"I care about building things with structure: databases that make sense, and data that tells a clear story. Working with tools like SQL, Python, Power BI and Figma, I enjoy taking a messy problem and turning it into something organized and useful, whether that means designing a schema that holds up, writing a query that actually answers the question, or shaping how a system looks and feels for the person using it.",about_p2:"I’m still building depth in these tools, but I’m comfortable moving between relational and non-relational data, and I pick up new ones quickly. I do best with problems that need patience and structure rather than guesswork. Based in the Western Region of Saudi Arabia, I’m looking for a co-op training opportunity where I can keep learning while contributing something real.",
+sg_soft:"Soft skills",sk_openall:"Open all",sk_closeall:"Close all",sk_hint:"Tap a category to see what’s inside",ss_team:"Teamwork",ss_fast:"Fast learner",ss_create:"Passion for creativity",ss_tech:"Keeping up with new technology",ss_pressure:"Working under pressure",ss_prob:"Problem solving",ss_eq:"Emotional intelligence",org_satr:"Satr Platform",org_tuwaiqacad:"Tuwaiq Academy",org_ibm:"IBM SkillsBuild",org_mawhiba:"Mawhiba",org_misk:"Misk Academy",org_uqu:"Umm Al-Qura University",org_tuwaiqclub:"Tuwaiq Club",mono_mawhiba:"MWH",mono_misk:"MISK",about_p1:"I like building things with structure: databases that make sense and data that tells a clear story. With SQL, Python, Power BI and Figma, I turn messy problems into organized, useful results, from a schema that holds up to a query that answers the real question.",about_p2:"I learn new tools quickly and do my best work on problems that need patience, not guesswork. I’m looking for a co-op training opportunity where I can keep learning while contributing real work.",
+langLabel:"عربي",cv_title:"Curriculum Vitae",cv_close:"Close",cv_note:"For a PDF copy, email raghad_ghazi_almatrafi@outlook.sa",title:"Raghad Almatrfy"
 },
 ar:{
+ev_lbl:"من مشاريعي",pn_academy:"أكاديمية التميّز",pn_eyecare:"EyeCare",pn_telecom:"تحليل الاتصالات",pn_grades:"نظام الدرجات",pn_safestep:"SafeStep",pn_capsule:"Capsule",pn_panda:"الباندا المفقودة",tg_teams:"فرق من 3 إلى 5",tk_js:"صفحات ويب تفاعلية",tk_html:"هيكلة صفحات الويب ومحتواها",tk_css:"التنسيق والتصميم المتجاوب",f_play:"تشغيل",f_pause:"إيقاف",f_hint:"اضغط على أي خطوة أو استخدم الأسهم",p_1x:"مَن سيستخدم الإجابة، وما القرار الذي سيتخذه بناءً عليها؟",p_2x:"أحدد الجداول والمقياس والمقارنة وشكل المخرجات قبل كتابة أي استعلام.",p_3x:"ربط وتجميع واضح ومقروء على جداول تحققت منها مسبقًا.",p_4x:"رسم واحد ورسالة واحدة، مع المتوسط كخط مرجعي. مرّر المؤشر على الأعمدة.",p_5x:"لا أشارك أي شيء قبل أن تنجح كل الفحوصات.",p_6x:"نتيجة مختصرة، والدليل عليها، وخطوة تالية واضحة.",
+s_clean:"تنظيف البيانات",s_xlf:"معادلات Excel",s_kpi:"بناء المؤشرات",s_viz:"تصوير البيانات",s_insight:"استخلاص النتائج",s_model:"النمذجة العلائقية",s_integ:"سلامة البيانات",s_proc:"الإجراءات المخزنة والعروض",s_index:"تحسين أداء الاستعلامات",s_erd:"مخططات ER",s_norm:"التطبيع",s_join:"الربط بين الجداول",s_agg:"التجميع والاستعلامات الفرعية",s_team:"العمل الجماعي",s_oop:"البرمجة الكائنية بـ Java",s_gui:"واجهات JavaFX",s_mvc:"معمارية MVC",s_valid:"التحقق من المدخلات",s_file:"التعامل مع الملفات",s_req:"كتابة المتطلبات (IEEE 830)",s_uml:"نمذجة UML",s_risk:"تحليل المخاطر",s_test:"اختبار البرمجيات",s_plan:"تخطيط المشاريع",s_ux:"تصميم تجربة المستخدم",s_proto:"النماذج الأولية في Figma",s_research:"كتابة التقارير البحثية",s_cpp:"البرمجة بـ C++",s_gfx:"رسومات الحاسب",s_anim:"التحريك",s_story:"السرد القصصي",s_laravel:"Laravel (PHP)",s_web:"تطوير الويب المتكامل",s_pg:"PostgreSQL",s_docker:"Docker",s_deploy:"النشر السحابي",sk_lbl:"المهارات المكتسبة",f_all:"الكل",f_data:"تحليل البيانات",f_db:"قواعد البيانات",f_soft:"برمجيات",f_design:"تصميم ورسوميات",org_hashplus:"هاش بلس",org_uqu:"جامعة أم القرى",org_tuwaiq:"معسكر طويق",org_satr:"منصة سطر · أكاديمية طويق",org_tuwaiqclub:"نادي طويق",mem_lbl:"العضويات",mem_t:"عضوة في نادي طويق",mem_s:"جامعة أم القرى",pq_meta:"مشروع معسكر طويق · 2026",pq_t:"QuoteIt: تطبيق ويب لمشاركة الاقتباسات",pq_g:"<b>الهدف:</b> بناء ونشر تطبيق ويب متكامل لمشاركة الاقتباسات وتصفحها.",pq_b1:"بناء التطبيق باستخدام Laravel (PHP) وواجهة أمامية بـ Vite",pq_b2:"ربط قاعدة بيانات PostgreSQL وتجهيز التطبيق بـ Docker",pq_b3:"تجهيز التطبيق للنشر السحابي على منصة Render",
 nav_about:"نبذة",nav_skills:"الأدوات",nav_process:"المنهجية",nav_work:"المشاريع",nav_contact:"تواصل",cv_short:"سيرتي",
 meta_l:"ملف أعمال",name_ar:"رغد المطرفي",tag_da:"تحليل البيانات",cap_l:"مكة المكرمة",cap_r:"جامعة أم القرى",
 hero_title:"من البيانات الخام إلى <em>قرار واضح</em>",
@@ -678,18 +844,18 @@ photo_ph:"الصورة الرسمية",photo_alt:"رغد المطرفي",
 about_eyebrow:"نبذة عني",about_h:"أهلًا، أنا رغد",
 about_title:"اكتشاف البيانات والمعلومات والمؤشرات من اهتماماتي.",
 about_p1:"أنا رغد المطرفي، طالبة في السنة الثالثة بتخصص علوم الحاسب في مكة المكرمة، وأستمتع باللحظة التي يتحول فيها جدول مبعثر إلى إجابة واضحة.",
-about_p2:"أعمل في قواعد البيانات ودعم اتخاذ القرار. أصمم لوحات Power BI تحافظ على دقة البيانات من البداية، ولدي معرفة في SQL، ثم أحوّل النتائج إلى لوحات ومؤشرات أداء يفهمها أي شخص في الفريق خلال ثوانٍ.",
+about_p2:"أعمل في قواعد البيانات ودعم اتخاذ القرار. أصمم لوحات Power BI تحافظ على دقة البيانات من البداية، وأتقن مهارات SQL وPython وExcel وPower BI، ثم أحوّل النتائج إلى لوحات ومؤشرات أداء يفهمها أي شخص في الفريق خلال ثوانٍ.",
 about_p3:"أهتم بالتفاصيل الصغيرة في كل البيانات.",
 q_based:"المدينة",q_based_v:"مكة المكرمة، السعودية",q_uni:"الجامعة",q_uni_v:"جامعة أم القرى",q_focus:"التركيز",q_focus_v:"تحليل البيانات",q_lang:"اللغات",q_lang_v:"العربية · الإنجليزية",
 why_eyebrow:"لماذا تعمل معي",why_title:"ما أضيفه لفريق البيانات",
-w1_t:"الدقة أولًا",w1_d:"أبني سلامة البيانات في أساسها، لتقوم كل رسمة بيانية على أرقام موثوقة.",
-w2_t:"سرد واضح بالأرقام",w2_d:"أحوّل الاستعلامات إلى مؤشرات ولوحات توضّح ما حدث وما الخطوة التالية.",
-w3_t:"تفكير منظّم",w3_d:"أفهم مسار المشروع كاملًا، وليس مرحلة التحليل فقط.",
+w1_t:"الدقة أولًا",w1_d:"أبني المفاتيح والقيود والتحقق من المدخلات داخل مشاريعي، ليكون كل رقم موثوقًا.",
+w2_t:"سرد واضح بالأرقام",w2_d:"أحوّل البيانات إلى مؤشرات ورسوم ونتيجة واضحة، مثل أن عملاء الباقة غير المحدودة يستهلكون 4 إلى 5 أضعاف الأساسية.",
+w3_t:"تفكير منظّم",w3_d:"المتطلبات وUML وتحليل المخاطر والاختبار والمعمارية الواضحة: أخطط للمشروع كاملًا، وليس مرحلة التحليل فقط.",
 w4_t:"إنجاز الفريق",w4_d:"إنجاز الفريق والعمل والتعاون من أهم أهدافي لتحقيق عمل مثالي.",
 w5_t:"تعلّم سريع ومستمر",w5_d:"أضيف أدوات ودورات جديدة باستمرار، وأُكمل ما أبدأه.",
-w6_t:"حسّ تصميمي",w6_d:"بخلفيتي في Figma وتجربة المستخدم، تبدو لوحاتي بنفس عناية التحليل الذي خلفها.",
+w6_t:"العرض والتصميم",w6_d:"من شاشات Figma إلى واجهات سطح المكتب والمشاهد المتحركة، أعرض العمل بطريقة سهلة القراءة والاستخدام.",
 tg_team4:"فريق من 4",tg_team5:"فريق من 5",
-skills_eyebrow:"الأدوات",skills_title:"8 أدوات أعمل بها",
+skills_eyebrow:"الأدوات",skills_title:"11 أداة أعمل بها",
 tk_pbi:"لوحات ورسوم وتتبّع مؤشرات الأداء",tk_xl:"الجداول المحورية وتنظيف البيانات",tk_sql:"المخططات والربط والعروض والإجراءات والفهرسة",tk_py:"البرمجة والتحليل",tk_java:"البرمجة الكائنية",tk_cpp:"الرسوميات والحركة في الوقت الحقيقي",tk_gh:"إدارة النسخ والمستودعات",tk_fig:"نماذج تجربة المستخدم",
 c_team:"العمل الجماعي",c_crit:"التفكير النقدي",c_prob:"حل المشكلات",c_detail:"الاهتمام بالتفاصيل",c_time:"إدارة الوقت",c_fast:"سرعة التعلّم",
 proc_eyebrow:"كيف أعمل",proc_title:"من السؤال إلى القرار في 6 خطوات",
@@ -724,7 +890,7 @@ n_scenes:"مشاهد",n_particles:"جسيم",n_fps:"إطار في الثانية
 edu_eyebrow:"التعليم",edu_title:"تعلّم باتجاه واضح",deg_eyebrow:"بكالوريوس · التخرج المتوقع 2028",deg_t:"علوم الحاسب، جامعة أم القرى",
 deg_c:"مقررات ذات صلة: مقدمة في قواعد البيانات، هياكل البيانات والخوارزميات، الإحصاء والاحتمالات، الذكاء الاصطناعي، البرمجة الكائنية (Java)، هندسة البرمجيات.",
 bc_t:"معسكر تحليل البيانات بالذكاء الاصطناعي",bc_h:"30 ساعة تدريبية",bc_d:"استخدام أدوات تحليل البيانات والذكاء الاصطناعي ضمن منهجية عملية واحدة، مع فهم متى وكيف نستخدم كل أداة للوصول من البيانات إلى رؤى وقرارات موثّقة.",bc_more:"محاور المعسكر (16)",bc_mods:["مدخل إلى التفكير التحليلي وفهم دورة تحليل البيانات", "تحديد أسئلة التحليل وصياغة المشكلات والتعرف على أدوات AI", "الفرق بين التحليل التقليدي والمدعوم بالذكاء الاصطناعي", "تحليل البيانات باستخدام Excel مع أدوات الذكاء الاصطناعي", "تنظيف وتجهيز البيانات ومعالجة القيم المفقودة والأخطاء بالـ AI", "التحليل الاستكشافي للبيانات واكتشاف الأنماط والاتجاهات بـ AI", "إنشاء الرسوم البيانية والتصورات باستخدام AI", "تحليل البيانات باستخدام SQL وأدوات الذكاء الاصطناعي", "مدخل إلى تحليل البيانات باستخدام Python", "تنظيف وتحليل البيانات باستخدام Python + AI", "بناء نماذج تنبؤية مبسطة باستخدام Python والذكاء الاصطناعي", "بناء مؤشرات الأداء وإنشاء Dashboards باستخدام Power BI وAI", "استخراج الرؤى والتوصيات وتحويل النتائج إلى Data Storytelling", "بناء تطبيق تحليلي باستخدام Claude Code + Lovable", "بناء AI Data Analyst Agent لأتمتة التحليل والتقارير", "بناء مشروع تحليلي واقعي متكامل وملف أعمال احترافي (Portfolio)"],
-ce1:"أساسيات Power BI وتحليل البيانات، المستوى المتوسط والمتقدم",ce2:"تحليل البيانات باستخدام Excel",ce3:"أساسيات Excel وتحليل البيانات",ce4:"SQL 101 و102 و103، وPython",satr:"منصة سطر",ce5:"برنامج موهبة للإثراء الأكاديمي: علم البيانات والذكاء الاصطناعي",ce5s:"موهبة بالتعاون مع جامعة أم القرى",ce6:"برنامج مسك «مسار المستقبل»",ce6s:"التفكير النقدي، تخطيط المشاريع، التحليل المالي، تحليل البيانات، الذكاء العاطفي، الإنتاجية وإدارة الوقت",
+ce1:"أساسيات Power BI وتحليل البيانات",dist:"بامتياز",ce1s:"هاش بلس · أكتوبر 2026",ce1b:"تحليل البيانات باستخدام Power BI، المستوى المتوسط والمتقدم",ce7:"خطة التعلّم EYOUTH",ce7s:"IBM SkillsBuild · مارس 2026",ce2:"تحليل البيانات باستخدام Excel",ce3:"أساسيات Excel وتحليل البيانات",ce4:"SQL 101 و102 و103، وPython",satr:"منصة سطر",ce5:"برنامج موهبة للإثراء الأكاديمي: علم البيانات والذكاء الاصطناعي",ce5s:"موهبة بالتعاون مع جامعة أم القرى",ce6:"برنامج مسك «مسار المستقبل»",ce6s:"التفكير النقدي، تخطيط المشاريع، التحليل المالي، تحليل البيانات، الذكاء العاطفي، الإنتاجية وإدارة الوقت",
 faq_eyebrow:"أسئلة شائعة",faq_title:"معلومات تهمّك",faq_side:"إجابات سريعة لجهات التوظيف والفرق.",
 f1q:"ما نوع الفرص التي تبحثين عنها؟",f1a:"تدريب في تحليل البيانات أو تقنية المعلومات، ومشاريع تركّز على البيانات أستطيع فيها تنظيف بيانات حقيقية وتحليلها وعرضها.",
 f2q:"ما الأدوات التي تستخدمينها أكثر؟",f2a:"Power BI وExcel للوحات والتقارير، وSQL (MySQL) للاستعلام والنمذجة، وPython للبرمجة والتحليل.",
@@ -734,7 +900,9 @@ f5q:"كيف أحصل على سيرتك الذاتية؟",f5a:"من زر السي
 c_eyebrow:"تواصل",c_giant:"لنعمل <i>معًا</i>",c_lede:"لديك فرصة تدريب، أو بيانات، أو سؤال يحتاج إجابة واضحة؟ يسعدني أن أسمع منك.",c_mail:"راسلني",
 l_email:"البريد الإلكتروني",l_loc:"الموقع",copy:"نسخ",copied:"تم النسخ",
 foot:"© 2026 رغد المطرفي",foot2:"مكة المكرمة · ملف أعمال تحليل البيانات",
-langLabel:"EN",cv_title:"السيرة الذاتية",cv_close:"إغلاق",cv_dl:"تحميل PDF",title:"رغد المطرفي · Raghad Almatrfy"
+nav_skills:"المهارات",skills_eyebrow:"المهارات",skills_title:"ما أستخدمه للوصول من جدول خام إلى قرار.",sg_bi:"تحليل البيانات وذكاء الأعمال",sg_db:"قواعد البيانات وSQL",sg_prog:"البرمجة",sg_tools:"الأدوات",sk_kpicards:"بطاقات المؤشرات والفلاتر",sk_model:"نمذجة البيانات",sk_clean:"تنظيف البيانات",sk_eda:"التحليل الاستكشافي (EDA)",sk_viz:"تصوير البيانات",sk_trend:"تحليل الاتجاهات",sk_reldesign:"التصميم العلائقي",sk_norm:"التطبيع",sk_subq:"الاستعلامات الفرعية",sk_aggs:"الدوال التجميعية",sk_views:"العروض (Views)",sk_procs:"الإجراءات المخزنة",sk_indexes:"الفهارس",sk_team:"العمل الجماعي",sk_prob:"حل المشكلات",sk_time:"إدارة الوقت",sk_pm:"إدارة المشاريع",cw_t:"مقررات ذات صلة",cw_db:"أنظمة قواعد البيانات",cw_dsa:"هياكل البيانات والخوارزميات",cw_stat:"الإحصاء والاحتمالات",cw_ai:"الذكاء الاصطناعي",cw_oop:"البرمجة الكائنية (Java)",cw_se:"هندسة البرمجيات",work_sub:"لكل مشروع ملفاته وتوثيقه على GitHub.",edu_title:"أين أدرس.",deg_eyebrow:"المستوى السابع · التخرج المتوقع 2028",deg_t:"بكالوريوس علوم الحاسب",deg_uni:"جامعة أم القرى، مكة المكرمة",deg_c:"مقررات في قواعد البيانات والخوارزميات والإحصاء والذكاء الاصطناعي وهندسة البرمجيات.",gpa_l:"المعدل التراكمي",gpa_out:"من 4.00",mem_t:"نادي طويق، جامعة أم القرى",mem_s:"معسكر القمة · مسار البرمجة والتطوير",org_tuwaiq:"نادي طويق · معسكر القمة",org_tuwaiqclub:"نادي طويق",c_learned:"المهارات المكتسبة",c_projects:"المشاريع:",ce_pbi:"تحليل البيانات باستخدام Power BI: الأساسيات والمتوسط والمتقدم",ce_xl:"أساسيات Excel وتحليل البيانات باستخدام Excel",ce_sql:"SQL 101 و102 و103",ce_py:"Python 101 و102 و103 و104",ls_model:"نمذجة البيانات",ls_clean:"تنظيف البيانات",ls_pq:"Power Query",ls_kpi:"مؤشرات الأداء الرئيسية",ls_dax:"DAX",ls_dash:"لوحات المعلومات",ls_trend:"تحليل الاتجاهات",ls_viz:"تصوير البيانات",ls_excel:"Microsoft Excel",ls_da:"تحليل البيانات",ls_rdb:"قواعد البيانات العلائقية",ls_dbm:"إدارة قواعد البيانات",ls_crud:"عمليات CRUD",ls_sqlq:"استعلامات SQL",ls_aggf:"الدوال التجميعية",ls_pandas:"Python (Pandas)",ls_ds:"علم البيانات والذكاء الاصطناعي",ls_prod:"الإنتاجية وإدارة الوقت",ls_pm:"إدارة المشاريع",ce6s:"أكاديمية مسك",l_phone:"الجوال",live:"الموقع المباشر",s_pbi:"Microsoft Power BI",s_dash:"لوحات المعلومات",s_da:"تحليل البيانات",s_dax:"مقاييس DAX",pc_meta:"Power BI · أكتوبر 2026 · بيانات افتراضية",pc_t:"لوحة تأجير السيارات",pc_g:"<b>الهدف:</b> تحليل أداء تأجير السيارات للربع الثاني من 2026 في واجهة تفاعلية واحدة.",pc_b1:"بطاقات مؤشرات لإجمالي العقود وإيرادات التأجير",pc_b2:"تفصيل النتائج حسب الفرع ونوع السيارة وحالة الحجز",pc_b3:"فلاتر تفاعلية تحدّث كل الرسوم",pr_meta:"Power BI · أكتوبر 2026 · بيانات افتراضية",pr_t:"لوحة مبيعات متجر التجزئة",pr_g:"<b>الهدف:</b> متابعة أداء مبيعات المتجر مقارنة بالمستهدف.",pr_b1:"مؤشرات تقارن المبيعات الفعلية بالمستهدفة ومتوسط قيمة الفاتورة",pr_b2:"بناء مقاييس DAX للمؤشرات الأساسية",pr_b3:"تفصيل حسب الفرع والمنتج مع فلاتر تفاعلية",pq_meta:"نادي طويق · معسكر القمة · مشروع فردي",pq_t:"QuoteIt: موقع اقتباسات تقنية",pq_g:"<b>الهدف:</b> بناء ونشر موقع مباشر لمشاركة الاقتباسات التقنية وتصفحها.",pq_b1:"بناء الموقع كاملًا باستخدام Laravel (PHP) وواجهة بـ Vite",pq_b2:"ربط قاعدة بيانات PostgreSQL وتجهيز التطبيق بـ Docker",pq_b3:"نشره مباشرة على منصة Render",pj_meta:"مشروع جامعي · تطبيق سطح مكتب",about_p1:"أهتم ببناء الأشياء بشكل منظّم: قواعد بيانات منطقية، وبيانات تحكي قصة واضحة. أعمل بأدوات مثل SQL وPython وPower BI وFigma، وأستمتع بتحويل مشكلة مبعثرة إلى شيء منظّم ومفيد، سواء كان ذلك تصميم مخطط متين، أو كتابة استعلام يجيب عن السؤال فعلًا، أو تشكيل شكل النظام وتجربته لمن يستخدمه.",about_p2:"ما زلت أعمّق خبرتي في هذه الأدوات، لكنني أتنقل بارتياح بين البيانات العلائقية وغير العلائقية، وأتعلّم الأدوات الجديدة بسرعة. أُبدع في المشكلات التي تحتاج صبرًا وتنظيمًا لا تخمينًا. أقيم في المنطقة الغربية بالمملكة العربية السعودية، وأبحث عن فرصة تدريب تعاوني أواصل فيها التعلّم وأقدّم إسهامًا حقيقيًا.",
+sg_soft:"المهارات الشخصية",sk_openall:"فتح الكل",sk_closeall:"إغلاق الكل",sk_hint:"اضغط على أي فئة لعرض محتواها",ss_team:"العمل الجماعي",ss_fast:"سرعة تعلّم المهارات",ss_create:"حب الإبداع",ss_tech:"مواكبة التقنيات الحديثة",ss_pressure:"العمل تحت الضغط",ss_prob:"حل المشكلات",ss_eq:"الذكاء العاطفي",org_satr:"منصة سطر",org_tuwaiqacad:"أكاديمية طويق",org_ibm:"IBM SkillsBuild",org_mawhiba:"موهبة",org_misk:"أكاديمية مسك",org_uqu:"جامعة أم القرى",org_tuwaiqclub:"نادي طويق",mono_mawhiba:"موهبة",mono_misk:"مسك",about_p1:"أحب بناء الأشياء بشكل منظّم: قواعد بيانات منطقية، وبيانات تحكي قصة واضحة. باستخدام SQL وPython وPower BI وFigma أحوّل المشكلات المبعثرة إلى نتائج منظّمة ومفيدة، من مخطط متين إلى استعلام يجيب عن السؤال الحقيقي.",about_p2:"أتعلّم الأدوات الجديدة بسرعة، وأقدّم أفضل ما لدي في المشكلات التي تحتاج صبرًا لا تخمينًا. أبحث عن فرصة تدريب تعاوني أواصل فيها التعلّم وأقدّم إسهامًا حقيقيًا.",
+langLabel:"EN",cv_title:"السيرة الذاتية",cv_close:"إغلاق",cv_note:"للحصول على نسخة PDF، راسلني على raghad_ghazi_almatrafi@outlook.sa",title:"رغد المطرفي · Raghad Almatrfy"
 }};
 
 const root=document.documentElement;
@@ -748,6 +916,8 @@ function applyLang(l){
   document.getElementById("langLabel").textContent=d.langLabel;
   document.getElementById("langBtn").setAttribute("aria-label",l==="ar"?"Switch to English":"التبديل إلى العربية");
   const bl=document.getElementById("bcList"); if(bl&&d.bc_mods) bl.innerHTML=d.bc_mods.map(m=>`<li>${m}</li>`).join("");
+  const fl=document.getElementById("flow"); if(fl){const l=document.getElementById("fPlayLbl"); if(l) l.textContent=d[fl.classList.contains("playing")?"f_pause":"f_play"];}
+  if(typeof orgTips==="function") orgTips();
   document.title=d.title;
   store.set("rg-lang",l);
   drawArt();
@@ -773,37 +943,49 @@ document.getElementById("copyBtn").addEventListener("click",e=>{
 // Project thumbnails in the palette
 function drawArt(){
   document.querySelectorAll(".thumb").forEach(el=>{
+    if(el.querySelector("img.shot")){const c0=el.querySelector("canvas");if(c0)c0.remove();return;}
     let c=el.querySelector("canvas"); if(!c){c=document.createElement("canvas");el.prepend(c);}
     const w=el.clientWidth,h=el.clientHeight,dpr=Math.min(devicePixelRatio||1,2);
     if(!w||!h) return;
-    c.width=w*dpr;c.height=h*dpr;const g=c.getContext("2d");g.scale(dpr,dpr);g.clearRect(0,0,w,h);
-    const onBlue=el.classList.contains("c-blue");
-    const cream=onBlue?"rgba(35,24,21,":"rgba(245,239,198,", blue=onBlue?"rgba(77,14,18,":"rgba(165,188,214,";
-    g.lineWidth=1;
+    c.width=w*dpr;c.height=h*dpr;const g=c.getContext("2d");g.scale(dpr,dpr);g.clearRect(0,0,w,h);g.direction="ltr";
+    const light=/c-(ice|butter|pink)/.test(el.className);
+    const A=light?"rgba(112,45,61,":"rgba(255,244,222,", B=light?"rgba(142,24,37,":"rgba(200,217,236,", Y=light?"rgba(61,39,34,":"rgba(255,237,173,";
+    g.lineWidth=1.2;
     const t=el.dataset.art;
-    if(t==="schema"){
+    const rr=(x,y,ww,hh,r)=>{g.beginPath();g.roundRect?g.roundRect(x,y,ww,hh,r):g.rect(x,y,ww,hh);};
+    if(t==="dash"){
+      for(let i=0;i<3;i++){rr(w*(.06+i*.2),h*.12,w*.17,h*.2,8);g.fillStyle=A+".14)";g.fill();g.fillStyle=(i===0?Y:B)+".9)";g.fillRect(w*(.08+i*.2),h*.17,w*.07,5);g.fillStyle=A+".55)";g.fillRect(w*(.08+i*.2),h*.24,w*.11,3);}
+      const v=[.4,.62,.5,.78,.58,.9];v.forEach((q,i)=>{const x=w*(.08+i*.075),bh=q*h*.42;g.fillStyle=(i===5?Y:B)+".9)";rr(x,h*.86-bh,w*.05,bh,4);g.fill();});
+      const cx=w*.83,cy=h*.55,r=Math.min(w,h)*.2;[[0,.45,B+".9)"],[.45,.75,Y+".9)"],[.75,1,A+".45)"]].forEach(([s0,s1,col])=>{g.strokeStyle=col;g.lineWidth=r*.42;g.beginPath();g.arc(cx,cy,r*.75,s0*2*Math.PI-Math.PI/2,s1*2*Math.PI-Math.PI/2);g.stroke();});g.lineWidth=1.2;
+      rr(w*.62,h*.12,w*.32,h*.2,8);g.fillStyle=A+".14)";g.fill();for(let i=0;i<3;i++){rr(w*(.645+i*.095),h*.17,w*.08,h*.1,6);g.fillStyle=(i===1?Y:A)+(i===1?".9)":".3)");g.fill();}
+    }else if(t==="schema"){
       const b=[[.1,.14],[.4,.08],[.7,.16],[.22,.48],[.55,.46],[.82,.52]],L=[[0,3],[1,3],[1,4],[2,4],[4,5],[0,1]];
-      g.strokeStyle=blue+".6)";L.forEach(([a,z])=>{g.beginPath();g.moveTo(b[a][0]*w+30,b[a][1]*h+14);g.lineTo(b[z][0]*w+30,b[z][1]*h+14);g.stroke();});
-      b.forEach(([x,y],i)=>{g.fillStyle="rgba(35,24,21,.95)";g.fillRect(x*w,y*h,60,30);g.strokeStyle=(i===4?blue:cream)+".7)";g.strokeRect(x*w+.5,y*h+.5,60,30);g.fillStyle=cream+".5)";g.fillRect(x*w+8,y*h+9,30,2);g.fillRect(x*w+8,y*h+17,20,2);});
+      g.strokeStyle=B+".7)";L.forEach(([a,z])=>{g.beginPath();g.moveTo(b[a][0]*w+30,b[a][1]*h+14);g.lineTo(b[z][0]*w+30,b[z][1]*h+14);g.stroke();});
+      b.forEach(([x,y],i)=>{rr(x*w,y*h,60,30,6);g.fillStyle=i===4?Y+".95)":A+".16)";g.fill();g.strokeStyle=A+".6)";g.stroke();g.fillStyle=i===4?"rgba(61,39,34,.7)":A+".6)";g.fillRect(x*w+8,y*h+9,30,2.5);g.fillRect(x*w+8,y*h+17,20,2.5);});
     }else if(t==="bars"){
       const v=[.35,.52,.44,.7,.6,.86,.66],bw=w/(v.length*1.9);
-      v.forEach((q,i)=>{const x=w*.1+i*bw*1.6,bh=q*h*.6;g.fillStyle=q>.59?blue+".95)":cream+".18)";g.fillRect(x,h*.78-bh,bw,bh);});
-      const ay=h*.78-.59*h*.6;g.strokeStyle="rgba(224,160,163,.9)";g.setLineDash([4,5]);g.beginPath();g.moveTo(w*.06,ay);g.lineTo(w*.96,ay);g.stroke();g.setLineDash([]);
+      v.forEach((q,i)=>{const x=w*.1+i*bw*1.6,bh=q*h*.6;g.fillStyle=q>.59?"rgba(142,24,37,.9)":A+".3)";rr(x,h*.78-bh,bw,bh,5);g.fill();});
+      const ay=h*.78-.59*h*.6;g.strokeStyle="rgba(112,45,61,.9)";g.setLineDash([5,5]);g.beginPath();g.moveTo(w*.06,ay);g.lineTo(w*.96,ay);g.stroke();g.setLineDash([]);
     }else if(t==="excel"){
       const v=[.3,.42,.36,.55,.9,.82,.4,.95],bw=w*.045;
-      v.forEach((q,i)=>{const x=w*.08+i*bw*1.7,bh=q*h*.55;g.fillStyle=q>.7?blue+".95)":cream+".25)";g.fillRect(x,h*.78-bh,bw,bh);});
-      const cx=w*.78,cy=h*.42,r=Math.min(w,h)*.2;[[0,.33,cream+".3)"],[.33,.62,cream+".6)"],[.62,1,blue+".95)"]].forEach(([s0,s1,c])=>{g.fillStyle=c;g.beginPath();g.moveTo(cx,cy);g.arc(cx,cy,r,s0*2*Math.PI-Math.PI/2,s1*2*Math.PI-Math.PI/2);g.closePath();g.fill();});
+      v.forEach((q,i)=>{const x=w*.08+i*bw*1.7,bh=q*h*.55;g.fillStyle=q>.7?Y+".95)":A+".3)";rr(x,h*.78-bh,bw,bh,4);g.fill();});
+      const cx=w*.78,cy=h*.42,r=Math.min(w,h)*.2;[[0,.33,A+".35)"],[.33,.62,B+".9)"],[.62,1,Y+".95)"]].forEach(([s0,s1,col])=>{g.fillStyle=col;g.beginPath();g.moveTo(cx,cy);g.arc(cx,cy,r,s0*2*Math.PI-Math.PI/2,s1*2*Math.PI-Math.PI/2);g.closePath();g.fill();});
     }else if(t==="ui"){
-      const x0=w*.12,y0=h*.12,W=w*.76,H=h*.62;g.fillStyle="rgba(245,239,198,.55)";g.fillRect(x0,y0,W,H);g.strokeStyle=cream+".7)";g.strokeRect(x0+.5,y0+.5,W,H);
-      g.fillStyle=cream+".85)";g.fillRect(x0,y0,W,12);for(let i=0;i<3;i++){g.fillStyle="rgba(77,14,18,.8)";g.beginPath();g.arc(x0+10+i*10,y0+6,2.5,0,7);g.fill();}
-      for(let r=0;r<5;r++){const y=y0+22+r*(H-30)/5;g.fillStyle=r===0?"rgba(77,14,18,.75)":cream+".35)";g.fillRect(x0+10,y,W*.55,6);g.fillRect(x0+W*.7,y,W*.2,6);}
+      const x0=w*.12,y0=h*.12,W=w*.76,H=h*.62;rr(x0,y0,W,H,10);g.fillStyle="rgba(255,248,236,.85)";g.fill();g.strokeStyle=A+".5)";g.stroke();
+      for(let i=0;i<3;i++){g.fillStyle="rgba(142,24,37,.8)";g.beginPath();g.arc(x0+14+i*11,y0+11,3,0,7);g.fill();}
+      for(let r=0;r<5;r++){const y=y0+26+r*(H-34)/5;g.fillStyle=r===0?"rgba(142,24,37,.8)":"rgba(112,45,61,.28)";g.fillRect(x0+14,y,W*.55,6);g.fillRect(x0+W*.7,y,W*.2,6);}
     }else if(t==="flow"){
-      for(let i=0;i<4;i++){const x=w*(.14+i*.24),y=h*.4;g.strokeStyle=(i===1?blue:cream)+".7)";g.beginPath();g.arc(x,y,16,0,Math.PI*2);g.stroke();if(i<3){g.strokeStyle=cream+".3)";g.beginPath();g.moveTo(x+20,y);g.lineTo(x+w*.24-20,y);g.stroke();}}
+      for(let i=0;i<4;i++){const x=w*(.14+i*.24),y=h*.4;g.fillStyle=(i===1?Y:A)+(i===1?".95)":".14)");g.beginPath();g.arc(x,y,18,0,Math.PI*2);g.fill();g.strokeStyle=A+".7)";g.stroke();if(i<3){g.strokeStyle=B+".7)";g.beginPath();g.moveTo(x+22,y);g.lineTo(x+w*.24-22,y);g.stroke();}}
     }else if(t==="rings"){
-      for(let i=1;i<7;i++){g.strokeStyle=(i===3?blue+".8)":cream+(.4-i*.045)+")");g.beginPath();g.arc(w*.68,h*.42,i*16,0,Math.PI*2);g.stroke();}
+      for(let i=1;i<7;i++){g.strokeStyle=(i===3?"rgba(142,24,37,.85)":A+(.5-i*.05)+")");g.lineWidth=i===3?2.5:1.2;g.beginPath();g.arc(w*.68,h*.42,i*16,0,Math.PI*2);g.stroke();}
+      rr(w*.68-16,h*.42-7,32,14,7);g.fillStyle="rgba(142,24,37,.9)";g.fill();
+    }else if(t==="quote"){
+      g.fillStyle=Y+".95)";g.font="700 "+Math.round(h*.8)+"px Amiri,serif";g.fillText("“",w*.05,h*.82);
+      for(let r=0;r<4;r++){g.fillStyle=(r===1?B+".95)":A+".4)");rr(w*.36,h*(.24+r*.13),w*(r===3?.3:.5),7,4);g.fill();}
     }else if(t==="rain"){
       let s=7;const R=()=>(s=(s*9301+49297)%233280)/233280;
-      for(let i=0;i<100;i++){const x=R()*w,y=R()*h*.8,l=6+R()*10;g.strokeStyle=(i%8===0?blue:cream)+(.18+R()*.4)+")";g.beginPath();g.moveTo(x,y);g.lineTo(x-2,y+l);g.stroke();}
+      for(let i=0;i<100;i++){const x=R()*w,y=R()*h*.8,l=6+R()*10;g.strokeStyle=(i%8===0?Y:(i%5===0?B:A))+(.25+R()*.45)+")";g.beginPath();g.moveTo(x,y);g.lineTo(x-2,y+l);g.stroke();}
+      g.fillStyle="rgba(234,205,212,.9)";g.font=Math.round(h*.2)+"px serif";g.fillText("♥",w*.78,h*.5);
     }
   });
 }
@@ -815,9 +997,63 @@ if(io && !matchMedia("(prefers-reduced-motion: reduce)").matches){
 let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(drawArt,150);});
 
 
+// Interactive process
+(function(){
+  const flow=document.getElementById("flow"); if(!flow) return;
+  const tabs=[...flow.querySelectorAll(".fstep")], pans=[...flow.querySelectorAll(".fpanel")];
+  const DUR=5200, reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  flow.style.setProperty("--dur",DUR+"ms");
+  let cur=0,timer=null,playing=false,userStopped=false;
+  function show(i,focus){
+    i=(i+tabs.length)%tabs.length; cur=i;
+    tabs.forEach((b,k)=>{const on=k===i;b.classList.toggle("on",on);b.classList.toggle("done",k<i);b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1;});
+    pans.forEach((p,k)=>{p.hidden=k!==i;p.classList.toggle("on",k===i);p.classList.remove("anim");});
+    void pans[i].offsetWidth; pans[i].classList.add("anim");
+    document.getElementById("fNow").textContent=i+1;
+    if(focus) tabs[i].focus();
+    tabs[i].scrollIntoView({block:"nearest",inline:"nearest"});
+    if(playing) schedule();
+  }
+  function schedule(){clearTimeout(timer);const b=tabs[cur].querySelector(".fbar b");b.style.animation="none";void b.offsetWidth;b.style.animation="";timer=setTimeout(()=>show(cur+1),DUR);}
+  function setPlay(on){playing=on;flow.classList.toggle("playing",on);const l=document.getElementById("fPlayLbl");l.textContent=T[lang][on?"f_pause":"f_play"];l.dataset.i18n=on?"f_pause":"f_play";if(on)schedule();else clearTimeout(timer);}
+  tabs.forEach((b,k)=>b.addEventListener("click",()=>{userStopped=true;setPlay(false);show(k);}));
+  flow.querySelector(".flow-nav").addEventListener("keydown",e=>{const rtl=document.documentElement.dir==="rtl";let d=0;if(e.key==="ArrowRight")d=rtl?-1:1;if(e.key==="ArrowLeft")d=rtl?1:-1;if(e.key==="Home"){e.preventDefault();show(0,true);}if(e.key==="End"){e.preventDefault();show(tabs.length-1,true);}if(d){e.preventDefault();userStopped=true;setPlay(false);show(cur+d,true);}});
+  document.getElementById("fPrev").addEventListener("click",()=>{userStopped=true;setPlay(false);show(cur-1);});
+  document.getElementById("fNext").addEventListener("click",()=>{userStopped=true;setPlay(false);show(cur+1);});
+  document.getElementById("fPlay").addEventListener("click",()=>{userStopped=playing;setPlay(!playing);});
+  flow.addEventListener("mouseenter",()=>{if(playing){clearTimeout(timer);flow.classList.add("hold");}});
+  flow.addEventListener("mouseleave",()=>{if(playing&&flow.classList.contains("hold")){flow.classList.remove("hold");schedule();}});
+  if(!reduce && "IntersectionObserver" in window){
+    new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!userStopped&&!playing){show(cur);setPlay(true);}else if(!e.isIntersecting&&playing){setPlay(false);}}),{threshold:.45}).observe(flow);
+  }
+})();
+
+// Projects: filter, tilt, count-up, organisation tips
+(function(){
+  const grid=document.getElementById("projGrid"); if(!grid) return;
+  const cards=[...grid.querySelectorAll(".proj")], btns=[...document.querySelectorAll(".pf")];
+  btns.forEach(b=>{const f=b.dataset.f;b.querySelector("b").textContent=f==="all"?cards.length:cards.filter(c=>c.dataset.cat===f).length;
+    b.addEventListener("click",()=>{btns.forEach(x=>x.classList.toggle("on",x===b));cards.forEach(c=>{const show=f==="all"||c.dataset.cat===f;c.classList.toggle("out",!show);c.classList.remove("pop","pre");if(show){void c.offsetWidth;c.classList.add("pop");}});drawArt();});});
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, fine=matchMedia("(pointer: fine)").matches;
+  if(!reduce&&fine){cards.forEach(c=>{c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateX(${(-y*4).toFixed(2)}deg) rotateY(${(x*5).toFixed(2)}deg) translateY(-4px)`;});c.addEventListener("pointerleave",()=>{c.style.transform="";});});}
+  const counts=[...grid.querySelectorAll("[data-count]")].filter(b=>/^\d+[+%×]?$/.test(b.dataset.count));
+  if(!reduce&&"IntersectionObserver" in window){const io2=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const b=e.target,m=b.dataset.count.match(/^(\d+)(.*)$/),n=+m[1],suf=m[2];let s=null;const step=ts=>{s=s||ts;const k=Math.min(1,(ts-s)/900);b.textContent=Math.round(n*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(step);};requestAnimationFrame(step);io2.unobserve(b);}),{threshold:.6});counts.forEach(b=>io2.observe(b));}
+})();
+document.addEventListener("click",e=>{const a=e.target.closest("[data-jump]");if(!a)return;e.preventDefault();const card=document.querySelector(`.proj[data-k="${a.dataset.jump}"]`);if(!card)return;document.querySelector('.pf[data-f="all"]')?.click();card.scrollIntoView({behavior:"smooth",block:"center"});card.classList.remove("pop");void card.offsetWidth;card.classList.add("pop");});
+// Skills accordion
+(function(){
+  const btns=[...document.querySelectorAll(".skbtn")],all=document.getElementById("skAll"); if(!btns.length) return;
+  const set=(b,open)=>{b.setAttribute("aria-expanded",open);document.getElementById(b.getAttribute("aria-controls")).classList.toggle("open",open);};
+  const sync=()=>{const allOpen=btns.every(b=>b.getAttribute("aria-expanded")==="true");all.classList.toggle("on",allOpen);const s=all.querySelector("span");s.dataset.i18n=allOpen?"sk_closeall":"sk_openall";s.textContent=T[lang][s.dataset.i18n];};
+  btns.forEach(b=>b.addEventListener("click",()=>{set(b,b.getAttribute("aria-expanded")!=="true");sync();}));
+  all.addEventListener("click",()=>{const open=!btns.every(b=>b.getAttribute("aria-expanded")==="true");btns.forEach(b=>set(b,open));sync();});
+})();
+function orgTips(){document.querySelectorAll(".org[data-org]").forEach(o=>{const n=T[lang]["org_"+o.dataset.org];o.dataset.tip=n;o.setAttribute("aria-label",n);});}
+
 applyLang(lang);
 syncThemeIcon();
 </script>
+
 
 </body>
 </html>
